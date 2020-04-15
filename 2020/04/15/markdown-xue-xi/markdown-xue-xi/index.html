@@ -410,14 +410,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    189
+                    796
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -438,7 +438,7 @@
 <h3 id="推荐书籍"><a href="#推荐书籍" class="headerlink" title="推荐书籍"></a>推荐书籍</h3><p>《了不起的Markdown》</p>
 <h3 id="用Typora开始Markdown之旅"><a href="#用Typora开始Markdown之旅" class="headerlink" title="用Typora开始Markdown之旅"></a>用Typora开始Markdown之旅</h3><pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> hello world</span></code></pre>
 <p>复制这句代码到Typora上（注意#号后有空格），显示效果如下：</p>
-<p><img src="C:%5CUsers%5Cdel%5CDesktop%5Cmyblog%5Csource_posts%5CMarkdown%E5%AD%A6%E4%B9%A0%5Chelloworld.png" alt="helloworld"></p>
+<p><img src="https://s1.ax1x.com/2020/04/15/JikvPe.png" alt="helloworld"></p>
 <h2 id="第二节-标题"><a href="#第二节-标题" class="headerlink" title="第二节  标题"></a>第二节  标题</h2><p>使用#号表示1~6级标题，一级标题对应一个#号，以此类推</p>
 <pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 是一级标题呀</span>
 <span class="token title important"><span class="token punctuation">##</span> 是二级标题呀</span>
@@ -447,8 +447,91 @@
 <span class="token title important"><span class="token punctuation">#####</span> 是五级标题呀</span>
 <span class="token title important"><span class="token punctuation">######</span> 是六级标题呀</span></code></pre>
 <p>效果如下图：</p>
-<p><img src="C:%5CUsers%5Cdel%5CDesktop%5Cmyblog%5Csource_posts%5CMarkdown%E5%AD%A6%E4%B9%A0%5C%E6%A0%87%E9%A2%98.png" alt="标题"></p>
-<h2 id="第三节-段落"><a href="#第三节-段落" class="headerlink" title="第三节  段落"></a>第三节  段落</h2>
+<p><img src="https://s1.ax1x.com/2020/04/15/JiAdqx.png" alt="标题"></p>
+<h2 id="第三节-段落"><a href="#第三节-段落" class="headerlink" title="第三节  段落"></a>第三节  段落</h2><p>Markdown的段落没啥特殊格式，直接Ctrl + 0就好了。</p>
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>Markdown有多种字体，喜欢或者需要哪种可自行选择</p>
+<pre class=" language-markdown"><code class="language-markdown"><span class="token italic"><span class="token punctuation">*</span>斜体文本<span class="token punctuation">*</span></span>
+<span class="token italic"><span class="token punctuation">_</span>斜体文本<span class="token punctuation">_</span></span>
+<span class="token bold"><span class="token punctuation">**</span>粗体文本<span class="token punctuation">**</span></span>
+<span class="token bold"><span class="token punctuation">__</span>粗体文本<span class="token punctuation">__</span></span>
+<span class="token bold"><span class="token punctuation">**</span>*粗斜体文本<span class="token punctuation">**</span></span>*
+<span class="token bold"><span class="token punctuation">__</span>_粗斜体文本<span class="token punctuation">__</span></span>_</code></pre>
+<p>在Typora中的效果如图：</p>
+<p><img src="https://s1.ax1x.com/2020/04/15/JimaEq.png" alt="字体"></p>
+<h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><p>如果段落中需要用到删除线，可以在段落两边添加两个  ~~  波浪线来实现。</p>
+<pre class=" language-markdown"><code class="language-markdown">~~删除线~~</code></pre>
+<p>效果如图：</p>
+<p><img src="https://s1.ax1x.com/2020/04/15/Jin4wn.png" alt="删除线"></p>
+<h3 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h3><p>脚注可以对文本进行补充说明</p>
+<pre class=" language-markdown"><code class="language-markdown">//格式如下
+[^需要说明的文本]
+
+//示例代码
+Markdown学习[^Markdown]
+[^Markdown]:Markdown是一种轻量级标记语言</code></pre>
+<p>效果如下：</p>
+<p><img src="https://s1.ax1x.com/2020/04/15/JiMGiq.png" alt="脚注"></p>
+<h2 id="第四节-列表"><a href="#第四节-列表" class="headerlink" title="第四节  列表"></a>第四节  列表</h2><h3 id="有序列表和无序列表"><a href="#有序列表和无序列表" class="headerlink" title="有序列表和无序列表"></a>有序列表和无序列表</h3><p>无序列表使用星号(<strong>***)、加号(</strong>+<strong>)或是减号(</strong>-**)作为列表标记</p>
+<p>有序列表使用 . 号</p>
+<pre class=" language-markdown"><code class="language-markdown">//无序列表
+<span class="token list punctuation">*</span> 迪迦
+<span class="token list punctuation">+</span> 戴拿
+<span class="token list punctuation">-</span> 盖亚
+
+//有序列表
+<span class="token list punctuation">1.</span> 迪迦
+<span class="token list punctuation">2.</span> 戴拿
+<span class="token list punctuation">3.</span> 盖亚</code></pre>
+<p>效果如下：</p>
+<p><img src="https://s1.ax1x.com/2020/04/15/Ji8MUH.png" alt="列表"></p>
+<h3 id="列表进阶之嵌套列表"><a href="#列表进阶之嵌套列表" class="headerlink" title="列表进阶之嵌套列表"></a>列表进阶之嵌套列表</h3><p>子列表在选项前面加四个空格就可以了</p>
+<pre class=" language-markdown"><code class="language-markdown"><span class="token list punctuation">1.</span> 平成系奥特曼
+<span class="token code keyword">    * 迪迦</span>
+<span class="token code keyword">    + 戴拿</span>
+<span class="token code keyword">    - 盖亚</span></code></pre>
+<p>效果如下：</p>
+<p><img src="https://s1.ax1x.com/2020/04/15/Ji8LZD.png" alt="嵌套列表"></p>
+<h2 id="第五节-区块与代码区块"><a href="#第五节-区块与代码区块" class="headerlink" title="第五节  区块与代码区块"></a>第五节  区块与代码区块</h2><h3 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h3><p>区块引用是在段落开头使用 <strong>&gt;</strong> 符号 ，然后后面紧跟一个空格符号：</p>
+<pre class=" language-markdown"><code class="language-markdown"><span class="token blockquote punctuation">></span> 少年乙的博客
+<span class="token blockquote punctuation">></span> 其他小伙伴的博客</code></pre>
+<p>效果如下：</p>
+<p><img src="https://s1.ax1x.com/2020/04/15/JiJ8nf.png" alt="区块"></p>
+<h3 id="区块进阶之嵌套区块"><a href="#区块进阶之嵌套区块" class="headerlink" title="区块进阶之嵌套区块"></a>区块进阶之嵌套区块</h3><p>一个 <strong>&gt;</strong> 符号是最外层，两个 <strong>&gt;</strong> 符号是第一层嵌套，以此类推：</p>
+<pre class=" language-markdown"><code class="language-markdown"><span class="token blockquote punctuation">></span> 少年乙的博客
+<span class="token blockquote punctuation">> ></span> 阅读文章
+<span class="token blockquote punctuation">> > ></span> 阅读完毕</code></pre>
+<p>效果如下：</p>
+<p><img src="https://s1.ax1x.com/2020/04/15/JiYRZ8.png" alt="嵌套区块"></p>
+<h3 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h3><p>用```开始代码区块，需要的话可以选定一种语言,选定了的话代码区块里的代码会高亮显示</p>
+<pre class=" language-markdown"><code class="language-markdown">​```
+for(int i = 0; i &lt; str.size();i++){
+<span class="token code keyword">    cout&lt;&lt;"***"&lt;&lt;endl;</span>
+}</code></pre>
+<p>效果如下：</p>
+<p><img src="https://s1.ax1x.com/2020/04/15/JiDtsJ.png" alt="代码区块"></p>
+<h2 id="第六节-链接与图片"><a href="#第六节-链接与图片" class="headerlink" title="第六节  链接与图片"></a>第六节  链接与图片</h2><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><pre class=" language-markdown"><code class="language-markdown">//链接的两种格式
+<span class="token url">[链接名](链接地址)</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>链接地址</span><span class="token punctuation">></span></span>
+
+//例子
+少年乙的博客<span class="token url">[传送门](https://1224756742.github.io/)</span></code></pre>
+<p>效果如下：</p>
+<p><img src="https://s1.ax1x.com/2020/04/15/Jisw8K.png" alt="链接"></p>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>嘻嘻，我的每个  效果如下  的测试图片都是用下面的方式写的</p>
+<pre class=" language-markdown"><code class="language-markdown">//图片的格式
+<span class="token url">![属性文本](图片地址)</span>
+
+<span class="token url">![我的头像](https://1224756742.github.io/medias/avatar.jpg)</span></code></pre>
+<p>效果如下：</p>
+<p><img src="https://s1.ax1x.com/2020/04/15/JiyaZj.png" alt="图片"></p>
+<h2 id="第七节-表格"><a href="#第七节-表格" class="headerlink" title="第七节  表格"></a>第七节  表格</h2><p>使用 <strong>|</strong> 来分隔不同的单元格，使用 <strong>-</strong> 来分隔表头和其他行</p>
+<pre class=" language-markdown"><code class="language-markdown">|  表头   | 表头  |
+|  ----  | ----  |
+| 单元格  | 单元格 |</code></pre>
+<p>效果如下：</p>
+<p><img src="https://s1.ax1x.com/2020/04/15/Ji69l8.png" alt="表格"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>学习了Marndown的基本语法，编写一般的文档ok啦！！！</p>
+
             </div>
             <hr/>
 
@@ -957,7 +1040,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.4k</span>&nbsp;字
+                class="white-color">3k</span>&nbsp;字
             
             
             
