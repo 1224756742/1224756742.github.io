@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="成绩排序, 少年乙的博客">
+    <meta name="keywords" content="计算日期到天数转换, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>成绩排序 | 少年乙的博客</title>
+    <title>计算日期到天数转换 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">成绩排序</h1>
+                    <h1 class="description center-align post-title">计算日期到天数转换</h1>
                 </div>
             </div>
         </div>
@@ -373,13 +373,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E6%8E%92%E5%BA%8F/">
-                                <span class="chip bg-color">排序</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -400,28 +396,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-13
+                    2020-04-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-13
+                    2020-04-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    602
+                    347
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -436,96 +432,39 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="成绩排序"><a href="#成绩排序" class="headerlink" title="成绩排序"></a>成绩排序</h2><p>查找和排序</p>
-<p>题目：输入任意（用户，成绩）序列，可以获得成绩从高到低或从低到高的排列,相同成绩<br>都按先录入排列在前的规则处理。</p>
-<p>例示：<br>jack   70<br>peter   96<br>Tom    70<br>smith   67</p>
-<p>从高到低 成绩<br>peter   96<br>jack   70<br>Tom    70<br>smith   67</p>
-<p>从低到高</p>
-<p>smith   67</p>
-<p>Tom    70<br>jack   70</p>
-<p>peter   96</p>
-<p>注：0代表从高到低，1代表从低到高</p>
-<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入多行，先输入要排序的人的个数，然后分别输入他们的名字和成绩，以一个空格隔开</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>按照指定方式输出名字和成绩，名字和成绩之间以一个空格隔开</code></pre><p>示例1</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>3
-0
-fang 90
-yang 50
-ning 70</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>fang 90
-ning 70
-yang 50</code></pre><p>用桶排序的思路，因为分数在0~100分之间，一个分数桶对应一个学生，哈哈，键值对的感觉有木有。下面是代码 </p>
+                <h2 id="计算日期到天数转换"><a href="#计算日期到天数转换" class="headerlink" title="计算日期到天数转换"></a>计算日期到天数转换</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>根据输入的日期，计算是这一年的第几天。。</p>
+<p>详细描述：</p>
+<p>输入某年某月某日，判断这一天是这一年的第几天？。</p>
+<p>接口设计及说明：</p>
+<p> /<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><br> Description  : 数据转换<br> Input Param  : year 输入年份<br>        Month 输入月份<br>        Day 输入天</p>
+<p> Output Param :<br> Return Value : 成功返回0，失败返回-1（如：数据错误）<br> <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/<br> public static int iConverDateToDay(int year, int month, int day)<br> {<br>   /* 在这里实现功能，将结果填入输入数组中*/<br>   return 0;<br> }</p>
+<p> /<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><br> Description  :<br> Input Param  :</p>
+<p> Output Param :<br> Return Value : 成功:返回outDay输出计算后的第几天;<br>                      失败:返回-1<br> <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/<br> public static int getOutDay()<br> {<br> return 0;<br> }</p>
+<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入三行，分别是年，月，日</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>成功:返回outDay输出计算后的第几天;
+失败:返回-1</code></pre><p>示例1</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>2012
+12
+31</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>366</code></pre><p>这题有个隐藏条件，需要判断输入年份是闰年还是平年。如果能被4整除但不能被100整除的是闰年，还有能被400整除的也是闰年。</p>
 <pre><code>#include&lt;iostream&gt;
-#include&lt;string&gt;
-#include&lt;vector&gt;
 using namespace std;
 
 int main(){
-    int number,hd;
-    string name;
-    int grade;
-    while(cin&gt;&gt;number&gt;&gt;hd){
-        string strarr[101];
-        int nums[101] = {0};
-        for(int i = 0;i &lt; number;i++){
-            cin&gt;&gt;name&gt;&gt;grade;
-            strarr[grade] = name;
-            nums[grade] = 1;
-        }
-        if(hd == 0){
-            for(int i = 100;i &gt;= 0;i--){
-                if(nums[i] != 0){
-                    cout&lt;&lt;strarr[i]&lt;&lt;&quot; &quot;&lt;&lt;i&lt;&lt;endl;
-                }
-            }
+    int year, month,day;
+    while(cin&gt;&gt;year&gt;&gt;month&gt;&gt;day){
+        int count = 0;
+        const int res[] = {0,31,59,90,120,151,181,212,243,273,304,334,365};
+        if(month &lt;= 0 || month &gt; 12 || day &lt;= 0 || day &gt; 31){
+            return -1;
         }
         else{
-            for(int i = 0;i &lt; 101;i++){
-                if(nums[i] != 0){
-                    cout&lt;&lt;strarr[i]&lt;&lt;&quot; &quot;&lt;&lt;i&lt;&lt;endl;
-                }
+            count = res[month - 1] + day;
+            if((year % 4 == 0 &amp;&amp; year % 100 != 0) || year % 400 == 0){
+                count++;
             }
         }
+        cout&lt;&lt;count&lt;&lt;endl;
     }
     return 0;
-}</code></pre><p>不过这种放在一维数组的做法是不足以解决这道题的，因为当出现两个用户的分数是一样的时候，所以这个程序的鲁棒性是不够给力的。<br>去牛客网得到讨论区，发现用容器可以解决多个用户分数一样的问题，附一下链接和代码。</p>
-<pre><code>//来源：牛客网
-//链接：https://www.nowcoder.com/questionTerminal/8e400fd9905747e4acc2aeed7240978b?f=discussion
-
-#include&lt;iostream&gt;
-#include&lt;vector&gt;
-#include&lt;string&gt;
-using namespace std;
-
-int main()
-{
-    int n;
-    int way;
-    string name;
-    int grade;
-    while(cin &gt;&gt; n &gt;&gt; way)
-    {
-        vector&lt;string&gt; b[101];  //0-100分的桶共101个
-        for(int i = 0; i &lt; n; i++)
-        {
-            cin &gt;&gt; name &gt;&gt; grade;
-            b[grade].push_back(name);
-        }
-        if(way == 0)
-        {
-          for(int i = 100 ; i &gt;= 0; i--)
-          {
-             for(int j = 0; j &lt; b[i].size(); j++)
-                 cout &lt;&lt; b[i][j] &lt;&lt; &quot; &quot; &lt;&lt; i &lt;&lt; endl;
-          }
-        }
-        else
-        {
-          for(int i = 0 ; i &lt; 101; i++)
-          {
-             for(int j = 0; j &lt; b[i].size(); j++)
-                 cout &lt;&lt; b[i][j] &lt;&lt; &quot; &quot; &lt;&lt; i &lt;&lt; endl;
-          }
-        }
-    }
 }</code></pre>
             </div>
             <hr/>
@@ -551,7 +490,7 @@ int main()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://1224756742.github.io/2020/04/13/hua-wei-ji-shi/cheng-ji-pai-xu/">http://1224756742.github.io/2020/04/13/hua-wei-ji-shi/cheng-ji-pai-xu/</a>
+                    <a href="http://1224756742.github.io/2020/04/15/hua-wei-ji-shi/ji-suan-ri-qi-dao-tian-shu-zhuan-huan/">http://1224756742.github.io/2020/04/15/hua-wei-ji-shi/ji-suan-ri-qi-dao-tian-shu-zhuan-huan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -588,11 +527,7 @@ int main()
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E6%8E%92%E5%BA%8F/">
-                                    <span class="chip bg-color">排序</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -762,47 +697,37 @@ int main()
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/14/hua-wei-ji-shi/ju-zhen-cheng-fa/ju-zhen-cheng-fa/">
+                <a href="/2020/04/15/markdown-xue-xi/markdown-xue-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="矩阵乘法">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Markdown学习">
                         
-                        <span class="card-title">矩阵乘法</span>
+                        <span class="card-title">Markdown学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            矩阵乘法题目描述如果A是个x行y列的矩阵，B是个y行z列的矩阵，把A和B相乘，其结果将是另一个x行z列的矩阵C。这个矩阵的每个元素是由下面的公式决定的
-
-输入描述:输入包含多组数据，每组数据包含：
-第一行包含一个正整数x，代表第一个矩阵的行
+                            Markdown学习第一节  Markdown介绍Markdown介绍Markdown是一种轻量级标记语言，知道他可以写文本就完事了。
+编辑器个人用Typora编辑器，不过不用编辑器也可以，Markdown可以纯文本编写文档，文件后缀是.m
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-14
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-15
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
+                            <a href="/categories/Markdown/" class="post-category">
+                                    Markdown
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%9F%A9%E9%98%B5/">
-                        <span class="chip bg-color">矩阵</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -811,30 +736,31 @@ int main()
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/13/hua-wei-ji-shi/cheng-ji-pai-xu/">
+                <a href="/2020/04/15/hua-wei-ji-shi/bai-qian-mai-bai-ji-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="成绩排序">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="百钱买百鸡问题">
                         
-                        <span class="card-title">成绩排序</span>
+                        <span class="card-title">百钱买百鸡问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            成绩排序查找和排序
-题目：输入任意（用户，成绩）序列，可以获得成绩从高到低或从低到高的排列,相同成绩都按先录入排列在前的规则处理。
-例示：jack   70peter   96Tom    70smith   67
-从高到低 成绩peter
+                            百钱买百鸡问题题目描述公元前五世纪，我国古代数学家张丘建在《算经》一书中提出了“百鸡问题”：鸡翁一值钱五，鸡母一值钱三，鸡雏三值钱一。百钱买百鸡，问鸡翁、鸡母、鸡雏各几何？
+详细描述：
+接口说明
+原型：
+int GetResult(vect
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-15
                             </span>
                         <span class="publish-author">
                             
@@ -847,15 +773,6 @@ int main()
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%8E%92%E5%BA%8F/">
-                        <span class="chip bg-color">排序</span>
-                    </a>
-                    
                 </div>
                 
             </div>
