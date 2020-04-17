@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="矩阵乘法, 少年乙的博客">
+    <meta name="keywords" content="成绩排序, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>矩阵乘法 | 少年乙的博客</title>
+    <title>成绩排序 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">矩阵乘法</h1>
+                    <h1 class="description center-align post-title">成绩排序</h1>
                 </div>
             </div>
         </div>
@@ -375,8 +375,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%9F%A9%E9%98%B5/">
-                                <span class="chip bg-color">矩阵</span>
+                            <a href="/tags/%E6%8E%92%E5%BA%8F/">
+                                <span class="chip bg-color">排序</span>
                             </a>
                         
                     </div>
@@ -400,21 +400,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-14
+                    2020-04-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-14
+                    2020-04-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    504
+                    602
                 </div>
                 
 
@@ -436,60 +436,96 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="矩阵乘法"><a href="#矩阵乘法" class="headerlink" title="矩阵乘法"></a>矩阵乘法</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>如果A是个x行y列的矩阵，B是个y行z列的矩阵，把A和B相乘，其结果将是另一个x行z列的矩阵C。这个矩阵的每个元素是由下面的公式决定的</p>
-<p><img src="https://uploadfiles.nowcoder.com/images/20190910/59_1568118638276_0FD75AC03CF8B932814B63C207D854C2" alt="img"></p>
-<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入包含多组数据，每组数据包含：
-第一行包含一个正整数x，代表第一个矩阵的行数
-第二行包含一个正整数y，代表第一个矩阵的列数和第二个矩阵的行数
-第三行包含一个正整数z，代表第二个矩阵的列数
-之后x行，每行y个整数，代表第一个矩阵的值
-之后y行，每行z个整数，代表第二个矩阵的值</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>对于每组输入数据，输出x行，每行z个整数，代表两个矩阵相乘的结果</code></pre><p>示例1</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>2
-3
-2
-1 2 3
-3 2 1
-1 2
-2 1
-3 3</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>14 13
-10 11</code></pre><p>这道题需要知晓矩阵乘法是怎么算的，运算过程如下</p>
-<p><img src="data:image/jpeg;base64,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" alt="矩阵乘法"></p>
-<p>既然知晓了矩阵乘法怎么算，这道题就可以直接写了。</p>
-<pre><code>#incude&lt;iostream&gt;
+                <h2 id="成绩排序"><a href="#成绩排序" class="headerlink" title="成绩排序"></a>成绩排序</h2><p>查找和排序</p>
+<p>题目：输入任意（用户，成绩）序列，可以获得成绩从高到低或从低到高的排列,相同成绩<br>都按先录入排列在前的规则处理。</p>
+<p>例示：<br>jack   70<br>peter   96<br>Tom    70<br>smith   67</p>
+<p>从高到低 成绩<br>peter   96<br>jack   70<br>Tom    70<br>smith   67</p>
+<p>从低到高</p>
+<p>smith   67</p>
+<p>Tom    70<br>jack   70</p>
+<p>peter   96</p>
+<p>注：0代表从高到低，1代表从低到高</p>
+<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入多行，先输入要排序的人的个数，然后分别输入他们的名字和成绩，以一个空格隔开</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>按照指定方式输出名字和成绩，名字和成绩之间以一个空格隔开</code></pre><p>示例1</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>3
+0
+fang 90
+yang 50
+ning 70</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>fang 90
+ning 70
+yang 50</code></pre><p>用桶排序的思路，因为分数在0~100分之间，一个分数桶对应一个学生，哈哈，键值对的感觉有木有。下面是代码 </p>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;string&gt;
 #include&lt;vector&gt;
 using namespace std;
 
 int main(){
-    int x,y,z;
-    while(cin&gt;&gt;x&gt;&gt;y&gt;&gt;z){
-        vector&lt;vector&lt;int&gt;&gt; first(x, vector&lt;int&gt;(y, 0));
-        vector&lt;vector&lt;int&gt;&gt; second(y, vector&lt;int&gt;(z, 0));
-        vector&lt;vector&lt;int&gt;&gt; result(x, vector&lt;int&gt;(z, 0));
-        for(int i = 0;i &lt; x;i++){
-            for(int j = 0;j &lt; y;j++){
-                cin&gt;&gt;first[i][j];
-            }
+    int number,hd;
+    string name;
+    int grade;
+    while(cin&gt;&gt;number&gt;&gt;hd){
+        string strarr[101];
+        int nums[101] = {0};
+        for(int i = 0;i &lt; number;i++){
+            cin&gt;&gt;name&gt;&gt;grade;
+            strarr[grade] = name;
+            nums[grade] = 1;
         }
-        for(int i = 0;i &lt; y;i++){
-            for(int j = 0;j &lt; z;j++){
-                cin&gt;&gt;second[i][j];
-            }
-        }
-        for(int i = 0;i &lt; x;i++){
-            for(int j = 0;j &lt; y;j++){
-                for(int k = 0;k &lt; z;k++){
-                    result[i][k] += first[i][j] * second[j][k];
+        if(hd == 0){
+            for(int i = 100;i &gt;= 0;i--){
+                if(nums[i] != 0){
+                    cout&lt;&lt;strarr[i]&lt;&lt;&quot; &quot;&lt;&lt;i&lt;&lt;endl;
                 }
             }
         }
-        for(int i = 0;i &lt; x;i++){
-            for(int j = 0;j &lt; z - 1;j++){
-                cout&lt;&lt;result[i][j]&lt;&lt;&quot; &quot;;    //题目的输出有格式要求，每行的最后一个需要换行
+        else{
+            for(int i = 0;i &lt; 101;i++){
+                if(nums[i] != 0){
+                    cout&lt;&lt;strarr[i]&lt;&lt;&quot; &quot;&lt;&lt;i&lt;&lt;endl;
+                }
             }
-            cout&lt;&lt;result[i][z - 1]&lt;&lt;endl;
         }
     }
     return 0;
+}</code></pre><p>不过这种放在一维数组的做法是不足以解决这道题的，因为当出现两个用户的分数是一样的时候，所以这个程序的鲁棒性是不够给力的。<br>去牛客网得到讨论区，发现用容器可以解决多个用户分数一样的问题，附一下链接和代码。</p>
+<pre><code>//来源：牛客网
+//链接：https://www.nowcoder.com/questionTerminal/8e400fd9905747e4acc2aeed7240978b?f=discussion
+
+#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;string&gt;
+using namespace std;
+
+int main()
+{
+    int n;
+    int way;
+    string name;
+    int grade;
+    while(cin &gt;&gt; n &gt;&gt; way)
+    {
+        vector&lt;string&gt; b[101];  //0-100分的桶共101个
+        for(int i = 0; i &lt; n; i++)
+        {
+            cin &gt;&gt; name &gt;&gt; grade;
+            b[grade].push_back(name);
+        }
+        if(way == 0)
+        {
+          for(int i = 100 ; i &gt;= 0; i--)
+          {
+             for(int j = 0; j &lt; b[i].size(); j++)
+                 cout &lt;&lt; b[i][j] &lt;&lt; &quot; &quot; &lt;&lt; i &lt;&lt; endl;
+          }
+        }
+        else
+        {
+          for(int i = 0 ; i &lt; 101; i++)
+          {
+             for(int j = 0; j &lt; b[i].size(); j++)
+                 cout &lt;&lt; b[i][j] &lt;&lt; &quot; &quot; &lt;&lt; i &lt;&lt; endl;
+          }
+        }
+    }
 }</code></pre>
             </div>
             <hr/>
@@ -515,7 +551,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://1224756742.github.io/2020/04/14/hua-wei-ji-shi/ju-zhen-cheng-fa/ju-zhen-cheng-fa/">http://1224756742.github.io/2020/04/14/hua-wei-ji-shi/ju-zhen-cheng-fa/ju-zhen-cheng-fa/</a>
+                    <a href="http://1224756742.github.io/posts/33506.html">http://1224756742.github.io/posts/33506.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -553,8 +589,8 @@ int main(){
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%9F%A9%E9%98%B5/">
-                                    <span class="chip bg-color">矩阵</span>
+                                <a href="/tags/%E6%8E%92%E5%BA%8F/">
+                                    <span class="chip bg-color">排序</span>
                                 </a>
                             
                         </div>
@@ -726,24 +762,27 @@ int main(){
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/15/hua-wei-ji-shi/zi-fu-chuan-tong-pei-fu/">
+                <a href="/posts/60626.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="字符串通配符">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="矩阵乘法">
                         
-                        <span class="card-title">字符串通配符</span>
+                        <span class="card-title">矩阵乘法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            字符串通配符题目描述问题描述：在计算机中，通配符一种特殊语法，广泛应用于文件搜索、数据库、正则表达式等领域。现要求各位实现字符串通配符的算法。要求：实现如下2个通配符：*：匹配0个或以上的字符（字符由英文字母和数字0-9组成，不区分大小写。
+                            矩阵乘法题目描述如果A是个x行y列的矩阵，B是个y行z列的矩阵，把A和B相乘，其结果将是另一个x行z列的矩阵C。这个矩阵的每个元素是由下面的公式决定的
+
+输入描述:输入包含多组数据，每组数据包含：
+第一行包含一个正整数x，代表第一个矩阵的行
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-14
                         </span>
                         <span class="publish-author">
                             
@@ -760,8 +799,8 @@ int main(){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2-%E9%80%9A%E9%85%8D%E7%AC%A6/">
-                        <span class="chip bg-color">字符串 通配符</span>
+                    <a href="/tags/%E7%9F%A9%E9%98%B5/">
+                        <span class="chip bg-color">矩阵</span>
                     </a>
                     
                 </div>
@@ -772,10 +811,10 @@ int main(){
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/13/hua-wei-ji-shi/cheng-ji-pai-xu/">
+                <a href="/posts/33506.html">
                     <div class="card-image">
                         
                         
@@ -809,6 +848,7 @@ int main(){
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
