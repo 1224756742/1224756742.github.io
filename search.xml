@@ -4,6 +4,50 @@
   
     
     <entry>
+      <title>整数数组合并</title>
+      <link href="/posts/55180.html"/>
+      <url>/posts/55180.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="整形数组合并"><a href="#整形数组合并" class="headerlink" title="整形数组合并"></a>整形数组合并</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>题目标题：</p><p>将两个整型数组按照升序合并，并且过滤掉重复数组元素[注: 题目更新了。输出之后有换行]</p><p>详细描述：</p><p>接口说明</p><p>原型：</p><p>voidCombineBySort(int* pArray1,intiArray1Num,int* pArray2,intiArray2Num,int* pOutputArray,int* iOutputNum);</p><p>输入参数：</p><p>int* pArray1 ：整型数组1</p><p>intiArray1Num：数组1元素个数</p><p>int* pArray2 ：整型数组2</p><p>intiArray2Num：数组2元素个数</p><p>输出参数（指针指向的内存区域保证有效）：</p><p>int* pOutputArray：合并后的数组</p><p>int* iOutputNum：合并后数组元素个数</p><p>返回值：</p><p>void</p><h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入说明，按下列顺序输入：1 输入第一个数组的个数2 输入第一个数组的数值3 输入第二个数组的个数4 输入第二个数组的数值</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输出合并之后的数组</code></pre><p>示例1</p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>31 2 54-1 0 3 2</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>-101235</code></pre><p>可以用STL标准库中的set集合来做。自动去重。开始还手动给set排序。后来知道原来是已经排好序了。。。</p><pre><code>#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;set&gt;using namespace std;int main(){    int num1,num2;    set&lt;int&gt; str;    while(cin&gt;&gt;num1){        int temp = 0;        for(int i = 0;i &lt; num1;i++){            cin&gt;&gt;temp;            str.insert(temp);        }        cin&gt;&gt;num2;        for(int i = 0;i &lt; num2;i++){            cin&gt;&gt;temp;            str.insert(temp);        }        //sort(str.begin(),str.end());        for(auto i=str.begin();i!= str.end();i++){            cout&lt;&lt;*i;        }        cout&lt;&lt;endl;        str.clear();    }    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 华为机试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>超长正整数相加</title>
+      <link href="/posts/11062.html"/>
+      <url>/posts/11062.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="超长正整数相加"><a href="#超长正整数相加" class="headerlink" title="超长正整数相加"></a>超长正整数相加</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>请设计一个算法完成两个超长正整数的加法。</p><p>接口说明</p><p> /*<br> 请设计一个算法完成两个超长正整数的加法。<br> 输入参数：<br> String addend：加数<br> String augend：被加数<br> 返回值：加法结果<br> */</p><p> public String AddLongInteger(String addend, String augend)<br> {<br>   /<em>在这里实现功能</em>/</p><p> return null;<br> }</p><h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入两个字符串数字</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输出相加后的结果，string型</code></pre><p>示例1</p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>999999999999999999999999999999999999999999999999991</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>100000000000000000000000000000000000000000000000000</code></pre><p>先让两个正整数等长，短的补零。模拟加法运算，从尾部开始，若产生进位就在前一位加1。</p><pre><code>#include&lt;iostream&gt;#include&lt;string&gt;using namespace std;int main(){    string str1;    string str2;    while(cin&gt;&gt;str1&gt;&gt;str2){        while(str1.size() &lt; str2.size()){            str1 = &#39;0&#39; + str1;        }        while(str1.size() &gt; str2.size()){            str2 = &#39;0&#39; + str2;        }        int temp = 0,carry = 0;        for(int i = str1.size() - 1;i &gt;= 0;i--){            temp = str1[i] - &#39;0&#39; + str2[i] -&#39;0&#39; + carry;            str1[i] = temp % 10 + &#39;0&#39;;            if(temp / 10){                carry = 1;            }else{                carry = 0;            }        }        if(carry){            str1 = &quot;1&quot; + str1;        }        cout&lt;&lt;str1&lt;&lt;endl;    }    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 华为机试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字符串 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>尼科彻斯定理</title>
       <link href="/posts/30413.html"/>
       <url>/posts/30413.html</url>

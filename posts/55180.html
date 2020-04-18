@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="成绩排序, 少年乙的博客">
+    <meta name="keywords" content="整数数组合并, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>成绩排序 | 少年乙的博客</title>
+    <title>整数数组合并 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">成绩排序</h1>
+                    <h1 class="description center-align post-title">整数数组合并</h1>
                 </div>
             </div>
         </div>
@@ -373,13 +373,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E6%8E%92%E5%BA%8F/">
-                                <span class="chip bg-color">排序</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -400,7 +396,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-13
+                    2020-04-18
                 </div>
                 
 
@@ -414,14 +410,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    602
+                    366
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -436,96 +432,58 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="成绩排序"><a href="#成绩排序" class="headerlink" title="成绩排序"></a>成绩排序</h2><p>查找和排序</p>
-<p>题目：输入任意（用户，成绩）序列，可以获得成绩从高到低或从低到高的排列,相同成绩<br>都按先录入排列在前的规则处理。</p>
-<p>例示：<br>jack   70<br>peter   96<br>Tom    70<br>smith   67</p>
-<p>从高到低 成绩<br>peter   96<br>jack   70<br>Tom    70<br>smith   67</p>
-<p>从低到高</p>
-<p>smith   67</p>
-<p>Tom    70<br>jack   70</p>
-<p>peter   96</p>
-<p>注：0代表从高到低，1代表从低到高</p>
-<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入多行，先输入要排序的人的个数，然后分别输入他们的名字和成绩，以一个空格隔开</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>按照指定方式输出名字和成绩，名字和成绩之间以一个空格隔开</code></pre><p>示例1</p>
+                <h2 id="整形数组合并"><a href="#整形数组合并" class="headerlink" title="整形数组合并"></a>整形数组合并</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>题目标题：</p>
+<p>将两个整型数组按照升序合并，并且过滤掉重复数组元素[注: 题目更新了。输出之后有换行]</p>
+<p>详细描述：</p>
+<p>接口说明</p>
+<p>原型：</p>
+<p>voidCombineBySort(int* pArray1,intiArray1Num,int* pArray2,intiArray2Num,int* pOutputArray,int* iOutputNum);</p>
+<p>输入参数：</p>
+<p>int* pArray1 ：整型数组1</p>
+<p>intiArray1Num：数组1元素个数</p>
+<p>int* pArray2 ：整型数组2</p>
+<p>intiArray2Num：数组2元素个数</p>
+<p>输出参数（指针指向的内存区域保证有效）：</p>
+<p>int* pOutputArray：合并后的数组</p>
+<p>int* iOutputNum：合并后数组元素个数</p>
+<p>返回值：</p>
+<p>void</p>
+<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入说明，按下列顺序输入：
+1 输入第一个数组的个数
+2 输入第一个数组的数值
+3 输入第二个数组的个数
+4 输入第二个数组的数值</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输出合并之后的数组</code></pre><p>示例1</p>
 <h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>3
-0
-fang 90
-yang 50
-ning 70</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>fang 90
-ning 70
-yang 50</code></pre><p>用桶排序的思路，因为分数在0~100分之间，一个分数桶对应一个学生，哈哈，键值对的感觉有木有。下面是代码 </p>
+1 2 5
+4
+-1 0 3 2</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>-101235</code></pre><p>可以用STL标准库中的set集合来做。自动去重。开始还手动给set排序。后来知道原来是已经排好序了。。。</p>
 <pre><code>#include&lt;iostream&gt;
-#include&lt;string&gt;
-#include&lt;vector&gt;
+#include&lt;algorithm&gt;
+#include&lt;set&gt;
 using namespace std;
 
 int main(){
-    int number,hd;
-    string name;
-    int grade;
-    while(cin&gt;&gt;number&gt;&gt;hd){
-        string strarr[101];
-        int nums[101] = {0};
-        for(int i = 0;i &lt; number;i++){
-            cin&gt;&gt;name&gt;&gt;grade;
-            strarr[grade] = name;
-            nums[grade] = 1;
+    int num1,num2;
+    set&lt;int&gt; str;
+    while(cin&gt;&gt;num1){
+        int temp = 0;
+        for(int i = 0;i &lt; num1;i++){
+            cin&gt;&gt;temp;
+            str.insert(temp);
         }
-        if(hd == 0){
-            for(int i = 100;i &gt;= 0;i--){
-                if(nums[i] != 0){
-                    cout&lt;&lt;strarr[i]&lt;&lt;&quot; &quot;&lt;&lt;i&lt;&lt;endl;
-                }
-            }
+        cin&gt;&gt;num2;
+        for(int i = 0;i &lt; num2;i++){
+            cin&gt;&gt;temp;
+            str.insert(temp);
         }
-        else{
-            for(int i = 0;i &lt; 101;i++){
-                if(nums[i] != 0){
-                    cout&lt;&lt;strarr[i]&lt;&lt;&quot; &quot;&lt;&lt;i&lt;&lt;endl;
-                }
-            }
+        //sort(str.begin(),str.end());
+        for(auto i=str.begin();i!= str.end();i++){
+            cout&lt;&lt;*i;
         }
+        cout&lt;&lt;endl;
+        str.clear();
     }
     return 0;
-}</code></pre><p>不过这种放在一维数组的做法是不足以解决这道题的，因为当出现两个用户的分数是一样的时候，所以这个程序的鲁棒性是不够给力的。<br>去牛客网得到讨论区，发现用容器可以解决多个用户分数一样的问题，附一下链接和代码。</p>
-<pre><code>//来源：牛客网
-//链接：https://www.nowcoder.com/questionTerminal/8e400fd9905747e4acc2aeed7240978b?f=discussion
-
-#include&lt;iostream&gt;
-#include&lt;vector&gt;
-#include&lt;string&gt;
-using namespace std;
-
-int main()
-{
-    int n;
-    int way;
-    string name;
-    int grade;
-    while(cin &gt;&gt; n &gt;&gt; way)
-    {
-        vector&lt;string&gt; b[101];  //0-100分的桶共101个
-        for(int i = 0; i &lt; n; i++)
-        {
-            cin &gt;&gt; name &gt;&gt; grade;
-            b[grade].push_back(name);
-        }
-        if(way == 0)
-        {
-          for(int i = 100 ; i &gt;= 0; i--)
-          {
-             for(int j = 0; j &lt; b[i].size(); j++)
-                 cout &lt;&lt; b[i][j] &lt;&lt; &quot; &quot; &lt;&lt; i &lt;&lt; endl;
-          }
-        }
-        else
-        {
-          for(int i = 0 ; i &lt; 101; i++)
-          {
-             for(int j = 0; j &lt; b[i].size(); j++)
-                 cout &lt;&lt; b[i][j] &lt;&lt; &quot; &quot; &lt;&lt; i &lt;&lt; endl;
-          }
-        }
-    }
 }</code></pre>
             </div>
             <hr/>
@@ -551,7 +509,7 @@ int main()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://1224756742.github.io/posts/33506.html">http://1224756742.github.io/posts/33506.html</a>
+                    <a href="http://1224756742.github.io/posts/55180.html">http://1224756742.github.io/posts/55180.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -588,11 +546,7 @@ int main()
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E6%8E%92%E5%BA%8F/">
-                                    <span class="chip bg-color">排序</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -758,83 +712,34 @@ int main()
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/60626.html">
+                <a href="/posts/55180.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="矩阵乘法">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="整数数组合并">
                         
-                        <span class="card-title">矩阵乘法</span>
+                        <span class="card-title">整数数组合并</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            矩阵乘法题目描述如果A是个x行y列的矩阵，B是个y行z列的矩阵，把A和B相乘，其结果将是另一个x行z列的矩阵C。这个矩阵的每个元素是由下面的公式决定的
-
-输入描述:输入包含多组数据，每组数据包含：
-第一行包含一个正整数x，代表第一个矩阵的行
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-14
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%9F%A9%E9%98%B5/">
-                        <span class="chip bg-color">矩阵</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/33506.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="成绩排序">
-                        
-                        <span class="card-title">成绩排序</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            成绩排序查找和排序
-题目：输入任意（用户，成绩）序列，可以获得成绩从高到低或从低到高的排列,相同成绩都按先录入排列在前的规则处理。
-例示：jack   70peter   96Tom    70smith   67
-从高到低 成绩peter
+                            整形数组合并题目描述题目标题：
+将两个整型数组按照升序合并，并且过滤掉重复数组元素[注: 题目更新了。输出之后有换行]
+详细描述：
+接口说明
+原型：
+voidCombineBySort(int* pArray1,intiArray1Num,
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-18
                             </span>
                         <span class="publish-author">
                             
@@ -850,10 +755,54 @@ int main()
                 </div>
 
                 
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/11062.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="超长正整数相加">
+                        
+                        <span class="card-title">超长正整数相加</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            超长正整数相加题目描述请设计一个算法完成两个超长正整数的加法。
+接口说明
+ /* 请设计一个算法完成两个超长正整数的加法。 输入参数： String addend：加数 String augend：被加数 返回值：加法结果 */
+ publ
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
+                                    华为机试
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%8E%92%E5%BA%8F/">
-                        <span class="chip bg-color">排序</span>
+                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                        <span class="chip bg-color">字符串</span>
                     </a>
                     
                 </div>
