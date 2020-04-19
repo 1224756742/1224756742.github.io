@@ -4,6 +4,50 @@
   
     
     <entry>
+      <title>统计大写字母个数</title>
+      <link href="/posts/42196.html"/>
+      <url>/posts/42196.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="统计大写字母个数"><a href="#统计大写字母个数" class="headerlink" title="统计大写字母个数"></a>统计大写字母个数</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>找出给定字符串中大写字符(即’A’-‘Z’)的个数</p><p>接口说明</p><p>原型：int CalcCapital(String str);</p><p>返回值：int</p><h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入一个String数据</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输出string中大写字母的个数</code></pre><p>示例1</p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>add123#$%#%#O</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>1</code></pre><p>用了个蠢方法，还是O(n*n)的时间复杂度(吐血)。。。</p><pre><code>#include&lt;iostream&gt;#include&lt;string&gt;using namespace std;int main(){    string str;    string strbig = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;    while(cin&gt;&gt;str){        int count = 0;        for(int i = 0;i &lt; 26;i++){            for(int j = 0;j &lt; str.size();j++){                if(str[j] == strbig[i]){                    count++;                }            }        }        cout&lt;&lt;count&lt;&lt;endl;    }    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 华为机试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字符串 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>将真分数分解为埃及分数</title>
+      <link href="/posts/58258.html"/>
+      <url>/posts/58258.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="将真分数分解为埃及分数"><a href="#将真分数分解为埃及分数" class="headerlink" title="将真分数分解为埃及分数"></a>将真分数分解为埃及分数</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>分子为1的分数称为埃及分数。现输入一个真分数(分子比分母小的分数，叫做真分数)，请将该分数分解为埃及分数。如：8/11 = 1/2+1/5+1/55+1/110。</p><p>接口说明</p><p> /*<br> 功能: 将分数分解为埃及分数序列<br> 输入参数：<br>   String pcRealFraction:真分数(格式“8/11”)<br> 返回值：<br>   String pcEgpytFraction:分解后的埃及分数序列(格式“1/2+1/5+1/55+1/100”)<br> */</p><p> public static String ConvertRealFractToEgpytFract(String pcRealFraction)<br> {<br> return null;<br> }</p><h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入一个真分数，String型</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输出分解后的string</code></pre><p>示例1</p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>8/11</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>1/2+1/5+1/55+1/110</code></pre><p>设num1,num2为互质正整数，num1&lt;num2 分数num1/num2 可用以下的步骤分解成若干个单位分数之和：<br> 步骤一： 用num2除以num1，得商数q1及余数r1,即num2=num1*q1+r1<br> 步骤二： num1/num2=1/(q1+1）+(num1-r)/num2(q1+1）<br> 步骤三： 重复步骤2，直到分解完毕</p><pre><code>#include&lt;iostream&gt;using namespace std;int main(){    char ch;    int num1, num2;    while (cin &gt;&gt; num1 &gt;&gt; ch &gt;&gt; num2)    {        while (num1 != 1)         {             if(num2 % (num1 - 1) == 0){                 cout&lt;&lt;1&lt;&lt;&quot;/&quot;&lt;&lt;num2 / (num1 - 1)&lt;&lt;&quot;+&quot;;                 num1 = 1;             }else{                 int c=num2 / num1 + 1;                 cout &lt;&lt; 1 &lt;&lt; &quot;/&quot; &lt;&lt; c &lt;&lt; &quot;+&quot;;                 num1 = num1 - num2 % num1;                 num2 = num2 * c;                 if (num2 % num1 == 0)                 {                     num2 = num2 / num1;                     num1 = 1;                 }             }         }         cout &lt;&lt; num1 &lt;&lt; &quot;/&quot; &lt;&lt; num2 &lt;&lt; endl;    }    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 华为机试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>整数数组合并</title>
       <link href="/posts/55180.html"/>
       <url>/posts/55180.html</url>
