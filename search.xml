@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Jsdeliver的使用方法</title>
+      <link href="/posts/29181.html"/>
+      <url>/posts/29181.html</url>
+      
+        <content type="html"><![CDATA[<p>格式：<a href="https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径</a><br>例如：<a href="https://cdn.jsdelivr.net/gh/1224756742/cdn@1.0/README.md" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/1224756742/cdn@1.0/README.md</a></p><p>如果以后在向cdn库里添加或者修改文件，首先把文件添加到本地仓库，然后依次在本地cdn仓库文件位置执行以下命令：</p><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> pull origin master  <span class="token comment" spellcheck="true">#拉取远程仓库到本地</span><span class="token function">git</span> add <span class="token keyword">.</span><span class="token function">git</span> commit -m <span class="token string">'描述内容'</span><span class="token function">git</span> push origin master  <span class="token comment" spellcheck="true"># 推送到GitHub仓库</span></code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>统计大写字母个数</title>
       <link href="/posts/42196.html"/>
       <url>/posts/42196.html</url>
