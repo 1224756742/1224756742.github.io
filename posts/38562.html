@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="将真分数分解为埃及分数, 少年乙的博客">
+    <meta name="keywords" content="字符串截取-密码截取, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>将真分数分解为埃及分数 | 少年乙的博客</title>
+    <title>字符串截取-密码截取 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">将真分数分解为埃及分数</h1>
+                    <h1 class="description center-align post-title">字符串截取-密码截取</h1>
                 </div>
             </div>
         </div>
@@ -373,9 +373,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                                <span class="chip bg-color">字符串</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -396,21 +400,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-19
+                    2020-04-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-19
+                    2020-04-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    361
+                    387
                 </div>
                 
 
@@ -432,37 +436,53 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="将真分数分解为埃及分数"><a href="#将真分数分解为埃及分数" class="headerlink" title="将真分数分解为埃及分数"></a>将真分数分解为埃及分数</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>分子为1的分数称为埃及分数。现输入一个真分数(分子比分母小的分数，叫做真分数)，请将该分数分解为埃及分数。如：8/11 = 1/2+1/5+1/55+1/110。</p>
-<p>接口说明</p>
-<p> /*<br> 功能: 将分数分解为埃及分数序列<br> 输入参数：<br>   String pcRealFraction:真分数(格式“8/11”)<br> 返回值：<br>   String pcEgpytFraction:分解后的埃及分数序列(格式“1/2+1/5+1/55+1/100”)<br> */</p>
-<p> public static String ConvertRealFractToEgpytFract(String pcRealFraction)<br> {<br> return null;<br> }</p>
-<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入一个真分数，String型</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输出分解后的string</code></pre><p>示例1</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>8/11</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>1/2+1/5+1/55+1/110</code></pre><p>设num1,num2为互质正整数，num1&lt;num2 分数num1/num2 可用以下的步骤分解成若干个单位分数之和：<br> 步骤一： 用num2除以num1，得商数q1及余数r1,即num2=num1*q1+r1<br> 步骤二： num1/num2=1/(q1+1）+(num1-r)/num2(q1+1）<br> 步骤三： 重复步骤2，直到分解完毕</p>
+                <h2 id="字符串运用-字符截取"><a href="#字符串运用-字符截取" class="headerlink" title="字符串运用-字符截取"></a>字符串运用-字符截取</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>Catcher 是MCA国的情报员，他工作时发现敌国会用一些对称的密码进行通信，比如像这些ABBA，ABA，A，123321，但是他们有时会在开始或结束时加入一些无关的字符以防止别国破解。比如进行下列变化 ABBA-&gt;12ABBA,ABA-&gt;ABAKK,123321-&gt;51233214　。因为截获的串太长了，而且存在多种可能的情况（abaaab可看作是aba,或baaab的加密形式），Cathcer的工作量实在是太大了，他只能向电脑高手求助，你能帮Catcher找出最长的有效密码串吗？</p>
+<p>（注意：记得加上while处理多个测试用例）</p>
+<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入一个字符串</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>返回有效密码串的最大长度</code></pre><p>示例1</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>ABBA</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>4</code></pre><p>分奇偶情况讨论，比如ABA，ABBA，满足情况，左右指针向外移动。</p>
 <pre><code>#include&lt;iostream&gt;
+#include&lt;string&gt;
 using namespace std;
 int main(){
-    char ch;
-    int num1, num2;
-    while (cin &gt;&gt; num1 &gt;&gt; ch &gt;&gt; num2)
-    {
-        while (num1 != 1) 
+    string str;
+    while(getline(cin,str)){
+        int len = str.size();
+        if(len&lt;=1)
         {
-             if(num2 % (num1 - 1) == 0){
-                 cout&lt;&lt;1&lt;&lt;&quot;/&quot;&lt;&lt;num2 / (num1 - 1)&lt;&lt;&quot;+&quot;;
-                 num1 = 1;
-             }else{
-                 int c=num2 / num1 + 1;
-                 cout &lt;&lt; 1 &lt;&lt; &quot;/&quot; &lt;&lt; c &lt;&lt; &quot;+&quot;;
-                 num1 = num1 - num2 % num1;
-                 num2 = num2 * c;
-                 if (num2 % num1 == 0)
-                 {
-                     num2 = num2 / num1;
-                     num1 = 1;
-                 }
-             }
-         }
-         cout &lt;&lt; num1 &lt;&lt; &quot;/&quot; &lt;&lt; num2 &lt;&lt; endl;
+            //cout&lt;&lt;len&lt;&lt;endl;
+            continue;
+        }
+        int num = 1;
+        for(int i=1;i&lt;len-1;i++)
+        {
+            if(str[i]==str[i+1])
+            {//偶数对成
+                int curnum = 0;
+                int start = i;int end =i+1;
+                while(start&gt;=0 &amp;&amp; end&lt;=len &amp;&amp; str[start] == str[end])
+                {
+                    start--;
+                    end++;
+                    curnum+=2;
+                }
+                if(curnum&gt;num)
+                    num = curnum;
+            }
+            if(str[i-1]==str[i+1])
+            {//奇数对成
+                int curnum = 1;
+                int start = i-1;int end =i+1;
+                while(start&gt;=0 &amp;&amp; end&lt;=len &amp;&amp; str[start] == str[end])
+                {
+                    start--;
+                    end++;
+                    curnum+=2;
+                }
+                if(curnum&gt;num)
+                    num = curnum;
+            }
+        }
+        cout&lt;&lt;num&lt;&lt;endl;
     }
     return 0;
 }</code></pre>
@@ -490,7 +510,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://1224756742.github.io/posts/58258.html">http://1224756742.github.io/posts/58258.html</a>
+                    <a href="http://1224756742.github.io/posts/38562.html">http://1224756742.github.io/posts/38562.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -527,7 +547,11 @@ int main(){
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                                    <span class="chip bg-color">字符串</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -697,28 +721,28 @@ int main(){
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/42196.html">
+                <a href="/posts/33736.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="统计大写字母个数">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="求最大连续bit数">
                         
-                        <span class="card-title">统计大写字母个数</span>
+                        <span class="card-title">求最大连续bit数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            统计大写字母个数题目描述找出给定字符串中大写字符(即’A’-‘Z’)的个数
-接口说明
-原型：int CalcCapital(String str);
-返回值：int
-输入描述:输入一个String数据输出描述:输出string中大写字母的个
+                            求最大连续bit数题目描述功能: 求一个byte数字对应的二进制数字中1的最大连续数，例如3的二进制为00000011，最大连续2个1
+输入: 一个byte型的数字
+输出: 无
+返回: 对应的二进制数字中1的最大连续数
+输入描述:输入一个b
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-19
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-23
                         </span>
                         <span class="publish-author">
                             
@@ -733,14 +757,6 @@ int main(){
                     </div>
                 </div>
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                        <span class="chip bg-color">字符串</span>
-                    </a>
-                    
-                </div>
-                
             </div>
         </div>
         
@@ -750,36 +766,32 @@ int main(){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/55180.html">
+                <a href="/posts/26899.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="整数数组合并">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="安卓菜单组件的实现">
                         
-                        <span class="card-title">整数数组合并</span>
+                        <span class="card-title">安卓菜单组件的实现</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            整形数组合并题目描述题目标题：
-将两个整型数组按照升序合并，并且过滤掉重复数组元素[注: 题目更新了。输出之后有换行]
-详细描述：
-接口说明
-原型：
-voidCombineBySort(int* pArray1,intiArray1Num,
+                            安卓菜单组件的实现选项菜单的.xml代码&lt;?xml version="1.0" encoding="utf-8"?>
+&lt;menu xmlns:android="http://schemas.android.com/apk/res
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
+                            <a href="/categories/%E5%AE%89%E5%8D%93-%E8%8F%9C%E5%8D%95/" class="post-category">
+                                    安卓 菜单
                                 </a>
                             
                             
