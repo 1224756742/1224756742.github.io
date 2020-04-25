@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="合法IP, 少年乙的博客">
+    <meta name="keywords" content="字符串中找出连续最长的数字串, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>合法IP | 少年乙的博客</title>
+    <title>字符串中找出连续最长的数字串 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">合法IP</h1>
+                    <h1 class="description center-align post-title">字符串中找出连续最长的数字串</h1>
                 </div>
             </div>
         </div>
@@ -373,9 +373,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                                <span class="chip bg-color">字符串</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -396,21 +400,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-24
+                    2020-04-25
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-24
+                    2020-04-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    345
+                    415
                 </div>
                 
 
@@ -432,27 +436,55 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="合法IP"><a href="#合法IP" class="headerlink" title="合法IP"></a>合法IP</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>现在IPV4下用一个32位无符号整数来表示，一般用点分方式来显示，点将IP地址分成4个部分，每个部分为8位，表示成一个无符号整数（因此不需要用正号出现），如10.137.17.1，是我们非常熟悉的IP地址，一个IP地址串中没有空格出现（因为要表示成一个32数字）。</p>
-<p>现在需要你用程序来判断IP是否合法。</p>
-<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入一个ip地址</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>返回判断的结果YES or NO</code></pre><p>示例1</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>10.138.15.1</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>YES</code></pre><p>IP地址本身就有格式限制，每八位在0到255之间，但前八位要大于零。接下来就是判断格式就可以了。</p>
+                <h2 id="字符串中找出连续最长的数字串"><a href="#字符串中找出连续最长的数字串" class="headerlink" title="字符串中找出连续最长的数字串"></a>字符串中找出连续最长的数字串</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>样例输出</p>
+<p>输出123058789，函数返回值9</p>
+<p>输出54761，函数返回值5</p>
+<p>接口说明</p>
+<p>函数原型：</p>
+<p>  unsignedint Continumax(char<em>* pOutputstr, char</em> intputstr)</p>
+<p>输入参数：<br>  char* intputstr 输入字符串；</p>
+<p>输出参数：<br>  char** pOutputstr: 连续最长的数字串，如果连续最长的数字串的长度为0，应该返回空字符串；如果输入字符串是空，也应该返回空字符串； </p>
+<p>返回值：<br> 连续最长的数字串的长度</p>
+<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入一个字符串。</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输出字符串中最长的数字字符串和它的长度。如果有相同长度的串，则要一块儿输出，但是长度还是一串的长度</code></pre><p>示例1</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>abcd12345ed125ss123058789</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>123058789,9</code></pre><ul>
+<li>字符串分组，数字的全部放进容器里</li>
+<li>找出最长的数字串的长度</li>
+<li>找出最长的数字串并输出</li>
+</ul>
 <pre><code>#include&lt;iostream&gt;
 #include&lt;string&gt;
+#include&lt;vector&gt;
 using namespace std;
-s
+
 int main(){
-    int arr[4] = {0};
-    char ch[3];
-    while(cin&gt;&gt;arr[0]&gt;&gt;ch[0]&gt;&gt;arr[1]&gt;&gt;ch[1]&gt;&gt;arr[2]&gt;&gt;ch[2]&gt;&gt;arr[3]){
-        if((arr[0] &gt; 0 &amp;&amp; arr[0] &lt;= 255) &amp;&amp; (arr[1] &gt;= 0 &amp;&amp; arr[1] &lt;= 255) &amp;&amp; (arr[2] &gt;= 0 &amp;&amp; arr[2] &lt;= 255) &amp;&amp; (arr[3] &gt;= 0 &amp;&amp; arr[3] &lt;= 255)){
-            if(ch[0] == &#39;.&#39; &amp;&amp; ch[1] == &#39;.&#39; &amp;&amp; ch[2] == &#39;.&#39;){
-                cout&lt;&lt;&quot;YES&quot;&lt;&lt;endl;
+    string str;
+    while(cin&gt;&gt;str){
+        int max = 0;
+        vector&lt;string&gt; arr;
+        string temp;
+        //字符串分组，数字的全部放进容器里
+        for(int i = 0;i &lt; str.size();i++){
+            if(str[i] &gt;= &#39;0&#39; &amp;&amp; str[i] &lt;= &#39;9&#39;){
+                temp += str[i];
             }else{
-                cout&lt;&lt;&quot;NO&quot;&lt;&lt;endl;
+                arr.push_back(temp);
+                temp =&quot;&quot;;
             }
-        }else{
-            cout&lt;&lt;&quot;NO&quot;&lt;&lt;endl;
         }
+        //不要忘记把最后一组放进去哟
+        arr.push_back(temp);
+        //找出最长的数字串的长度
+        for(int i = 0;i &lt; arr.size();i++){
+            max = arr[i].size() &gt; max ? arr[i].size():max;
+        }
+        //找出最长的数字串并输出
+        for(int i = 0;i &lt;arr.size();i++){
+            if(arr[i].size() == max){
+                cout&lt;&lt;arr[i];
+            }
+        }
+        cout&lt;&lt;&quot;,&quot;&lt;&lt;max&lt;&lt;endl;
+        arr.clear();
     }
     return 0;
 }</code></pre>
@@ -480,7 +512,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://1224756742.github.io/posts/9288.html">http://1224756742.github.io/posts/9288.html</a>
+                    <a href="http://1224756742.github.io/posts/34408.html">http://1224756742.github.io/posts/34408.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -517,7 +549,11 @@ int main(){
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                                    <span class="chip bg-color">字符串</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -687,19 +723,20 @@ int main(){
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/54020.html">
+                <a href="/posts/37310.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="201301-JAVA题目2-3级">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="记票统计">
                         
-                        <span class="card-title">201301-JAVA题目2-3级</span>
+                        <span class="card-title">记票统计</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            201301-JAVA题目2-3级题目描述请编写一个函数（允许增加子函数），计算n x m的棋盘格子（n为横向的格子数，m为竖向的格子数）沿着各自边缘线从左上角走到右下角，总共有多少种走法，要求不能走回头路，即：只能往右和往下走，不能往左和
+                            记票统计题目描述请实现接口：
+unsigned int AddCandidate (char* pCandidateName);功能：设置候选人姓名输入： char* pCandidateName 候选人姓名输出：无返回：输入值非法返回0，
                         
                     </div>
                     <div class="publish-info">
@@ -728,28 +765,24 @@ int main(){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/33736.html">
+                <a href="/posts/54020.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="求最大连续bit数">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="201301-JAVA题目2-3级">
                         
-                        <span class="card-title">求最大连续bit数</span>
+                        <span class="card-title">201301-JAVA题目2-3级</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            求最大连续bit数题目描述功能: 求一个byte数字对应的二进制数字中1的最大连续数，例如3的二进制为00000011，最大连续2个1
-输入: 一个byte型的数字
-输出: 无
-返回: 对应的二进制数字中1的最大连续数
-输入描述:输入一个b
+                            201301-JAVA题目2-3级题目描述请编写一个函数（允许增加子函数），计算n x m的棋盘格子（n为横向的格子数，m为竖向的格子数）沿着各自边缘线从左上角走到右下角，总共有多少种走法，要求不能走回头路，即：只能往右和往下走，不能往左和
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-25
                             </span>
                         <span class="publish-author">
                             

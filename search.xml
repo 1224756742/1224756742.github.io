@@ -4,6 +4,50 @@
   
     
     <entry>
+      <title>记票统计</title>
+      <link href="/posts/37310.html"/>
+      <url>/posts/37310.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="记票统计"><a href="#记票统计" class="headerlink" title="记票统计"></a>记票统计</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>请实现接口：</p><p>unsigned int AddCandidate (char* pCandidateName);<br>功能：设置候选人姓名<br>输入： char* pCandidateName 候选人姓名<br>输出：无<br>返回：输入值非法返回0，已经添加过返回0 ，添加成功返回1</p><p>Void Vote(char* pCandidateName);<br>功能：投票<br>输入： char* pCandidateName 候选人姓名<br>输出：无<br>返回：无</p><p>unsigned int GetVoteResult (char* pCandidateName);</p><p>功能：获取候选人的票数。如果传入为空指针，返回无效的票数，同时说明本次投票活动结束，释放资源<br>输入： char* pCandidateName 候选人姓名。当输入一个空指针时，返回无效的票数</p><p>输出：无<br>返回：该候选人获取的票数</p><p>void Clear()</p><p>// 功能：清除投票结果，释放所有资源<br>// 输入：<br>// 输出：无<br>// 返回</p><h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入候选人的人数，第二行输入候选人的名字，第三行输入投票人的人数，第四行输入投票。</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>每行输出候选人的名字和得票数量。</code></pre><p>示例1</p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>4A B C D8A B C D E F G H</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>A : 1B : 1C : 1D : 1Invalid : 4</code></pre><ul><li><p>输入候选人</p></li><li><p>判断投票</p></li><li><p>输出结果</p><p>思想类似桶排序</p></li></ul><pre><code>#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;vector&gt;using namespace std;int main(){    int numbers;    while(cin&gt;&gt;numbers){        int count[10000] = {0};        vector&lt;string&gt; arr(numbers);        //输入候选人        for(int i = 0;i &lt; numbers;i++){            cin&gt;&gt;arr[i];        }        int ticket;        cin&gt;&gt;ticket;        vector&lt;string&gt; voter(ticket);        //输入票数        for(int i = 0;i &lt; ticket;i++){            cin&gt;&gt;voter[i];        }        //判断投票        for(int i = 0;i &lt; numbers;i++){            for(int j = 0;j &lt; ticket;j++){                if(arr[i] == voter[j]){                    count[i] += 1;                }            }        }        //输出结果        int invalid = 0;        for(int i = 0;i &lt; numbers;i++){            invalid += count[i];            cout&lt;&lt;arr[i]&lt;&lt;&quot;:&quot;&lt;&lt;count[i]&lt;&lt;endl;        }        cout&lt;&lt;&quot;Invalid :&quot;&lt;&lt;ticket - invalid&lt;&lt;endl;    }    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 华为机试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>字符串中找出连续最长的数字串</title>
+      <link href="/posts/34408.html"/>
+      <url>/posts/34408.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="字符串中找出连续最长的数字串"><a href="#字符串中找出连续最长的数字串" class="headerlink" title="字符串中找出连续最长的数字串"></a>字符串中找出连续最长的数字串</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>样例输出</p><p>输出123058789，函数返回值9</p><p>输出54761，函数返回值5</p><p>接口说明</p><p>函数原型：</p><p>  unsignedint Continumax(char<em>* pOutputstr, char</em> intputstr)</p><p>输入参数：<br>  char* intputstr 输入字符串；</p><p>输出参数：<br>  char** pOutputstr: 连续最长的数字串，如果连续最长的数字串的长度为0，应该返回空字符串；如果输入字符串是空，也应该返回空字符串； </p><p>返回值：<br> 连续最长的数字串的长度</p><h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入一个字符串。</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输出字符串中最长的数字字符串和它的长度。如果有相同长度的串，则要一块儿输出，但是长度还是一串的长度</code></pre><p>示例1</p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>abcd12345ed125ss123058789</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>123058789,9</code></pre><ul><li>字符串分组，数字的全部放进容器里</li><li>找出最长的数字串的长度</li><li>找出最长的数字串并输出</li></ul><pre><code>#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;vector&gt;using namespace std;int main(){    string str;    while(cin&gt;&gt;str){        int max = 0;        vector&lt;string&gt; arr;        string temp;        //字符串分组，数字的全部放进容器里        for(int i = 0;i &lt; str.size();i++){            if(str[i] &gt;= &#39;0&#39; &amp;&amp; str[i] &lt;= &#39;9&#39;){                temp += str[i];            }else{                arr.push_back(temp);                temp =&quot;&quot;;            }        }        //不要忘记把最后一组放进去哟        arr.push_back(temp);        //找出最长的数字串的长度        for(int i = 0;i &lt; arr.size();i++){            max = arr[i].size() &gt; max ? arr[i].size():max;        }        //找出最长的数字串并输出        for(int i = 0;i &lt;arr.size();i++){            if(arr[i].size() == max){                cout&lt;&lt;arr[i];            }        }        cout&lt;&lt;&quot;,&quot;&lt;&lt;max&lt;&lt;endl;        arr.clear();    }    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 华为机试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字符串 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>201301-JAVA题目2-3级</title>
       <link href="/posts/54020.html"/>
       <url>/posts/54020.html</url>
