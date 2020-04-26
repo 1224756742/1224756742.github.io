@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="记票统计, 少年乙的博客">
+    <meta name="keywords" content="记负均正, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>记票统计 | 少年乙的博客</title>
+    <title>记负均正 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">记票统计</h1>
+                    <h1 class="description center-align post-title">记负均正</h1>
                 </div>
             </div>
         </div>
@@ -396,28 +396,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-25
+                    2020-04-26
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-25
+                    2020-04-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    463
+                    218
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -432,67 +432,36 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="记票统计"><a href="#记票统计" class="headerlink" title="记票统计"></a>记票统计</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>请实现接口：</p>
-<p>unsigned int AddCandidate (char* pCandidateName);<br>功能：设置候选人姓名<br>输入： char* pCandidateName 候选人姓名<br>输出：无<br>返回：输入值非法返回0，已经添加过返回0 ，添加成功返回1</p>
-<p>Void Vote(char* pCandidateName);<br>功能：投票<br>输入： char* pCandidateName 候选人姓名<br>输出：无<br>返回：无</p>
-<p>unsigned int GetVoteResult (char* pCandidateName);</p>
-<p>功能：获取候选人的票数。如果传入为空指针，返回无效的票数，同时说明本次投票活动结束，释放资源<br>输入： char* pCandidateName 候选人姓名。当输入一个空指针时，返回无效的票数</p>
-<p>输出：无<br>返回：该候选人获取的票数</p>
-<p>void Clear()</p>
-<p>// 功能：清除投票结果，释放所有资源<br>// 输入：<br>// 输出：无<br>// 返回</p>
-<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入候选人的人数，第二行输入候选人的名字，第三行输入投票人的人数，第四行输入投票。</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>每行输出候选人的名字和得票数量。</code></pre><p>示例1</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>4
-A B C D
-8
-A B C D E F G H</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>A : 1
-B : 1
-C : 1
-D : 1
-Invalid : 4</code></pre><ul>
-<li><p>输入候选人</p>
-</li>
-<li><p>判断投票</p>
-</li>
-<li><p>输出结果</p>
-<p>思想类似桶排序</p>
-</li>
-</ul>
+                <h2 id="记负均正"><a href="#记负均正" class="headerlink" title="记负均正"></a>记负均正</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>首先输入要输入的整数个数n，然后输入n个整数。输出为n个整数中负数的个数，和所有正整数的平均值，结果保留一位小数。</p>
+<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>首先输入一个正整数n，
+然后输入n个整数。</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输出负数的个数，和所有正整数的平均值。</code></pre><p>示例1</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>5
+1
+2
+3
+4
+5</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>0 3</code></pre><p><strong>注意</strong>：零不要计算进去</p>
 <pre><code>#include&lt;iostream&gt;
-#include&lt;string&gt;
 #include&lt;vector&gt;
+#include&lt;iomanip&gt;
 using namespace std;
 
 int main(){
-    int numbers;
-    while(cin&gt;&gt;numbers){
-        int count[10000] = {0};
-        vector&lt;string&gt; arr(numbers);
-        //输入候选人
-        for(int i = 0;i &lt; numbers;i++){
+    int num;
+    while(cin&gt;&gt;num){
+        vector&lt;int&gt; arr(num);
+        int count1 = 0,count2 = 0;
+        double sum = 0;
+        for(int i = 0;i &lt; num;i++){
             cin&gt;&gt;arr[i];
-        }
-        int ticket;
-        cin&gt;&gt;ticket;
-        vector&lt;string&gt; voter(ticket);
-        //输入票数
-        for(int i = 0;i &lt; ticket;i++){
-            cin&gt;&gt;voter[i];
-        }
-        //判断投票
-        for(int i = 0;i &lt; numbers;i++){
-            for(int j = 0;j &lt; ticket;j++){
-                if(arr[i] == voter[j]){
-                    count[i] += 1;
-                }
+            if(arr[i] &lt; 0){
+                count1++;
+            }else if(arr[i] &gt; 0){
+                count2++;
+                sum += arr[i];
             }
         }
-        //输出结果
-        int invalid = 0;
-        for(int i = 0;i &lt; numbers;i++){
-            invalid += count[i];
-            cout&lt;&lt;arr[i]&lt;&lt;&quot;:&quot;&lt;&lt;count[i]&lt;&lt;endl;
-        }
-        cout&lt;&lt;&quot;Invalid :&quot;&lt;&lt;ticket - invalid&lt;&lt;endl;
+        cout&lt;&lt;count1&lt;&lt;&quot; &quot;&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;(double)sum/count2&lt;&lt;endl;
     }
     return 0;
 }</code></pre>
@@ -520,7 +489,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://1224756742.github.io/posts/37310.html">http://1224756742.github.io/posts/37310.html</a>
+                    <a href="http://1224756742.github.io/posts/5527.html">http://1224756742.github.io/posts/5527.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -727,6 +696,53 @@ int main(){
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/posts/39257.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="记负均正II">
+                        
+                        <span class="card-title">记负均正II</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            记负均正II题目描述从输入任意个整型数，统计其中的负数个数并求所有非负数的平均值
+输入描述:输入任意个整数输出描述:输出负数个数以及所有非负数的平均值示例1
+输入-13
+-4
+-7输出3
+0.0和上一篇记负均正差别不大
+#include&l
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-26
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
+                                    华为机试
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/posts/4365.html">
                     <div class="card-image">
                         
@@ -747,62 +763,8 @@ return null;
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-26
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                        <span class="chip bg-color">字符串</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/34408.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="字符串中找出连续最长的数字串">
-                        
-                        <span class="card-title">字符串中找出连续最长的数字串</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            字符串中找出连续最长的数字串题目描述样例输出
-输出123058789，函数返回值9
-输出54761，函数返回值5
-接口说明
-函数原型：
-  unsignedint Continumax(char* pOutputstr, char intp
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-26
                             </span>
                         <span class="publish-author">
                             

@@ -4,6 +4,88 @@
   
     
     <entry>
+      <title>等差数列</title>
+      <link href="/posts/4704.html"/>
+      <url>/posts/4704.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="等差数列"><a href="#等差数列" class="headerlink" title="等差数列"></a>等差数列</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>功能:等差数列 2，5，8，11，14。。。。</p><p>输入:正整数N &gt;0</p><p>输出:求等差数列前N项和</p><p>返回:转换成功返回 0 ,非法输入与异常返回-1</p><h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入一个正整数。</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输出一个相加后的整数。</code></pre><p>示例1</p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>2</code></pre><h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>真.等差数列。一点坑都没有。。。</p><pre><code>#include&lt;iostream&gt;using namespace std;int main(){    int num;    while(cin&gt;&gt;num){        int add = 2,sum=0;        for(int i = 0;i &lt; num;i++){            sum += add;            add +=3;        }        cout&lt;&lt;sum&lt;&lt;endl;    }    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 华为机试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>记负均正II</title>
+      <link href="/posts/39257.html"/>
+      <url>/posts/39257.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="记负均正II"><a href="#记负均正II" class="headerlink" title="记负均正II"></a>记负均正II</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>从输入任意个整型数，统计其中的负数个数并求所有非负数的平均值</p><h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入任意个整数</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输出负数个数以及所有非负数的平均值</code></pre><p>示例1</p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>-13-4-7</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>30.0</code></pre><p>和上一篇记负均正差别不大</p><pre><code>#include&lt;iostream&gt;#include&lt;iomanip&gt;using namespace std;int main(){    int num;    int count1 = 0,count2 = 0,sum = 0;    while(cin&gt;&gt;num){        if(num &lt; 0){            count1++;        }else{            count2++;            sum += num;        }    }    cout&lt;&lt;count1&lt;&lt;endl&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;(double)sum/count2&lt;&lt;endl;    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 华为机试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>记负均正</title>
+      <link href="/posts/5527.html"/>
+      <url>/posts/5527.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="记负均正"><a href="#记负均正" class="headerlink" title="记负均正"></a>记负均正</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>首先输入要输入的整数个数n，然后输入n个整数。输出为n个整数中负数的个数，和所有正整数的平均值，结果保留一位小数。</p><h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>首先输入一个正整数n，然后输入n个整数。</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输出负数的个数，和所有正整数的平均值。</code></pre><p>示例1</p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>512345</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>0 3</code></pre><p><strong>注意</strong>：零不要计算进去</p><pre><code>#include&lt;iostream&gt;#include&lt;vector&gt;#include&lt;iomanip&gt;using namespace std;int main(){    int num;    while(cin&gt;&gt;num){        vector&lt;int&gt; arr(num);        int count1 = 0,count2 = 0;        double sum = 0;        for(int i = 0;i &lt; num;i++){            cin&gt;&gt;arr[i];            if(arr[i] &lt; 0){                count1++;            }else if(arr[i] &gt; 0){                count2++;                sum += arr[i];            }        }        cout&lt;&lt;count1&lt;&lt;&quot; &quot;&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;(double)sum/count2&lt;&lt;endl;    }    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 华为机试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>表示数字</title>
+      <link href="/posts/4365.html"/>
+      <url>/posts/4365.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="表示数字"><a href="#表示数字" class="headerlink" title="表示数字"></a>表示数字</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>将一个字符中所有出现的数字前后加上符号“*”，其他字符保持不变<br>public static String MarkNum(String pInStr)<br>{</p><p>return null;</p><p>}</p><p>注意：输入数据可能有多行</p><h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入一个字符串</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>字符中所有出现的数字前后加上符号“*”，其他字符保持不变</code></pre><p>示例1</p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>Jkdi234klowe90a3</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>Jkdi*234*klowe*90*a*3*</code></pre><p>通过观察”**“号插入的位置，分四种情况讨论：</p><ul><li><p>数字和字母之间插入</p></li><li><p>字母和数字之间插入</p></li><li><p>第一个字符是数字时，在其前面插入</p></li><li><p>最后一个字符是数字时，在其后面插入</p><pre><code>#include&lt;iostream&gt;#include&lt;string&gt;using namespace std;int main(){    string str;    while(cin&gt;&gt;str){        int leng = str.size();        for(int i = 0;i &lt; leng - 1;i++){            //在数字和字母之间插入           if((str[i] &gt;= &#39;0&#39; &amp;&amp; str[i] &lt;= &#39;9&#39;) &amp;&amp; ((str[i + 1] &gt;= &#39;a&#39; &amp;&amp; str[i + 1] &lt;= &#39;z&#39;) || (str[i+1] &gt;= &#39;A&#39; &amp;&amp; str[i + 1] &lt;= &#39;Z&#39;))){               str.insert(i + 1,&quot;*&quot;);               leng++;           }            //在字母和数字之间插入           if((str[i + 1] &gt;= &#39;0&#39; &amp;&amp; str[i + 1] &lt;= &#39;9&#39;) &amp;&amp; ((str[i] &gt;= &#39;a&#39; &amp;&amp; str[i] &lt;= &#39;z&#39;) || (str[i] &gt;= &#39;A&#39; &amp;&amp; str[i] &lt;= &#39;Z&#39;))){               str.insert(i + 1,&quot;*&quot;);               leng++;           }        }        string temp = str;        //头尾是数字的情况插入        if(str[0] &gt;= &#39;0&#39;&amp;&amp; str[0] &lt;= &#39;9&#39;){                temp = &#39;*&#39; + temp;            }        if(str[str.size() - 1] &gt;= &#39;0&#39; &amp;&amp; str[str.size() - 1] &lt;= &#39;9&#39;){                temp = temp + &#39;*&#39;;            }        cout&lt;&lt;temp&lt;&lt;endl;    }    return 0;}</code></pre></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 华为机试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字符串 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>记票统计</title>
       <link href="/posts/37310.html"/>
       <url>/posts/37310.html</url>
