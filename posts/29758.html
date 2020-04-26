@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="成绩排序, 少年乙的博客">
+    <meta name="keywords" content="字符逆序, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>成绩排序 | 少年乙的博客</title>
+    <title>字符逆序 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">成绩排序</h1>
+                    <h1 class="description center-align post-title">字符逆序</h1>
                 </div>
             </div>
         </div>
@@ -375,8 +375,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%8E%92%E5%BA%8F/">
-                                <span class="chip bg-color">排序</span>
+                            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                                <span class="chip bg-color">字符串</span>
                             </a>
                         
                     </div>
@@ -400,28 +400,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-13
+                    2020-04-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-18
+                    2020-04-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    602
+                    168
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -436,96 +436,26 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="成绩排序"><a href="#成绩排序" class="headerlink" title="成绩排序"></a>成绩排序</h2><p>查找和排序</p>
-<p>题目：输入任意（用户，成绩）序列，可以获得成绩从高到低或从低到高的排列,相同成绩<br>都按先录入排列在前的规则处理。</p>
-<p>例示：<br>jack   70<br>peter   96<br>Tom    70<br>smith   67</p>
-<p>从高到低 成绩<br>peter   96<br>jack   70<br>Tom    70<br>smith   67</p>
-<p>从低到高</p>
-<p>smith   67</p>
-<p>Tom    70<br>jack   70</p>
-<p>peter   96</p>
-<p>注：0代表从高到低，1代表从低到高</p>
-<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入多行，先输入要排序的人的个数，然后分别输入他们的名字和成绩，以一个空格隔开</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>按照指定方式输出名字和成绩，名字和成绩之间以一个空格隔开</code></pre><p>示例1</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>3
-0
-fang 90
-yang 50
-ning 70</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>fang 90
-ning 70
-yang 50</code></pre><p>用桶排序的思路，因为分数在0~100分之间，一个分数桶对应一个学生，哈哈，键值对的感觉有木有。下面是代码 </p>
+                <h2 id="字符逆序"><a href="#字符逆序" class="headerlink" title="字符逆序"></a>字符逆序</h2><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>将一个字符串str的内容颠倒过来，并输出。str的长度不超过100个字符。 如：输入“I am a student”，输出“tneduts a ma I”。</p>
+<p>输入参数：</p>
+<p>inputString：输入的字符串</p>
+<p> 返回值：</p>
+<p>输出转换好的逆序字符串</p>
+<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入一个字符串，可以有空格</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输出逆序的字符串</code></pre><p>示例1</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>I am a student</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>tneduts a ma I</code></pre><p>将字符串逆过来输入就完事了</p>
 <pre><code>#include&lt;iostream&gt;
 #include&lt;string&gt;
-#include&lt;vector&gt;
 using namespace std;
 
 int main(){
-    int number,hd;
-    string name;
-    int grade;
-    while(cin&gt;&gt;number&gt;&gt;hd){
-        string strarr[101];
-        int nums[101] = {0};
-        for(int i = 0;i &lt; number;i++){
-            cin&gt;&gt;name&gt;&gt;grade;
-            strarr[grade] = name;
-            nums[grade] = 1;
+    string str;
+    while(getline(cin,str)){
+        for(int i = str.size() - 1;i &gt;= 0;i--){
+            cout&lt;&lt;str[i];
         }
-        if(hd == 0){
-            for(int i = 100;i &gt;= 0;i--){
-                if(nums[i] != 0){
-                    cout&lt;&lt;strarr[i]&lt;&lt;&quot; &quot;&lt;&lt;i&lt;&lt;endl;
-                }
-            }
-        }
-        else{
-            for(int i = 0;i &lt; 101;i++){
-                if(nums[i] != 0){
-                    cout&lt;&lt;strarr[i]&lt;&lt;&quot; &quot;&lt;&lt;i&lt;&lt;endl;
-                }
-            }
-        }
+        cout&lt;&lt;endl;
     }
     return 0;
-}</code></pre><p>不过这种放在一维数组的做法是不足以解决这道题的，因为当出现两个用户的分数是一样的时候，所以这个程序的鲁棒性是不够给力的。<br>去牛客网得到讨论区，发现用容器可以解决多个用户分数一样的问题，附一下链接和代码。</p>
-<pre><code>//来源：牛客网
-//链接：https://www.nowcoder.com/questionTerminal/8e400fd9905747e4acc2aeed7240978b?f=discussion
-
-#include&lt;iostream&gt;
-#include&lt;vector&gt;
-#include&lt;string&gt;
-using namespace std;
-
-int main()
-{
-    int n;
-    int way;
-    string name;
-    int grade;
-    while(cin &gt;&gt; n &gt;&gt; way)
-    {
-        vector&lt;string&gt; b[101];  //0-100分的桶共101个
-        for(int i = 0; i &lt; n; i++)
-        {
-            cin &gt;&gt; name &gt;&gt; grade;
-            b[grade].push_back(name);
-        }
-        if(way == 0)
-        {
-          for(int i = 100 ; i &gt;= 0; i--)
-          {
-             for(int j = 0; j &lt; b[i].size(); j++)
-                 cout &lt;&lt; b[i][j] &lt;&lt; &quot; &quot; &lt;&lt; i &lt;&lt; endl;
-          }
-        }
-        else
-        {
-          for(int i = 0 ; i &lt; 101; i++)
-          {
-             for(int j = 0; j &lt; b[i].size(); j++)
-                 cout &lt;&lt; b[i][j] &lt;&lt; &quot; &quot; &lt;&lt; i &lt;&lt; endl;
-          }
-        }
-    }
 }</code></pre>
             </div>
             <hr/>
@@ -551,7 +481,7 @@ int main()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://1224756742.github.io/posts/33506.html">http://1224756742.github.io/posts/33506.html</a>
+                    <a href="http://1224756742.github.io/posts/29758.html">http://1224756742.github.io/posts/29758.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -589,8 +519,8 @@ int main()
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%8E%92%E5%BA%8F/">
-                                    <span class="chip bg-color">排序</span>
+                                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                                    <span class="chip bg-color">字符串</span>
                                 </a>
                             
                         </div>
@@ -758,83 +688,33 @@ int main()
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/60626.html">
+                <a href="/posts/29758.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="矩阵乘法">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="字符逆序">
                         
-                        <span class="card-title">矩阵乘法</span>
+                        <span class="card-title">字符逆序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            矩阵乘法题目描述如果A是个x行y列的矩阵，B是个y行z列的矩阵，把A和B相乘，其结果将是另一个x行z列的矩阵C。这个矩阵的每个元素是由下面的公式决定的
-
-输入描述:输入包含多组数据，每组数据包含：
-第一行包含一个正整数x，代表第一个矩阵的行
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-14
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%9F%A9%E9%98%B5/">
-                        <span class="chip bg-color">矩阵</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/33506.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="成绩排序">
-                        
-                        <span class="card-title">成绩排序</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            成绩排序查找和排序
-题目：输入任意（用户，成绩）序列，可以获得成绩从高到低或从低到高的排列,相同成绩都按先录入排列在前的规则处理。
-例示：jack   70peter   96Tom    70smith   67
-从高到低 成绩peter
+                            字符逆序题目描述将一个字符串str的内容颠倒过来，并输出。str的长度不超过100个字符。 如：输入“I am a student”，输出“tneduts a ma I”。
+输入参数：
+inputString：输入的字符串
+ 返回值：
+输出
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-27
                             </span>
                         <span class="publish-author">
                             
@@ -852,10 +732,56 @@ int main()
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%8E%92%E5%BA%8F/">
-                        <span class="chip bg-color">排序</span>
+                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                        <span class="chip bg-color">字符串</span>
                     </a>
                     
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/4704.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="等差数列">
+                        
+                        <span class="card-title">等差数列</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            等差数列题目描述功能:等差数列 2，5，8，11，14。。。。
+输入:正整数N &gt;0
+输出:求等差数列前N项和
+返回:转换成功返回 0 ,非法输入与异常返回-1
+输入描述:输入一个正整数。输出描述:输出一个相加后的整数。示例1
+输入2
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
+                                    华为机试
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>

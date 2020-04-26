@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>字符逆序</title>
+      <link href="/posts/29758.html"/>
+      <url>/posts/29758.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="字符逆序"><a href="#字符逆序" class="headerlink" title="字符逆序"></a>字符逆序</h2><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>将一个字符串str的内容颠倒过来，并输出。str的长度不超过100个字符。 如：输入“I am a student”，输出“tneduts a ma I”。</p><p>输入参数：</p><p>inputString：输入的字符串</p><p> 返回值：</p><p>输出转换好的逆序字符串</p><h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入一个字符串，可以有空格</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输出逆序的字符串</code></pre><p>示例1</p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>I am a student</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>tneduts a ma I</code></pre><p>将字符串逆过来输入就完事了</p><pre><code>#include&lt;iostream&gt;#include&lt;string&gt;using namespace std;int main(){    string str;    while(getline(cin,str)){        for(int i = str.size() - 1;i &gt;= 0;i--){            cout&lt;&lt;str[i];        }        cout&lt;&lt;endl;    }    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 华为机试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字符串 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>等差数列</title>
       <link href="/posts/4704.html"/>
       <url>/posts/4704.html</url>
