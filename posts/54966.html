@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="字符串截取-密码截取, 少年乙的博客">
+    <meta name="keywords" content="自守数, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>字符串截取-密码截取 | 少年乙的博客</title>
+    <title>自守数 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">字符串截取-密码截取</h1>
+                    <h1 class="description center-align post-title">自守数</h1>
                 </div>
             </div>
         </div>
@@ -373,13 +373,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                <span class="chip bg-color">字符串</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -400,21 +396,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-23
+                    2020-04-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-23
+                    2020-04-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    387
+                    248
                 </div>
                 
 
@@ -436,53 +432,49 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="字符串运用-字符截取"><a href="#字符串运用-字符截取" class="headerlink" title="字符串运用-字符截取"></a>字符串运用-字符截取</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>Catcher 是MCA国的情报员，他工作时发现敌国会用一些对称的密码进行通信，比如像这些ABBA，ABA，A，123321，但是他们有时会在开始或结束时加入一些无关的字符以防止别国破解。比如进行下列变化 ABBA-&gt;12ABBA,ABA-&gt;ABAKK,123321-&gt;51233214　。因为截获的串太长了，而且存在多种可能的情况（abaaab可看作是aba,或baaab的加密形式），Cathcer的工作量实在是太大了，他只能向电脑高手求助，你能帮Catcher找出最长的有效密码串吗？</p>
-<p>（注意：记得加上while处理多个测试用例）</p>
-<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入一个字符串</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>返回有效密码串的最大长度</code></pre><p>示例1</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>ABBA</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>4</code></pre><p>分奇偶情况讨论，比如ABA，ABBA，满足情况，左右指针向外移动。</p>
+                <h2 id="自守数"><a href="#自守数" class="headerlink" title="自守数"></a>自守数</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>自守数是指一个数的平方的尾数等于该数自身的自然数。例如：25^2 = 625，76^2 = 5776，9376^2 = 87909376。请求出n以内的自守数的个数</p>
+<p>接口说明</p>
+<p>/*<br>功能: 求出n以内的自守数的个数</p>
+<p>输入参数：<br>int n</p>
+<p>返回值：<br>n以内自守数的数量。<br>*/</p>
+<p>public static int CalcAutomorphicNumbers( int n)<br>{<br>/<em>在这里实现功能</em>/</p>
+<p>return 0;<br>}</p>
+<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>int型整数</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>n以内自守数的数量。</code></pre><p>示例1</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>2000</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>8</code></pre><p>以数本身为循环次数，分别拿该数和平方后的各位数。比较拿出来的数字都相等，那么该数就是自守数。</p>
 <pre><code>#include&lt;iostream&gt;
-#include&lt;string&gt;
 using namespace std;
-int main(){
-    string str;
-    while(getline(cin,str)){
-        int len = str.size();
-        if(len&lt;=1)
+
+bool isAutomorphic(int x)
+{
+    int y=x*x;
+    while(x)
+    {
+        if(x%10==y%10)
         {
-            //cout&lt;&lt;len&lt;&lt;endl;
-            continue;
+            x/=10;
+            y/=10;
         }
-        int num = 1;
-        for(int i=1;i&lt;len-1;i++)
-        {
-            if(str[i]==str[i+1])
-            {//偶数对成
-                int curnum = 0;
-                int start = i;int end =i+1;
-                while(start&gt;=0 &amp;&amp; end&lt;=len &amp;&amp; str[start] == str[end])
-                {
-                    start--;
-                    end++;
-                    curnum+=2;
-                }
-                if(curnum&gt;num)
-                    num = curnum;
-            }
-            if(str[i-1]==str[i+1])
-            {//奇数对成
-                int curnum = 1;
-                int start = i-1;int end =i+1;
-                while(start&gt;=0 &amp;&amp; end&lt;=len &amp;&amp; str[start] == str[end])
-                {
-                    start--;
-                    end++;
-                    curnum+=2;
-                }
-                if(curnum&gt;num)
-                    num = curnum;
-            }
-        }
-        cout&lt;&lt;num&lt;&lt;endl;
+        else break;
+    }
+    if(x==0) 
+        return true;
+    else 
+        return  false;
+
+}
+int main()
+{
+    int num;
+    while(cin&gt;&gt;num)
+    {
+         bool flag;
+         int count=0;
+         for(int i = 0;i &lt; num;i++)
+         {
+             if(isAutomorphic(i)) 
+                 count++;
+         }
+        cout&lt;&lt;count&lt;&lt;endl;
     }
     return 0;
 }</code></pre>
@@ -510,7 +502,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://1224756742.github.io/posts/38562.html">http://1224756742.github.io/posts/38562.html</a>
+                    <a href="http://1224756742.github.io/posts/54966.html">http://1224756742.github.io/posts/54966.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -547,11 +539,7 @@ int main(){
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                    <span class="chip bg-color">字符串</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -721,28 +709,27 @@ int main(){
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/33736.html">
+                <a href="/posts/3110.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="求最大连续bit数">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="输入整型数组和排序标识，对其元素按照升序或降序进行排序">
                         
-                        <span class="card-title">求最大连续bit数</span>
+                        <span class="card-title">输入整型数组和排序标识，对其元素按照升序或降序进行排序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            求最大连续bit数题目描述功能: 求一个byte数字对应的二进制数字中1的最大连续数，例如3的二进制为00000011，最大连续2个1
-输入: 一个byte型的数字
-输出: 无
-返回: 对应的二进制数字中1的最大连续数
-输入描述:输入一个b
+                            输入整型数组和排序标识，对其元素按照升序或降序进行排序题目描述输入整型数组和排序标识，对其元素按照升序或降序进行排序（一组测试用例可能会有多组数据）
+接口说明
+原型：
+void sortIntegerArray(Integer[] pInt
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-23
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-27
                         </span>
                         <span class="publish-author">
                             
@@ -766,37 +753,48 @@ int main(){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/26899.html">
+                <a href="/posts/29758.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="安卓菜单组件的实现">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="字符逆序">
                         
-                        <span class="card-title">安卓菜单组件的实现</span>
+                        <span class="card-title">字符逆序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            安卓菜单组件的实现选项菜单的.xml代码&lt;?xml version="1.0" encoding="utf-8"?>
-&lt;menu xmlns:android="http://schemas.android.com/apk/res
+                            字符逆序题目描述将一个字符串str的内容颠倒过来，并输出。str的长度不超过100个字符。 如：输入“I am a student”，输出“tneduts a ma I”。
+输入参数：
+inputString：输入的字符串
+ 返回值：
+输出
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AE%89%E5%8D%93-%E8%8F%9C%E5%8D%95/" class="post-category">
-                                    安卓 菜单
+                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
+                                    华为机试
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                        <span class="chip bg-color">字符串</span>
+                    </a>
+                    
                 </div>
                 
             </div>

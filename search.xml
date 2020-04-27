@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>输入整型数组和排序标识，对其元素按照升序或降序进行排序</title>
+      <link href="/posts/3110.html"/>
+      <url>/posts/3110.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="输入整型数组和排序标识，对其元素按照升序或降序进行排序"><a href="#输入整型数组和排序标识，对其元素按照升序或降序进行排序" class="headerlink" title="输入整型数组和排序标识，对其元素按照升序或降序进行排序"></a>输入整型数组和排序标识，对其元素按照升序或降序进行排序</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入整型数组和排序标识，对其元素按照升序或降序进行排序（一组测试用例可能会有多组数据）</p><p>接口说明</p><p>原型：</p><p>void sortIntegerArray(Integer[] pIntegerArray, int iSortFlag);</p><p>输入参数：</p><p>Integer[] pIntegerArray：整型数组</p><p>int iSortFlag：排序标识：0表示按升序，1表示按降序</p><p>输出参数：</p><p>无</p><p>返回值：</p><p>void</p><h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>1、输入需要输入的整型数个数</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输出排好序的数字</code></pre><p>示例1</p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>81 2 4 9 3 55 64 250</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>1 2 3 4 9 25 55 64</code></pre><p>很普通的排序题</p><pre><code>#include&lt;iostream&gt;#include&lt;vector&gt;#include&lt;algorithm&gt;using namespace std;int main(){    int num;    while(cin&gt;&gt;num){        vector&lt;int&gt; arr(num,0);        for(int i = 0;i &lt; num;i++){            cin&gt;&gt;arr[i];        }        sort(arr.begin(),arr.end());        int flag;        cin&gt;&gt;flag;        if(flag == 0){            for(int i = 0;i &lt; arr.size();i++){                cout&lt;&lt;arr[i]&lt;&lt;&quot; &quot;;            }            cout&lt;&lt;endl;        }else{            for(int i = arr.size() - 1; i &gt;= 0;i--){                cout&lt;&lt;arr[i]&lt;&lt;&quot; &quot;;            }            cout&lt;&lt;endl;        }    }    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 华为机试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>自守数</title>
+      <link href="/posts/54966.html"/>
+      <url>/posts/54966.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="自守数"><a href="#自守数" class="headerlink" title="自守数"></a>自守数</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>自守数是指一个数的平方的尾数等于该数自身的自然数。例如：25^2 = 625，76^2 = 5776，9376^2 = 87909376。请求出n以内的自守数的个数</p><p>接口说明</p><p>/*<br>功能: 求出n以内的自守数的个数</p><p>输入参数：<br>int n</p><p>返回值：<br>n以内自守数的数量。<br>*/</p><p>public static int CalcAutomorphicNumbers( int n)<br>{<br>/<em>在这里实现功能</em>/</p><p>return 0;<br>}</p><h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>int型整数</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>n以内自守数的数量。</code></pre><p>示例1</p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>2000</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>8</code></pre><p>以数本身为循环次数，分别拿该数和平方后的各位数。比较拿出来的数字都相等，那么该数就是自守数。</p><pre><code>#include&lt;iostream&gt;using namespace std;bool isAutomorphic(int x){    int y=x*x;    while(x)    {        if(x%10==y%10)        {            x/=10;            y/=10;        }        else break;    }    if(x==0)         return true;    else         return  false;}int main(){    int num;    while(cin&gt;&gt;num)    {         bool flag;         int count=0;         for(int i = 0;i &lt; num;i++)         {             if(isAutomorphic(i))                  count++;         }        cout&lt;&lt;count&lt;&lt;endl;    }    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 华为机试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>字符逆序</title>
       <link href="/posts/29758.html"/>
       <url>/posts/29758.html</url>
