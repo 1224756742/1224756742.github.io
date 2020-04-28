@@ -4,6 +4,94 @@
   
     
     <entry>
+      <title>求最小公倍数</title>
+      <link href="/posts/25368.html"/>
+      <url>/posts/25368.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="求最小公倍数"><a href="#求最小公倍数" class="headerlink" title="求最小公倍数"></a>求最小公倍数</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>正整数A和正整数B 的最小公倍数是指 能被A和B整除的最小的正整数值，设计一个算法，求输入A和B的最小公倍数。</p><h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入两个正整数A和B。</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输出A和B的最小公倍数。</code></pre><p>示例1</p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>5 7</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>35</code></pre><p>从1开始尝试，能同时对A和B取余结果为零的即时结果</p><pre><code>#include&lt;iostream&gt;using namespace std;int main(){    int A,B;    while(cin&gt;&gt;A&gt;&gt;B){        for(int i = 1;i &lt; 100000000;i++){            if(i % A == 0 &amp;&amp; i % B == 0){                cout&lt;&lt;i&lt;&lt;endl;                break;            }        }    }    return 0;}</code></pre><p>但这种方法算出来的时间复杂度太大了，来个舒服些的</p><p>*最小公倍数 = 两数之积除以最大公约数</p><pre><code>#include&lt;iostream&gt;using namespace std;int gcd(int A, int B) {    while(A%B){        int temp = A;        A = B;        B = temp % B;    }    return B;}int main(){    int A,B;    while(cin &gt;&gt; A &gt;&gt; B){        cout &lt;&lt; A*B/gcd(A,B) &lt;&lt;endl;    }    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 华为机试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>求解立方根</title>
+      <link href="/posts/38686.html"/>
+      <url>/posts/38686.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="求解立方根"><a href="#求解立方根" class="headerlink" title="求解立方根"></a>求解立方根</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>•计算一个数字的立方根，不使用库函数</p><p>详细描述：</p><p>•接口说明</p><p>原型：</p><p>public static double getCubeRoot(double input)</p><p>输入:double 待求解参数</p><p>返回值:double 输入参数的立方根，保留一位小数</p><h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>待求解参数 double类型</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输入参数的立方根 也是double类型</code></pre><p>示例1</p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>216</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>6.0</code></pre><ul><li>二分法求解</li></ul><pre><code>#include&lt;iostream&gt;#include&lt;iomanip&gt;using namespace std;double getCubeRoot(double num){    double min = 0,max = num,mid = 0;    while((max - min) &gt; 0.001){ //提高精度        mid = (min + max) / 2;        if(mid*mid*mid &gt; num){            max = mid;        }else if(mid*mid*mid &lt; num){            min = mid;        }else{            return mid;        }    }    return max;}int main(){    double num;    while(cin&gt;&gt;num){        cout&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;(double)getCubeRoot(num)&lt;&lt;endl;    }    return 0;}</code></pre><ul><li>牛顿迭代法</li></ul><pre><code>链接：https://www.nowcoder.com/questionTerminal/caf35ae421194a1090c22fe223357dca?f=discussion来源：牛客网#include&lt;iostream&gt;#include&lt;iomanip&gt;//牛顿法using namespace std;double newton(double a){    double x = 1;    while (((x*x*x - a) &gt;= 1e-7) || ((a - x*x*x) &gt;= 1e-7)){        x = (x - x / 3 + a / (3 * x*x));    }    return x;}int main(){    double num;    while (cin &gt;&gt; num){        cout &lt;&lt; setprecision(1) &lt;&lt; fixed &lt;&lt; newton(num) &lt;&lt; endl;    }    return 0;}</code></pre><ul><li>这里贴一个求解<strong>平方根</strong>非常牛叉的函数，来感受数学之美</li></ul><pre><code>class Solution {public:    int mySqrt(int x) {        float xhalf = 0.5f*x;        int i = *(int*)&amp;x;        i = 0x5f3759df - (i &gt;&gt; 1); // 计算第一个近似根        x = *(float*)&amp;i;        x = x*(1.5f - xhalf*x*x); // 牛顿迭代法        //x = 1/(x*x);        return x;    }};</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 华为机试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>字符串分割</title>
+      <link href="/posts/26533.html"/>
+      <url>/posts/26533.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="字符串分割"><a href="#字符串分割" class="headerlink" title="字符串分割"></a>字符串分割</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>连续输入字符串(输出次数为N,字符串长度小于100)，请按长度为8拆分每个字符串后输出到新的字符串数组，</p><p>长度不是8整数倍的字符串请在后面补数字0，空字符串不处理。</p><p>首先输入一个整数，为要输入的字符串个数。</p><p>例如：</p><p>输入：2</p><p>   abc</p><p>   12345789</p><p>输出：abc00000</p><p>   12345678</p><p>   90000000</p><p>接口函数设计如下:</p><p>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><br>功能:存储输入的字符创</p><p>输入:字符串</p><p>输出:无</p><p>返回:0表示成功,其它返回-1<br><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/</p><p>int AddString(char <em>strValue);<br>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></em><br>功能:获取补位后的二维数组的长度</p><p>输入:无</p><p>输出:无</p><p>返回:二维数组长度<br><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/</p><p>int GetLength();</p><p>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><br>功能:将补位后的二维数组，与输入的二维数组做比较</p><p>输入:strInput:输入二维数组,iLen：输入的二维数组的长度</p><p>输出:无</p><p>返回:若相等,返回0;不相等,返回-1.其它:-1;<br><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/<br>int ArrCmp(char strInput[][9],int iLen);</p><h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>首先输入数字n，表示要输入多少个字符串。连续输入字符串(输出次数为N,字符串长度小于100)。</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>按长度为8拆分每个字符串后输出到新的字符串数组，长度不是8整数倍的字符串请在后面补数字0，空字符串不处理。</code></pre><p>示例1</p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>2abc123456789</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>abc000001234567890000000</code></pre><ul><li>不够八位的补零</li><li>超出八位的先输出前八位</li><li>超出八位的部分再进循环前面两个步骤</li></ul><pre><code>#include&lt;iostream&gt;#include&lt;string&gt;using namespace std;int main(){    int num;    while(cin&gt;&gt;num){        for(int i = 0;i &lt; num;i++){            string str;            cin&gt;&gt;str;            while(str.size() &gt; 0){                if(str.size() &lt; 8){                    str += &quot;0000000&quot;;                    cout&lt;&lt;str.substr(0,8)&lt;&lt;endl;                    str = &quot;&quot;;                }else{                    cout&lt;&lt;str.substr(0,8)&lt;&lt;endl;                    str = str.substr(8);                }            }        }    }    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 华为机试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字符串 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>字符统计</title>
+      <link href="/posts/7363.html"/>
+      <url>/posts/7363.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="字符统计"><a href="#字符统计" class="headerlink" title="字符统计"></a>字符统计</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>如果统计的个数相同，则按照ASCII码由小到大排序输出 。如果有其他字符，则对这些字符不用进行统计。</p><p>实现以下接口：<br>输入一个字符串，对字符中的各个英文字符，数字，空格进行统计（可反复调用）<br>按照统计个数由多到少输出统计结果，如果统计的个数相同，则按照ASII码由小到大排序输出<br>清空目前的统计结果，重新统计<br>调用者会保证：<br>输入的字符串以‘\0’结尾。</p><h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入一串字符。</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>对字符中的各个英文字符（大小写分开统计），数字，空格进行统计，并按照统计个数由多到少输出,如果统计的个数相同，则按照ASII码由小到大排序输出 。如果有其他字符，则对这些字符不用进行统计。</code></pre><p>示例1</p><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>aadddccddc</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>dca</code></pre><ul><li>用桶排序的想法，将ASCLL码0~256字符出现的次数记录在数组中，因为这个数组本身就是按ASCLL码的顺序来的排的。</li><li>找出其中的出现最多字符的出现次数max，递减max并循环查找等于max的字符，再输出出来就好啦</li></ul><pre><code>#include&lt;iostream&gt;#include&lt;string&gt;using namespace std;int main(){    string str;    while(cin&gt;&gt;str){        int arr[256] = {0};        int max = 0;        for(int i = 0;i &lt; str.size();i++){            arr[str[i]]++;            if(arr[str[i]] &gt; max){                max = arr[str[i]];            }        }        while(max){            for(int i = 0;i &lt; 256;i++){                char ch;                if(arr[i] == max){                    ch = (char)i;                    cout&lt;&lt;ch;                }            }            max--;        }        cout&lt;&lt;endl;    }    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 华为机试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字符串 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>输入整型数组和排序标识，对其元素按照升序或降序进行排序</title>
       <link href="/posts/3110.html"/>
       <url>/posts/3110.html</url>

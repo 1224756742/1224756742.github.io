@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="201301-JAVA题目2-3级, 少年乙的博客">
+    <meta name="keywords" content="字符串分割, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>201301-JAVA题目2-3级 | 少年乙的博客</title>
+    <title>字符串分割 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">201301-JAVA题目2-3级</h1>
+                    <h1 class="description center-align post-title">字符串分割</h1>
                 </div>
             </div>
         </div>
@@ -373,9 +373,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                                <span class="chip bg-color">字符串</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -396,21 +400,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-25
+                    2020-04-28
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-25
+                    2020-04-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    298
+                    473
                 </div>
                 
 
@@ -432,43 +436,61 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="201301-JAVA题目2-3级"><a href="#201301-JAVA题目2-3级" class="headerlink" title="201301-JAVA题目2-3级"></a>201301-JAVA题目2-3级</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>请编写一个函数（允许增加子函数），计算n x m的棋盘格子（n为横向的格子数，m为竖向的格子数）沿着各自边缘线从左上角走到右下角，总共有多少种走法，要求不能走回头路，即：只能往右和往下走，不能往左和往上走。</p>
-<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入两个正整数</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>返回结果</code></pre><p>示例1</p>
+                <h2 id="字符串分割"><a href="#字符串分割" class="headerlink" title="字符串分割"></a>字符串分割</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>连续输入字符串(输出次数为N,字符串长度小于100)，请按长度为8拆分每个字符串后输出到新的字符串数组，</p>
+<p>长度不是8整数倍的字符串请在后面补数字0，空字符串不处理。</p>
+<p>首先输入一个整数，为要输入的字符串个数。</p>
+<p>例如：</p>
+<p>输入：2</p>
+<p>   abc</p>
+<p>   12345789</p>
+<p>输出：abc00000</p>
+<p>   12345678</p>
+<p>   90000000</p>
+<p>接口函数设计如下:</p>
+<p>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><br>功能:存储输入的字符创</p>
+<p>输入:字符串</p>
+<p>输出:无</p>
+<p>返回:0表示成功,其它返回-1<br><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/</p>
+<p>int AddString(char <em>strValue);<br>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></em><br>功能:获取补位后的二维数组的长度</p>
+<p>输入:无</p>
+<p>输出:无</p>
+<p>返回:二维数组长度<br><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/</p>
+<p>int GetLength();</p>
+<p>/<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><br>功能:将补位后的二维数组，与输入的二维数组做比较</p>
+<p>输入:strInput:输入二维数组,iLen：输入的二维数组的长度</p>
+<p>输出:无</p>
+<p>返回:若相等,返回0;不相等,返回-1.其它:-1;<br><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/<br>int ArrCmp(char strInput[][9],int iLen);</p>
+<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>首先输入数字n，表示要输入多少个字符串。连续输入字符串(输出次数为N,字符串长度小于100)。</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>按长度为8拆分每个字符串后输出到新的字符串数组，长度不是8整数倍的字符串请在后面补数字0，空字符串不处理。</code></pre><p>示例1</p>
 <h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>2
-2</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>6</code></pre><p>动态规划做法，将格子化成点，比如题目的2*2的例子</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p>列和行交叉的点都是可以按规则走的。从(m, n)—&gt;(0, 0)就分两步走：</p>
-<p>往右走一步：f(m, n - 1)—&gt;(0, 0) 加上下走一步：f(m - 1, n)—&gt;(0, 0)，可以开工码了，冲！！！</p>
-<pre><code>#include &lt;iostream&gt;
-#include &lt;vector&gt;
+abc
+123456789</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>abc00000
+12345678
+90000000</code></pre><ul>
+<li>不够八位的补零</li>
+<li>超出八位的先输出前八位</li>
+<li>超出八位的部分再进循环前面两个步骤</li>
+</ul>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;string&gt;
 using namespace std;
 
-int main() {
-    int m, n;
-    while (cin &gt;&gt; m &gt;&gt; n) {
-        vector&lt;vector&lt;int&gt; &gt; dp(n + 1, vector&lt;int&gt;(m + 1, 0));
-        for (int i = 0; i &lt;= n; i++) {
-            for (int j = 0; j &lt;= m; j++) {
-                if (i == 0 || j == 0) {
-                    dp[i][j] = 1;
-                    continue;
-                } else {
-                    dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+int main(){
+    int num;
+    while(cin&gt;&gt;num){
+        for(int i = 0;i &lt; num;i++){
+            string str;
+            cin&gt;&gt;str;
+            while(str.size() &gt; 0){
+                if(str.size() &lt; 8){
+                    str += &quot;0000000&quot;;
+                    cout&lt;&lt;str.substr(0,8)&lt;&lt;endl;
+                    str = &quot;&quot;;
+                }else{
+                    cout&lt;&lt;str.substr(0,8)&lt;&lt;endl;
+                    str = str.substr(8);
                 }
             }
         }
-        cout &lt;&lt; dp[n][m] &lt;&lt; endl;
     }
     return 0;
 }</code></pre>
@@ -496,7 +518,7 @@ int main() {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://1224756742.github.io/posts/54020.html">http://1224756742.github.io/posts/54020.html</a>
+                    <a href="http://1224756742.github.io/posts/26533.html">http://1224756742.github.io/posts/26533.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -533,7 +555,11 @@ int main() {
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                                    <span class="chip bg-color">字符串</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -703,30 +729,73 @@ int main() {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/34408.html">
+                <a href="/posts/38686.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="字符串中找出连续最长的数字串">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="求解立方根">
                         
-                        <span class="card-title">字符串中找出连续最长的数字串</span>
+                        <span class="card-title">求解立方根</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            字符串中找出连续最长的数字串题目描述样例输出
-输出123058789，函数返回值9
-输出54761，函数返回值5
-接口说明
-函数原型：
-  unsignedint Continumax(char* pOutputstr, char intp
+                            求解立方根题目描述•计算一个数字的立方根，不使用库函数
+详细描述：
+•接口说明
+原型：
+public static double getCubeRoot(double input)
+输入:double 待求解参数
+返回值:double 输入
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-25
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-28
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
+                                    华为机试
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/7363.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="字符统计">
+                        
+                        <span class="card-title">字符统计</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            字符统计题目描述如果统计的个数相同，则按照ASCII码由小到大排序输出 。如果有其他字符，则对这些字符不用进行统计。
+实现以下接口：输入一个字符串，对字符中的各个英文字符，数字，空格进行统计（可反复调用）按照统计个数由多到少输出统计结果，如
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -746,47 +815,6 @@ int main() {
                         <span class="chip bg-color">字符串</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/9288.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="合法IP">
-                        
-                        <span class="card-title">合法IP</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            合法IP题目描述现在IPV4下用一个32位无符号整数来表示，一般用点分方式来显示，点将IP地址分成4个部分，每个部分为8位，表示成一个无符号整数（因此不需要用正号出现），如10.137.17.1，是我们非常熟悉的IP地址，一个IP地址串中没
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-24
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
                 </div>
                 
             </div>
