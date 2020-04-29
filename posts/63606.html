@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="求解立方根, 少年乙的博客">
+    <meta name="keywords" content="华为机试结局篇, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>求解立方根 | 少年乙的博客</title>
+    <title>华为机试结局篇 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">求解立方根</h1>
+                    <h1 class="description center-align post-title">华为机试结局篇</h1>
                 </div>
             </div>
         </div>
@@ -380,15 +380,6 @@
                 </div>
                 <div class="col s5 right-align">
                     
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                华为机试
-                            </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
 
@@ -396,21 +387,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-28
+                    2020-04-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-28
+                    2020-04-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    363
+                    0
                 </div>
                 
 
@@ -432,81 +423,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="求解立方根"><a href="#求解立方根" class="headerlink" title="求解立方根"></a>求解立方根</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>•计算一个数字的立方根，不使用库函数</p>
-<p>详细描述：</p>
-<p>•接口说明</p>
-<p>原型：</p>
-<p>public static double getCubeRoot(double input)</p>
-<p>输入:double 待求解参数</p>
-<p>返回值:double 输入参数的立方根，保留一位小数</p>
-<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>待求解参数 double类型</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输入参数的立方根 也是double类型</code></pre><p>示例1</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>216</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>6.0</code></pre><ul>
-<li>二分法求解</li>
-</ul>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;iomanip&gt;
-using namespace std;
-
-double getCubeRoot(double num){
-    double min = 0,max = num,mid = 0;
-    while((max - min) &gt; 0.001){ //提高精度
-        mid = (min + max) / 2;
-        if(mid*mid*mid &gt; num){
-            max = mid;
-        }else if(mid*mid*mid &lt; num){
-            min = mid;
-        }else{
-            return mid;
-        }
-    }
-    return max;
-}
-
-int main(){
-    double num;
-    while(cin&gt;&gt;num){
-        cout&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;(double)getCubeRoot(num)&lt;&lt;endl;
-    }
-    return 0;
-}</code></pre><ul>
-<li>牛顿迭代法</li>
-</ul>
-<pre><code>链接：https://www.nowcoder.com/questionTerminal/caf35ae421194a1090c22fe223357dca?f=discussion
-来源：牛客网
-
-#include&lt;iostream&gt;
-#include&lt;iomanip&gt;
-//牛顿法
-using namespace std;
-double newton(double a){
-    double x = 1;
-    while (((x*x*x - a) &gt;= 1e-7) || ((a - x*x*x) &gt;= 1e-7)){
-        x = (x - x / 3 + a / (3 * x*x));
-    }
-    return x;
-}
-
-int main(){
-    double num;
-    while (cin &gt;&gt; num){
-        cout &lt;&lt; setprecision(1) &lt;&lt; fixed &lt;&lt; newton(num) &lt;&lt; endl;
-    }
-    return 0;
-}</code></pre><ul>
-<li>这里贴一个求解<strong>平方根</strong>非常牛叉的函数，来感受数学之美</li>
-</ul>
-<pre><code>class Solution {
-public:
-    int mySqrt(int x) {
-        float xhalf = 0.5f*x;
-        int i = *(int*)&amp;x;
-        i = 0x5f3759df - (i &gt;&gt; 1); // 计算第一个近似根
-        x = *(float*)&amp;i;
-        x = x*(1.5f - xhalf*x*x); // 牛顿迭代法
-        //x = 1/(x*x);
-        return x;
-    }
-};</code></pre>
+                
             </div>
             <hr/>
 
@@ -531,7 +448,7 @@ public:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shaonianyi.xyz/posts/38686.html">https://shaonianyi.xyz/posts/38686.html</a>
+                    <a href="https://shaonianyi.xyz/posts/63606.html">https://shaonianyi.xyz/posts/63606.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -734,9 +651,48 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/63606.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="华为机试结局篇">
+                        
+                        <span class="card-title">华为机试结局篇</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            少年乙
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/posts/25368.html">
                     <div class="card-image">
@@ -756,51 +712,6 @@ public:
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-28
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/26533.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="字符串分割">
-                        
-                        <span class="card-title">字符串分割</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            字符串分割题目描述连续输入字符串(输出次数为N,字符串长度小于100)，请按长度为8拆分每个字符串后输出到新的字符串数组，
-长度不是8整数倍的字符串请在后面补数字0，空字符串不处理。
-首先输入一个整数，为要输入的字符串个数。
-例如：
-输入：
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2020-04-28
                             </span>
@@ -815,14 +726,6 @@ public:
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                        <span class="chip bg-color">字符串</span>
-                    </a>
-                    
                 </div>
                 
             </div>
