@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="201301-JAVA题目2-3级, 少年乙的博客">
+    <meta name="keywords" content="二维数组中的查找, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>201301-JAVA题目2-3级 | 少年乙的博客</title>
+    <title>二维数组中的查找 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">201301-JAVA题目2-3级</h1>
+                    <h1 class="description center-align post-title">二维数组中的查找</h1>
                 </div>
             </div>
         </div>
@@ -373,9 +373,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E7%BB%84/">
+                                <span class="chip bg-color">数组</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -383,8 +387,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                华为机试
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                剑指offer
                             </a>
                         
                     </div>
@@ -396,21 +400,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-25
+                    2020-05-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-25
+                    2020-05-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    298
+                    302
                 </div>
                 
 
@@ -432,46 +436,31 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="201301-JAVA题目2-3级"><a href="#201301-JAVA题目2-3级" class="headerlink" title="201301-JAVA题目2-3级"></a>201301-JAVA题目2-3级</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>请编写一个函数（允许增加子函数），计算n x m的棋盘格子（n为横向的格子数，m为竖向的格子数）沿着各自边缘线从左上角走到右下角，总共有多少种走法，要求不能走回头路，即：只能往右和往下走，不能往左和往上走。</p>
-<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入两个正整数</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>返回结果</code></pre><p>示例1</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>2
-2</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>6</code></pre><p>动态规划做法，将格子化成点，比如题目的2*2的例子</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p>列和行交叉的点都是可以按规则走的。从(m, n)—&gt;(0, 0)就分两步走：</p>
-<p>往右走一步：f(m, n - 1)—&gt;(0, 0) 加上下走一步：f(m - 1, n)—&gt;(0, 0)，可以开工码了，冲！！！</p>
-<pre><code>#include &lt;iostream&gt;
-#include &lt;vector&gt;
-using namespace std;
-
-int main() {
-    int m, n;
-    while (cin &gt;&gt; m &gt;&gt; n) {
-        vector&lt;vector&lt;int&gt; &gt; dp(n + 1, vector&lt;int&gt;(m + 1, 0));
-        for (int i = 0; i &lt;= n; i++) {
-            for (int j = 0; j &lt;= m; j++) {
-                if (i == 0 || j == 0) {
-                    dp[i][j] = 1;
-                    continue;
-                } else {
-                    dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
-                }
+                <h2 id="二维数组中的查找"><a href="#二维数组中的查找" class="headerlink" title="二维数组中的查找"></a>二维数组中的查找</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>因为这个二维数组是左到右，上到下递增的。选取数组中的一个数和查找的数相比。</p>
+<ul>
+<li>如果选取数大于查找数，那么查找数必然在左边或下边</li>
+<li>如果选取数小于查找数，那么查找数必然在右边或上边</li>
+<li>如果选取数等于查找数，直接返回true</li>
+</ul>
+<p>这里选取数组右上角的数，如果选取数大于查找数，选取数这一列都不用查找了。如果大于查找数，再往下逐行查找。</p>
+<pre><code>class Solution {
+public:
+    bool Find(int target, vector&lt;vector&lt;int&gt; &gt; array) {
+        int col = array.size();
+        int row = array[0].size();
+        for(int i = col - 1,j = 0;i &gt;= 0 &amp;&amp; j &lt; row;){
+            if(target == array[i][j]){
+                return true;
+            }else if(target &gt; array[i][j]){
+                j++;
+            }else{
+                i--;
             }
         }
-        cout &lt;&lt; dp[n][m] &lt;&lt; endl;
+        return false;
     }
-    return 0;
-}</code></pre>
+};</code></pre>
             </div>
             <hr/>
 
@@ -496,7 +485,7 @@ int main() {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shaonianyi.xyz/posts/54020.html">https://shaonianyi.xyz/posts/54020.html</a>
+                    <a href="https://shaonianyi.xyz/posts/45951.html">https://shaonianyi.xyz/posts/45951.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -533,7 +522,11 @@ int main() {
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%95%B0%E7%BB%84/">
+                                    <span class="chip bg-color">数组</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -699,51 +692,49 @@ int main() {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/34408.html">
+                <a href="/posts/45951.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="字符串中找出连续最长的数字串">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="二维数组中的查找">
                         
-                        <span class="card-title">字符串中找出连续最长的数字串</span>
+                        <span class="card-title">二维数组中的查找</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            字符串中找出连续最长的数字串题目描述样例输出
-输出123058789，函数返回值9
-输出54761，函数返回值5
-接口说明
-函数原型：
-  unsignedint Continumax(char* pOutputstr, char intp
+                            二维数组中的查找题目描述在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
+思路因为这个二维数组是
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                    剑指offer
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                        <span class="chip bg-color">字符串</span>
+                    <a href="/tags/%E6%95%B0%E7%BB%84/">
+                        <span class="chip bg-color">数组</span>
                     </a>
                     
                 </div>
@@ -757,36 +748,46 @@ int main() {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/9288.html">
+                <a href="/posts/26648.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="合法IP">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="创建安卓的基本通知">
                         
-                        <span class="card-title">合法IP</span>
+                        <span class="card-title">创建安卓的基本通知</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            合法IP题目描述现在IPV4下用一个32位无符号整数来表示，一般用点分方式来显示，点将IP地址分成4个部分，每个部分为8位，表示成一个无符号整数（因此不需要用正号出现），如10.137.17.1，是我们非常熟悉的IP地址，一个IP地址串中没
+                            创建安卓的基本通知1、为界面上一个图片设置弹出式菜单名为“发送通知”，当点击该菜单项则创建基本通知。
+2、设置通知的“关闭”点按操作。
+popupmenu.xml创立一个popupmenu.xml文件，这个文件创建弹出式菜单的两个菜单项，分
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
+                            <a href="/categories/Android/" class="post-category">
+                                    Android
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%8F%9C%E5%8D%95/">
+                        <span class="chip bg-color">菜单</span>
+                    </a>
+                    
                 </div>
                 
             </div>

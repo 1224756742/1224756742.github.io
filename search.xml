@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>二维数组中的查找</title>
+      <link href="/posts/45951.html"/>
+      <url>/posts/45951.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="二维数组中的查找"><a href="#二维数组中的查找" class="headerlink" title="二维数组中的查找"></a>二维数组中的查找</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>因为这个二维数组是左到右，上到下递增的。选取数组中的一个数和查找的数相比。</p><ul><li>如果选取数大于查找数，那么查找数必然在左边或下边</li><li>如果选取数小于查找数，那么查找数必然在右边或上边</li><li>如果选取数等于查找数，直接返回true</li></ul><p>这里选取数组右上角的数，如果选取数大于查找数，选取数这一列都不用查找了。如果大于查找数，再往下逐行查找。</p><pre><code>class Solution {public:    bool Find(int target, vector&lt;vector&lt;int&gt; &gt; array) {        int col = array.size();        int row = array[0].size();        for(int i = col - 1,j = 0;i &gt;= 0 &amp;&amp; j &lt; row;){            if(target == array[i][j]){                return true;            }else if(target &gt; array[i][j]){                j++;            }else{                i--;            }        }        return false;    }};</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数组 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>创建安卓的基本通知</title>
       <link href="/posts/26648.html"/>
       <url>/posts/26648.html</url>
