@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>从尾到头打印链表</title>
+      <link href="/posts/58399.html"/>
+      <url>/posts/58399.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="从尾到头打印链表"><a href="#从尾到头打印链表" class="headerlink" title="从尾到头打印链表"></a>从尾到头打印链表</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个链表，按链表从尾到头的顺序返回一个ArrayList。</p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul><li>遍历链表，将节点的值放在数组里</li><li>再翻转数组即可</li></ul><pre><code>/***  struct ListNode {*        int val;*        struct ListNode *next;*        ListNode(int x) :*              val(x), next(NULL) {*        }*  };*/class Solution {public:    vector&lt;int&gt; printListFromTailToHead(ListNode* head) {        vector&lt;int&gt; arr;        if(head != NULL){            arr.push_back(head -&gt; val);            while(head -&gt; next != NULL){                arr.push_back(head -&gt; next -&gt; val);                head = head -&gt; next;            }        }        //for(int i = arr.size() - 1,j = 0;i &gt;= 0;i--,j++){            //temp[j] = arr[i];        //}        //arr.reserve(arr.begin(),arr.end());        //手动实现数组翻转        int i=0,j=arr.size()-1;        while(i&lt;j){            swap(arr[i],arr[j]);            i++;            j--;        }        return arr;    }};</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 链表 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>替换空格</title>
+      <link href="/posts/12603.html"/>
+      <url>/posts/12603.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="替换空格"><a href="#替换空格" class="headerlink" title="替换空格"></a>替换空格</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</p><h3 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h3><p>新开辟字符串进行替换。</p><p>牛客传参的类型是char*，佛了。。。</p><pre><code>class Solution {public:    void replaceSpace(char *str,int length) {         string temp(str);        string res;        for(auto i :temp){            if(i == &#39; &#39;){                res += &quot;%20&quot;;            }else{                res += i;            }        }        auto ret = res.c_str();        strcpy(str,ret);     }};</code></pre><h3 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h3><p>在当前字符串进行替换</p><ul><li>从前往后替换，后面的字符要不断往后移动，要多次移动，所以效率低下</li><li>从后往前，先计算需要多少空间，然后从后往前移动，则每个字符只为移动一次，这样效率更高一点。</li></ul><p><strong>注意：</strong>题目给的空间是足够的，不用担心</p><p>这里实现从后往前替换的方法</p><pre><code>class Solution {public:    void replaceSpace(char *str,int length) {         if(str == NULL || length &lt;0)            return;        int num =0;    //空格数目        for (int i = 0; i &lt; length; i++){            if (str[i] == &#39; &#39;)                num++;        }        int truelength = length + num * 2;  //字符串替换%20之后的长度        while(length &gt;= 0 &amp;&amp; truelength &gt; length){            if(str[length] == &#39; &#39;){                str[truelength--] = &#39;0&#39;;                str[truelength--] = &#39;2&#39;;                str[truelength--] = &#39;%&#39;;            }else{                str[truelength--] = str[length];            }            length--;        }    }};</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字符串 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>二维数组中的查找</title>
       <link href="/posts/45951.html"/>
       <url>/posts/45951.html</url>

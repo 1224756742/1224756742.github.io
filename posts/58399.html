@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="创建安卓的基本通知, 少年乙的博客">
+    <meta name="keywords" content="从尾到头打印链表, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>创建安卓的基本通知 | 少年乙的博客</title>
+    <title>从尾到头打印链表 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">创建安卓的基本通知</h1>
+                    <h1 class="description center-align post-title">从尾到头打印链表</h1>
                 </div>
             </div>
         </div>
@@ -375,8 +375,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%8F%9C%E5%8D%95/">
-                                <span class="chip bg-color">菜单</span>
+                            <a href="/tags/%E9%93%BE%E8%A1%A8/">
+                                <span class="chip bg-color">链表</span>
                             </a>
                         
                     </div>
@@ -387,8 +387,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Android/" class="post-category">
-                                Android
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                剑指offer
                             </a>
                         
                     </div>
@@ -400,28 +400,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-01
+                    2020-05-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-01
+                    2020-05-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    766
+                    160
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -436,138 +436,45 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="创建安卓的基本通知"><a href="#创建安卓的基本通知" class="headerlink" title="创建安卓的基本通知"></a>创建安卓的基本通知</h2><p>1、为界面上一个图片设置弹出式菜单名为“发送通知”，当点击该菜单项则创建基本通知。</p>
-<p>2、设置通知的“关闭”点按操作。</p>
-<h3 id="popupmenu-xml"><a href="#popupmenu-xml" class="headerlink" title="popupmenu.xml"></a>popupmenu.xml</h3><p>创立一个popupmenu.xml文件，这个文件创建弹出式菜单的两个菜单项，分别是“发送菜单”和“返回”。</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menu</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>group</span> <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/group<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span>
-            <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/actionmenu1<span class="token punctuation">"</span></span>
-            <span class="token attr-name"><span class="token namespace">android:</span>title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>发送通知<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span>
-            <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/actionmenu2<span class="token punctuation">"</span></span>
-            <span class="token attr-name"><span class="token namespace">android:</span>title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>返回<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>group</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menu</span><span class="token punctuation">></span></span></code></pre>
-<h3 id="activity-xml文件"><a href="#activity-xml文件" class="headerlink" title="activity.xml文件"></a>activity.xml文件</h3><p>在activity.xml文件中，加入一个imagView空间，放置图片</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>androidx.constraintlayout.widget.ConstraintLayout</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">xmlns:</span>app</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res-auto<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">xmlns:</span>tools</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/tools<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">tools:</span>context</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>.MainActivity<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ImageView</span>
-        <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/imageView<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>layout_marginStart</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>102dp<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>layout_marginLeft</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>102dp<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">android:</span>layout_marginTop</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>164dp<span class="token punctuation">"</span></span>
-       <span class="token attr-name"><span class="token namespace">app:</span>layout_constraintStart_toStartOf</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>parent<span class="token punctuation">"</span></span>
-        <span class="token attr-name"><span class="token namespace">app:</span>layout_constraintTop_toTopOf</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>parent<span class="token punctuation">"</span></span>    <span class="token attr-name"><span class="token namespace">app:</span>srcCompat</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@android:drawable/ic_notification_overlay<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>androidx.constraintlayout.widget.ConstraintLayout</span><span class="token punctuation">></span></span></code></pre>
-<h3 id="MainActivity-java"><a href="#MainActivity-java" class="headerlink" title="MainActivity.java"></a>MainActivity.java</h3><p>在MainActivity.java文件中，先声明imagView控件和需要的变量，再为其实现个点击事件</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>gdlgxy<span class="token punctuation">.</span>menudemo<span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> androidx<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>RequiresApi<span class="token punctuation">;</span>
-<span class="token keyword">import</span> androidx<span class="token punctuation">.</span>appcompat<span class="token punctuation">.</span>app<span class="token punctuation">.</span>AppCompatActivity<span class="token punctuation">;</span>
-<span class="token keyword">import</span> androidx<span class="token punctuation">.</span>core<span class="token punctuation">.</span>app<span class="token punctuation">.</span>NotificationCompat<span class="token punctuation">;</span>
-<span class="token keyword">import</span> androidx<span class="token punctuation">.</span>core<span class="token punctuation">.</span>app<span class="token punctuation">.</span>NotificationManagerCompat<span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>app<span class="token punctuation">.</span>Notification<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>app<span class="token punctuation">.</span>NotificationChannel<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>app<span class="token punctuation">.</span>NotificationManager<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>app<span class="token punctuation">.</span>PendingIntent<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>content<span class="token punctuation">.</span>Intent<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>graphics<span class="token punctuation">.</span>BitmapFactory<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>os<span class="token punctuation">.</span>Build<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>os<span class="token punctuation">.</span>Bundle<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>view<span class="token punctuation">.</span>ContextMenu<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>view<span class="token punctuation">.</span>Menu<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>view<span class="token punctuation">.</span>MenuInflater<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>view<span class="token punctuation">.</span>MenuItem<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>view<span class="token punctuation">.</span>SubMenu<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>view<span class="token punctuation">.</span>View<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>widget<span class="token punctuation">.</span>ImageView<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>widget<span class="token punctuation">.</span>PopupMenu<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>widget<span class="token punctuation">.</span>TextView<span class="token punctuation">;</span>
-<span class="token keyword">import</span> android<span class="token punctuation">.</span>widget<span class="token punctuation">.</span>Toast<span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> <span class="token keyword">static</span> androidx<span class="token punctuation">.</span>core<span class="token punctuation">.</span>app<span class="token punctuation">.</span>NotificationManagerCompat<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MainActivity</span> <span class="token keyword">extends</span> <span class="token class-name">AppCompatActivity</span> <span class="token punctuation">{</span>
-
-    <span class="token keyword">private</span> ImageView imageView<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String CHANNELID <span class="token operator">=</span> <span class="token string">"gdlgxy"</span><span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> notificationID <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">onCreate</span><span class="token punctuation">(</span>Bundle savedInstanceState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onCreate</span><span class="token punctuation">(</span>savedInstanceState<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">setContentView</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>layout<span class="token punctuation">.</span>activity_main<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//声明textview控件，注册上下文菜单</span>
-        <span class="token comment" spellcheck="true">//TextView textView = (TextView) findViewById(R.id.context_menu);</span>
-        <span class="token comment" spellcheck="true">//registerForContextMenu(textView);</span>
-
-        imageView <span class="token operator">=</span> <span class="token punctuation">(</span>ImageView<span class="token punctuation">)</span> <span class="token function">findViewById</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>imageView<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//点击图片弹出弹出式菜单，再点击菜单项发送通知，实现关闭通知</span>
-       imageView<span class="token punctuation">.</span><span class="token function">setOnClickListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">View<span class="token punctuation">.</span>OnClickListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token annotation punctuation">@Override</span>
-            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onClick</span><span class="token punctuation">(</span>View v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                PopupMenu popupMenu <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PopupMenu</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> v<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                MenuInflater menuInflater <span class="token operator">=</span> popupMenu<span class="token punctuation">.</span><span class="token function">getMenuInflater</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                menuInflater<span class="token punctuation">.</span><span class="token function">inflate</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>menu<span class="token punctuation">.</span>popupmenu<span class="token punctuation">,</span> popupMenu<span class="token punctuation">.</span><span class="token function">getMenu</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                popupMenu<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                popupMenu<span class="token punctuation">.</span><span class="token function">setOnMenuItemClickListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">PopupMenu<span class="token punctuation">.</span>OnMenuItemClickListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    <span class="token annotation punctuation">@RequiresApi</span><span class="token punctuation">(</span>api <span class="token operator">=</span> Build<span class="token punctuation">.</span>VERSION_CODES<span class="token punctuation">.</span>O<span class="token punctuation">)</span>
-                    <span class="token annotation punctuation">@Override</span>
-                    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">onMenuItemClick</span><span class="token punctuation">(</span>MenuItem item<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                        <span class="token keyword">switch</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span><span class="token function">getItemId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                            <span class="token keyword">case</span> R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>actionmenu1<span class="token operator">:</span>
-                                Intent intent <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Intent</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> MainActivity<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                                <span class="token comment" spellcheck="true">// PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this, 0, mIntent, 0);</span>
-                                PendingIntent pi <span class="token operator">=</span> PendingIntent<span class="token punctuation">.</span><span class="token function">getActivity</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> intent<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                                <span class="token comment" spellcheck="true">//获取NotificationManager的实例  系统中的通知服务</span>
-                                NotificationManager manager <span class="token operator">=</span>
-                                        <span class="token punctuation">(</span>NotificationManager<span class="token punctuation">)</span> <span class="token function">getSystemService</span><span class="token punctuation">(</span>NOTIFICATION_SERVICE<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                                <span class="token comment" spellcheck="true">//使用Builder来创建 notification对象  用support-v4库 兼容性更好</span>
-                                NotificationCompat<span class="token punctuation">.</span>Builder builder <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">NotificationCompat<span class="token punctuation">.</span>Builder</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span> CHANNELID<span class="token punctuation">)</span>
-                                        <span class="token comment" spellcheck="true">//丰富对象内容 设置标题 文字 时间 大图标 小图标</span>
-                                        <span class="token punctuation">.</span><span class="token function">setSmallIcon</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>mipmap<span class="token punctuation">.</span>ic_launcher<span class="token punctuation">)</span>
-                                        <span class="token punctuation">.</span><span class="token function">setContentTitle</span><span class="token punctuation">(</span><span class="token string">"假面骑士Kuuga"</span><span class="token punctuation">)</span>
-                                        <span class="token punctuation">.</span><span class="token function">setContentText</span><span class="token punctuation">(</span><span class="token string">"你的笑容由我来守护！"</span><span class="token punctuation">)</span>
-                                        <span class="token comment" spellcheck="true">//.setPriority(NotificationCompat.PRIORITY_DEFAULT)</span>
-                                        <span class="token punctuation">.</span><span class="token function">setContentIntent</span><span class="token punctuation">(</span>pi<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//当点击消息（通知）提供一个PendingIntent</span>
-                                        <span class="token punctuation">.</span><span class="token function">setShowWhen</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//设置事件发生的时间。面板中的通知按此时间排序。</span>
-                                        <span class="token punctuation">.</span><span class="token function">addAction</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>mipmap<span class="token punctuation">.</span>ic_launcher<span class="token punctuation">,</span> <span class="token string">"关闭"</span><span class="token punctuation">,</span> pi<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//添加动作图标操作按钮</span>
-                                <span class="token comment" spellcheck="true">//显示通知 第一个参数是通知的id 保证 每条通知的id不同</span>
-                                Notification notification <span class="token operator">=</span> builder<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                                manager<span class="token punctuation">.</span><span class="token function">notify</span><span class="token punctuation">(</span>notificationID<span class="token punctuation">,</span> notification<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-                                <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-
-                            <span class="token keyword">default</span><span class="token operator">:</span>
-                                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-                        <span class="token punctuation">}</span>
-                    <span class="token punctuation">}</span>
-                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="结果图"><a href="#结果图" class="headerlink" title="结果图"></a>结果图</h3><p>程序运行后，点击界面中的图片控件，弹出弹出式菜单</p>
-<p><img src="https://s1.ax1x.com/2020/05/01/JXcAit.jpg" alt="弹出式菜单"></p>
-<p>点击“发送通知”，创建基本通知</p>
-<p><img src="https://s1.ax1x.com/2020/05/01/JX65xU.jpg" alt="基本通知"></p>
-<p>好啦，收工！！！</p>
-
+                <h2 id="从尾到头打印链表"><a href="#从尾到头打印链表" class="headerlink" title="从尾到头打印链表"></a>从尾到头打印链表</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个链表，按链表从尾到头的顺序返回一个ArrayList。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>遍历链表，将节点的值放在数组里</li>
+<li>再翻转数组即可</li>
+</ul>
+<pre><code>/**
+*  struct ListNode {
+*        int val;
+*        struct ListNode *next;
+*        ListNode(int x) :
+*              val(x), next(NULL) {
+*        }
+*  };
+*/
+class Solution {
+public:
+    vector&lt;int&gt; printListFromTailToHead(ListNode* head) {
+        vector&lt;int&gt; arr;
+        if(head != NULL){
+            arr.push_back(head -&gt; val);
+            while(head -&gt; next != NULL){
+                arr.push_back(head -&gt; next -&gt; val);
+                head = head -&gt; next;
+            }
+        }
+        //for(int i = arr.size() - 1,j = 0;i &gt;= 0;i--,j++){
+            //temp[j] = arr[i];
+        //}
+        //arr.reserve(arr.begin(),arr.end());
+        //手动实现数组翻转
+        int i=0,j=arr.size()-1;
+        while(i&lt;j){
+            swap(arr[i],arr[j]);
+            i++;
+            j--;
+        }
+        return arr;
+    }
+};</code></pre>
             </div>
             <hr/>
 
@@ -592,7 +499,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shaonianyi.xyz/posts/26648.html">https://shaonianyi.xyz/posts/26648.html</a>
+                    <a href="https://shaonianyi.xyz/posts/58399.html">https://shaonianyi.xyz/posts/58399.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -630,8 +537,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%8F%9C%E5%8D%95/">
-                                    <span class="chip bg-color">菜单</span>
+                                <a href="/tags/%E9%93%BE%E8%A1%A8/">
+                                    <span class="chip bg-color">链表</span>
                                 </a>
                             
                         </div>
@@ -799,30 +706,90 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/45951.html">
+                <a href="/posts/58399.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="二维数组中的查找">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="从尾到头打印链表">
                         
-                        <span class="card-title">二维数组中的查找</span>
+                        <span class="card-title">从尾到头打印链表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            二维数组中的查找题目描述在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
-思路因为这个二维数组是
+                            从尾到头打印链表题目描述输入一个链表，按链表从尾到头的顺序返回一个ArrayList。
+思路
+遍历链表，将节点的值放在数组里
+再翻转数组即可
+
+/**
+*  struct ListNode {
+*        int val;
+*    
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-04
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                    剑指offer
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%93%BE%E8%A1%A8/">
+                        <span class="chip bg-color">链表</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/12603.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="替换空格">
+                        
+                        <span class="card-title">替换空格</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            替换空格题目描述请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。
+思路一新开辟字符串进行替换。
+牛客传参的类型是char*，佛了。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -838,55 +805,10 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E7%BB%84/">
-                        <span class="chip bg-color">数组</span>
+                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                        <span class="chip bg-color">字符串</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/63606.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="华为机试结局篇">
-                        
-                        <span class="card-title">华为机试结局篇</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            华为机试结局篇华为机试刷了近两个月终于刷完了。这套题练数组，字符串较多，关于链表，树，图这些数据结构的题偏少些，动态规划的也少。
-
-有点惨。。。
-有空去刷《剑指offer》了，冲鸭！！！
-
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
                 </div>
                 
             </div>
