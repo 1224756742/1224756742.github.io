@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>重建二叉树</title>
+      <link href="/posts/19604.html"/>
+      <url>/posts/19604.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="重建二叉树"><a href="#重建二叉树" class="headerlink" title="重建二叉树"></a>重建二叉树</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。</p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>前序遍历就是根在前，中序遍历就是根在中，后序遍历就是根在后。</p><p>树的遍历一般是用递归的方法。看前序遍历的结果，再结合中序遍历确定根节点。将根节点左右两边的序列又当成一棵树一直递归。因为中序左右子树的索引很好找。</p><p>接下来是确定递归结束的条件，遍历序列为空就结束。</p><pre class=" language-c++"><code class="language-c++">/** * Definition for binary tree * struct TreeNode { *     int val; *     TreeNode *left; *     TreeNode *right; *     TreeNode(int x) : val(x), left(NULL), right(NULL) {} * }; */class Solution {public:    TreeNode* reConstructBinaryTree(vector<int> pre,vector<int> vin) {        TreeNode* root = reConstructBinaryTree(pre,0,pre.size() - 1,vin,0,vin.size() - 1);        return root;    }private:    TreeNode *reConstructBinaryTree(vector<int>& pre,int startpre,int endpre,vector<int>& vin,int startvin,int endvin){        if(startpre > endpre || startvin > endvin){            return NULL;        }        TreeNode *root = new TreeNode(pre[startpre]);        for(int i = startvin;i <= endvin;i++){            if(vin[i] == pre[startpre]){                root -> left=reConstructBinaryTree(pre,startpre+1,startpre+i-startvin,vin,startvin,i-1);                root -> right=reConstructBinaryTree(pre,i-startvin+startpre+1,endpre,vin,i+1,endvin);                break;            }        }        return root;    }};</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构与算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>从尾到头打印链表</title>
       <link href="/posts/58399.html"/>
       <url>/posts/58399.html</url>
