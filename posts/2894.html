@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="从尾到头打印链表, 少年乙的博客">
+    <meta name="keywords" content="矩阵覆盖, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>从尾到头打印链表 | 少年乙的博客</title>
+    <title>矩阵覆盖 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">从尾到头打印链表</h1>
+                    <h1 class="description center-align post-title">矩阵覆盖</h1>
                 </div>
             </div>
         </div>
@@ -375,8 +375,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%93%BE%E8%A1%A8/">
-                                <span class="chip bg-color">链表</span>
+                            <a href="/tags/%E7%9F%A9%E9%98%B5/">
+                                <span class="chip bg-color">矩阵</span>
                             </a>
                         
                     </div>
@@ -400,21 +400,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-07
+                    2020-05-12
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-07
+                    2020-05-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    160
+                    165
                 </div>
                 
 
@@ -436,45 +436,29 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="从尾到头打印链表"><a href="#从尾到头打印链表" class="headerlink" title="从尾到头打印链表"></a>从尾到头打印链表</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个链表，按链表从尾到头的顺序返回一个ArrayList。</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>遍历链表，将节点的值放在数组里</li>
-<li>再翻转数组即可</li>
+                <h2 id="矩阵覆盖"><a href="#矩阵覆盖" class="headerlink" title="矩阵覆盖"></a>矩阵覆盖</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>我们可以用2<em>1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2</em>1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？</p>
+<p>比如n=3时，2*3的矩形块有3种覆盖方法：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20200218/6384065_1581999858239_64E40A35BE277D7E7C87D4DCF588BE84" alt="img"></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>斐波那契数列的变种</p>
+<ul>
+<li>当你n=1，方法数：1</li>
+<li>当你n=2，方法数：2</li>
+<li>当你n=3，方法数：3</li>
+<li>当你n=4，方法数：5</li>
+<li>当你n=5，方法数：8</li>
 </ul>
-<pre><code>/**
-*  struct ListNode {
-*        int val;
-*        struct ListNode *next;
-*        ListNode(int x) :
-*              val(x), next(NULL) {
-*        }
-*  };
-*/
-class Solution {
+<p>f(n) = f(n-1)+f(n-2)</p>
+<pre class=" language-c++"><code class="language-c++">class Solution {
 public:
-    vector&lt;int&gt; printListFromTailToHead(ListNode* head) {
-        vector&lt;int&gt; arr;
-        if(head != NULL){
-            arr.push_back(head -&gt; val);
-            while(head -&gt; next != NULL){
-                arr.push_back(head -&gt; next -&gt; val);
-                head = head -&gt; next;
-            }
-        }
-        //for(int i = arr.size() - 1,j = 0;i &gt;= 0;i--,j++){
-            //temp[j] = arr[i];
-        //}
-        //arr.reserve(arr.begin(),arr.end());
-        //手动实现数组翻转
-        int i=0,j=arr.size()-1;
-        while(i&lt;j){
-            swap(arr[i],arr[j]);
-            i++;
-            j--;
-        }
-        return arr;
+    int rectCover(int number) {
+        if(number < 1)
+            return 0;
+        else if(number == 1 || number == 2)
+            return number;
+        return rectCover(number - 1) + rectCover(number - 2);
     }
 };</code></pre>
+
             </div>
             <hr/>
 
@@ -499,7 +483,7 @@ public:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shaonianyi.xyz/posts/58399.html">https://shaonianyi.xyz/posts/58399.html</a>
+                    <a href="https://shaonianyi.xyz/posts/2894.html">https://shaonianyi.xyz/posts/2894.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -537,8 +521,8 @@ public:
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%93%BE%E8%A1%A8/">
-                                    <span class="chip bg-color">链表</span>
+                                <a href="/tags/%E7%9F%A9%E9%98%B5/">
+                                    <span class="chip bg-color">矩阵</span>
                                 </a>
                             
                         </div>
@@ -706,83 +690,35 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/19604.html">
+                <a href="/posts/2894.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="重建二叉树">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="矩阵覆盖">
                         
-                        <span class="card-title">重建二叉树</span>
+                        <span class="card-title">矩阵覆盖</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            重建二叉树题目描述输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-08
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
-                                    剑指offer
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">数据结构与算法</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-                        <span class="chip bg-color">二叉树</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/12603.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="替换空格">
-                        
-                        <span class="card-title">替换空格</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            替换空格题目描述请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。
-思路一新开辟字符串进行替换。
-牛客传参的类型是char*，佛了。
+                            矩阵覆盖题目描述我们可以用21的小矩形横着或者竖着去覆盖更大的矩形。请问用n个21的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？
+比如n=3时，2*3的矩形块有3种覆盖方法：
+
+思路斐波那契数列的变种
+
+当你n=1，方法数：1
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-12
                             </span>
                         <span class="publish-author">
                             
@@ -796,13 +732,57 @@ public:
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                        <span class="chip bg-color">字符串</span>
+                    <a href="/tags/%E7%9F%A9%E9%98%B5/">
+                        <span class="chip bg-color">矩阵</span>
                     </a>
                     
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/62776.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="跳台阶">
+                        
+                        <span class="card-title">跳台阶</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            跳台阶题目描述一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。
+思路斐波那契数列的变种，上递归代码。避免重复计算的做法可以参考我的上篇文章《斐波那契数列》
+class S
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                    剑指offer
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>
