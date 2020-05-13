@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>二进制中1的个数</title>
+      <link href="/posts/61258.html"/>
+      <url>/posts/61258.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="二进制中1的个数"><a href="#二进制中1的个数" class="headerlink" title="二进制中1的个数"></a>二进制中1的个数</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。</p><h3 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h3><p>开始我的想法是把十进制数转换成二进制，二进制的每一位放进数组中，再循环遍历数组找出1的个数。</p><pre><code>class Solution {public:     int  NumberOf1(int n) {         vector&lt;int&gt; arr;         int temp = 0,count = 0;         while(n != 0){             temp = n % 2;             arr.push_back(temp);             n /= 2;         }         for(int i = 0;i &lt; arr.size();i++){             if(arr[i] == 1){                 count++;             }         }         return count;     }};</code></pre><p>但输入如果是负数的话，这程序就搞不了了。</p><pre><code>您的代码已保存答案错误:您提交的程序没有通过所有的测试用例点击对比用例标准输出与你的输出case通过率为44.44%用例:-2147483648对应输出应该为:1你的输出为:0</code></pre><h3 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h3><p>个整数不为0，那么这个整数至少有一位是1。如果我们把这个整数减1，那么原来处在整数最右边的1就会变为0，原来在1后面的所有的0都会变成1(如果最右边的1后面还有0的话)。其余所有位将不会受到影响。</p><p>​      <strong>举个例子：一个二进制数1100，从右边数起第三位是处于最右边的一个1。减去1后，第三位变成0，它后面的两位0变成了1，而前面的1保持不变，因此得到的结果是1011.我们发现减1的结果是把最右边的一个1开始的所有位都取反了。这个时候如果我们再把原来的整数和减去1之后的结果做与运算，从原来整数最右边一个1那一位开始所有位都会变成0。如1100&amp;1011=1000.也就是说，把一个整数减去1，再和原整数做与运算，会把该整数最右边一个1变成0.那么一个整数的二进制有多少个1，就可以进行多少次这样的操作</strong>——–<strong>《剑指offer》</strong></p><pre><code>class Solution {public:     int  NumberOf1(int n) {        int count = 0;        while(n!= 0){            count++;            n = n &amp; (n - 1);         }        return count;     }};</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>矩阵覆盖</title>
       <link href="/posts/2894.html"/>
       <url>/posts/2894.html</url>
