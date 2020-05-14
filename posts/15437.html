@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="表示数字, 少年乙的博客">
+    <meta name="keywords" content="数值的整数次方, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>表示数字 | 少年乙的博客</title>
+    <title>数值的整数次方 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">表示数字</h1>
+                    <h1 class="description center-align post-title">数值的整数次方</h1>
                 </div>
             </div>
         </div>
@@ -373,13 +373,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                <span class="chip bg-color">字符串</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -387,8 +383,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                华为机试
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                剑指offer
                             </a>
                         
                     </div>
@@ -400,21 +396,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-26
+                    2020-05-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-26
+                    2020-05-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    399
+                    185
                 </div>
                 
 
@@ -436,53 +432,39 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="表示数字"><a href="#表示数字" class="headerlink" title="表示数字"></a>表示数字</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>将一个字符中所有出现的数字前后加上符号“*”，其他字符保持不变<br>public static String MarkNum(String pInStr)<br>{</p>
-<p>return null;</p>
-<p>}</p>
-<p>注意：输入数据可能有多行</p>
-<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入一个字符串</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>字符中所有出现的数字前后加上符号“*”，其他字符保持不变</code></pre><p>示例1</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>Jkdi234klowe90a3</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>Jkdi*234*klowe*90*a*3*</code></pre><p>通过观察”**“号插入的位置，分四种情况讨论：</p>
+                <h2 id="数值的整数次方"><a href="#数值的整数次方" class="headerlink" title="数值的整数次方"></a>数值的整数次方</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。</p>
+<p>保证base和exponent不同时为0</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>使用递归，时间复杂度O(logn)</p>
 <ul>
-<li><p>数字和字母之间插入</p>
-</li>
-<li><p>字母和数字之间插入</p>
-</li>
-<li><p>第一个字符是数字时，在其前面插入</p>
-</li>
-<li><p>最后一个字符是数字时，在其后面插入</p>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;string&gt;
-using namespace std;
-
-int main(){
-    string str;
-    while(cin&gt;&gt;str){
-        int leng = str.size();
-        for(int i = 0;i &lt; leng - 1;i++){
-            //在数字和字母之间插入
-           if((str[i] &gt;= &#39;0&#39; &amp;&amp; str[i] &lt;= &#39;9&#39;) &amp;&amp; ((str[i + 1] &gt;= &#39;a&#39; &amp;&amp; str[i + 1] &lt;= &#39;z&#39;) || (str[i+1] &gt;= &#39;A&#39; &amp;&amp; str[i + 1] &lt;= &#39;Z&#39;))){
-               str.insert(i + 1,&quot;*&quot;);
-               leng++;
-           }
-            //在字母和数字之间插入
-           if((str[i + 1] &gt;= &#39;0&#39; &amp;&amp; str[i + 1] &lt;= &#39;9&#39;) &amp;&amp; ((str[i] &gt;= &#39;a&#39; &amp;&amp; str[i] &lt;= &#39;z&#39;) || (str[i] &gt;= &#39;A&#39; &amp;&amp; str[i] &lt;= &#39;Z&#39;))){
-               str.insert(i + 1,&quot;*&quot;);
-               leng++;
-           }
-        }
-        string temp = str;
-        //头尾是数字的情况插入
-        if(str[0] &gt;= &#39;0&#39;&amp;&amp; str[0] &lt;= &#39;9&#39;){
-                temp = &#39;*&#39; + temp;
-            }
-        if(str[str.size() - 1] &gt;= &#39;0&#39; &amp;&amp; str[str.size() - 1] &lt;= &#39;9&#39;){
-                temp = temp + &#39;*&#39;;
-            }
-        cout&lt;&lt;temp&lt;&lt;endl;
-    }
-    return 0;
-}</code></pre></li>
+<li>当n为偶数，a^n =（a^n/2）*（a^n/2）</li>
 </ul>
+<ul>
+<li>当n为奇数，a^n = a^[(n-1)/2] * a^[(n-1)/2] * a</li>
+</ul>
+<pre><code>class Solution {
+public:
+    double Power(double base, int exponent) {
+        int n = exponent;
+        if(exponent &lt; 0){
+           n = -exponent;
+        }
+        if(n==0)
+            return 1;
+        if(n==1)
+            return base;
+        double result=Power(base,n&gt;&gt;1);
+        result*=result;
+        if((n&amp;1)==1)
+            result*=base;
+        if(exponent&lt;0)
+            result=1/result;
+        return result;     
+    }
+};</code></pre><h3 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h3><ul>
+<li>用右移运算符代替除以2</li>
+<li>用位与运算符代替求余运算符来判断一个数是奇数还是偶数</li>
+</ul>
+<p>这样的效率会更高。</p>
 
             </div>
             <hr/>
@@ -508,7 +490,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shaonianyi.xyz/posts/4365.html">https://shaonianyi.xyz/posts/4365.html</a>
+                    <a href="https://shaonianyi.xyz/posts/15437.html">https://shaonianyi.xyz/posts/15437.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -545,11 +527,7 @@ int main(){
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                    <span class="chip bg-color">字符串</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -715,44 +693,47 @@ int main(){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/5527.html">
+                <a href="/posts/15437.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="记负均正">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="数值的整数次方">
                         
-                        <span class="card-title">记负均正</span>
+                        <span class="card-title">数值的整数次方</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记负均正题目描述首先输入要输入的整数个数n，然后输入n个整数。输出为n个整数中负数的个数，和所有正整数的平均值，结果保留一位小数。
-输入描述:首先输入一个正整数n，
-然后输入n个整数。输出描述:输出负数的个数，和所有正整数的平均值。示例1
+                            数值的整数次方题目描述给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。
+保证base和exponent不同时为0
+思路使用递归，时间复杂度O(logn)
 
+当n为偶数，a^n =
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                    剑指offer
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -763,32 +744,35 @@ int main(){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/37310.html">
+                <a href="/posts/61258.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="记票统计">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="二进制中1的个数">
                         
-                        <span class="card-title">记票统计</span>
+                        <span class="card-title">二进制中1的个数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记票统计题目描述请实现接口：
-unsigned int AddCandidate (char* pCandidateName);功能：设置候选人姓名输入： char* pCandidateName 候选人姓名输出：无返回：输入值非法返回0，
+                            二进制中1的个数题目描述输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。
+思路一开始我的想法是把十进制数转换成二进制，二进制的每一位放进数组中，再循环遍历数组找出1的个数。
+class Solution {
+public:
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                    剑指offer
                                 </a>
                             
                             

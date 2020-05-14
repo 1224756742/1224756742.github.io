@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>数值的整数次方</title>
+      <link href="/posts/15437.html"/>
+      <url>/posts/15437.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="数值的整数次方"><a href="#数值的整数次方" class="headerlink" title="数值的整数次方"></a>数值的整数次方</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。</p><p>保证base和exponent不同时为0</p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>使用递归，时间复杂度O(logn)</p><ul><li>当n为偶数，a^n =（a^n/2）*（a^n/2）</li></ul><ul><li>当n为奇数，a^n = a^[(n-1)/2] * a^[(n-1)/2] * a</li></ul><pre><code>class Solution {public:    double Power(double base, int exponent) {        int n = exponent;        if(exponent &lt; 0){           n = -exponent;        }        if(n==0)            return 1;        if(n==1)            return base;        double result=Power(base,n&gt;&gt;1);        result*=result;        if((n&amp;1)==1)            result*=base;        if(exponent&lt;0)            result=1/result;        return result;         }};</code></pre><h3 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h3><ul><li>用右移运算符代替除以2</li><li>用位与运算符代替求余运算符来判断一个数是奇数还是偶数</li></ul><p>这样的效率会更高。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>二进制中1的个数</title>
       <link href="/posts/61258.html"/>
       <url>/posts/61258.html</url>
