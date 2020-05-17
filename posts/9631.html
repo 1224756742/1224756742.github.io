@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="字符统计, 少年乙的博客">
+    <meta name="keywords" content="链表中倒数第k个结点, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>字符统计 | 少年乙的博客</title>
+    <title>链表中倒数第k个结点 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">字符统计</h1>
+                    <h1 class="description center-align post-title">链表中倒数第k个结点</h1>
                 </div>
             </div>
         </div>
@@ -375,8 +375,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                <span class="chip bg-color">字符串</span>
+                            <a href="/tags/%E9%93%BE%E8%A1%A8/">
+                                <span class="chip bg-color">链表</span>
                             </a>
                         
                     </div>
@@ -387,8 +387,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                华为机试
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                剑指offer
                             </a>
                         
                     </div>
@@ -400,21 +400,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-28
+                    2020-05-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-28
+                    2020-05-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    416
+                    128
                 </div>
                 
 
@@ -436,43 +436,38 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="字符统计"><a href="#字符统计" class="headerlink" title="字符统计"></a>字符统计</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>如果统计的个数相同，则按照ASCII码由小到大排序输出 。如果有其他字符，则对这些字符不用进行统计。</p>
-<p>实现以下接口：<br>输入一个字符串，对字符中的各个英文字符，数字，空格进行统计（可反复调用）<br>按照统计个数由多到少输出统计结果，如果统计的个数相同，则按照ASII码由小到大排序输出<br>清空目前的统计结果，重新统计<br>调用者会保证：<br>输入的字符串以‘\0’结尾。</p>
-<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入一串字符。</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>对字符中的
-各个英文字符（大小写分开统计），数字，空格进行统计，并按照统计个数由多到少输出,如果统计的个数相同，则按照ASII码由小到大排序输出 。如果有其他字符，则对这些字符不用进行统计。</code></pre><p>示例1</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>aadddccddc</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>dca</code></pre><ul>
-<li>用桶排序的想法，将ASCLL码0~256字符出现的次数记录在数组中，因为这个数组本身就是按ASCLL码的顺序来的排的。</li>
-<li>找出其中的出现最多字符的出现次数max，递减max并循环查找等于max的字符，再输出出来就好啦</li>
-</ul>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;string&gt;
-using namespace std;
-
-int main(){
-    string str;
-    while(cin&gt;&gt;str){
-        int arr[256] = {0};
-        int max = 0;
-        for(int i = 0;i &lt; str.size();i++){
-            arr[str[i]]++;
-            if(arr[str[i]] &gt; max){
-                max = arr[str[i]];
-            }
-        }
-        while(max){
-            for(int i = 0;i &lt; 256;i++){
-                char ch;
-                if(arr[i] == max){
-                    ch = (char)i;
-                    cout&lt;&lt;ch;
-                }
-            }
-            max--;
-        }
-        cout&lt;&lt;endl;
+                <h2 id="链表中倒数第k个结点"><a href="#链表中倒数第k个结点" class="headerlink" title="链表中倒数第k个结点"></a>链表中倒数第k个结点</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个链表，输出该链表中倒数第k个结点。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>遍历一遍链表，知道有多少个节点。再遍历一次找到目标节点。</p>
+<pre><code>/*
+struct ListNode {
+    int val;
+    struct ListNode *next;
+    ListNode(int x) :
+            val(x), next(NULL) {
     }
-    return 0;
-}</code></pre>
+};*/
+class Solution {
+public:
+    ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) {
+        if(k == 0 || pListHead == NULL) return NULL;
+        int n = 1;
+        ListNode* node = pListHead;
+        while (node -&gt; next != NULL){
+            n++;
+            node = node -&gt; next;
+        }
+        node = pListHead;
+        int l = n-k;
+        if (l &lt; 0) 
+            return NULL;
+        while (l)
+            {
+            l--;
+            node = node -&gt; next;
+        }
+        return node;
+    }
+};</code></pre>
             </div>
             <hr/>
 
@@ -497,7 +492,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shaonianyi.xyz/posts/7363.html">https://shaonianyi.xyz/posts/7363.html</a>
+                    <a href="https://shaonianyi.xyz/posts/9631.html">https://shaonianyi.xyz/posts/9631.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -535,8 +530,8 @@ int main(){
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                    <span class="chip bg-color">字符串</span>
+                                <a href="/tags/%E9%93%BE%E8%A1%A8/">
+                                    <span class="chip bg-color">链表</span>
                                 </a>
                             
                         </div>
@@ -704,50 +699,53 @@ int main(){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/26533.html">
+                <a href="/posts/9631.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="字符串分割">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="链表中倒数第k个结点">
                         
-                        <span class="card-title">字符串分割</span>
+                        <span class="card-title">链表中倒数第k个结点</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            字符串分割题目描述连续输入字符串(输出次数为N,字符串长度小于100)，请按长度为8拆分每个字符串后输出到新的字符串数组，
-长度不是8整数倍的字符串请在后面补数字0，空字符串不处理。
-首先输入一个整数，为要输入的字符串个数。
-例如：
-输入：
+                            链表中倒数第k个结点题目描述输入一个链表，输出该链表中倒数第k个结点。
+思路遍历一遍链表，知道有多少个节点。再遍历一次找到目标节点。
+/*
+struct ListNode {
+    int val;
+    struct ListNode
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                    剑指offer
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                        <span class="chip bg-color">字符串</span>
+                    <a href="/tags/%E9%93%BE%E8%A1%A8/">
+                        <span class="chip bg-color">链表</span>
                     </a>
                     
                 </div>
@@ -761,39 +759,45 @@ int main(){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/3110.html">
+                <a href="/posts/7691.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="输入整型数组和排序标识，对其元素按照升序或降序进行排序">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="调整数组顺序使奇数位于偶数前面">
                         
-                        <span class="card-title">输入整型数组和排序标识，对其元素按照升序或降序进行排序</span>
+                        <span class="card-title">调整数组顺序使奇数位于偶数前面</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            输入整型数组和排序标识，对其元素按照升序或降序进行排序题目描述输入整型数组和排序标识，对其元素按照升序或降序进行排序（一组测试用例可能会有多组数据）
-接口说明
-原型：
-void sortIntegerArray(Integer[] pInt
+                            调整数组顺序使奇数位于偶数前面题目描述输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。
+思路创建一个新数组，遍历传进的数
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                    剑指offer
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E7%BB%84/">
+                        <span class="chip bg-color">数组</span>
+                    </a>
+                    
                 </div>
                 
             </div>

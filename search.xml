@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>链表中倒数第k个结点</title>
+      <link href="/posts/9631.html"/>
+      <url>/posts/9631.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="链表中倒数第k个结点"><a href="#链表中倒数第k个结点" class="headerlink" title="链表中倒数第k个结点"></a>链表中倒数第k个结点</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个链表，输出该链表中倒数第k个结点。</p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>遍历一遍链表，知道有多少个节点。再遍历一次找到目标节点。</p><pre><code>/*struct ListNode {    int val;    struct ListNode *next;    ListNode(int x) :            val(x), next(NULL) {    }};*/class Solution {public:    ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) {        if(k == 0 || pListHead == NULL) return NULL;        int n = 1;        ListNode* node = pListHead;        while (node -&gt; next != NULL){            n++;            node = node -&gt; next;        }        node = pListHead;        int l = n-k;        if (l &lt; 0)             return NULL;        while (l)            {            l--;            node = node -&gt; next;        }        return node;    }};</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 链表 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>调整数组顺序使奇数位于偶数前面</title>
+      <link href="/posts/7691.html"/>
+      <url>/posts/7691.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="调整数组顺序使奇数位于偶数前面"><a href="#调整数组顺序使奇数位于偶数前面" class="headerlink" title="调整数组顺序使奇数位于偶数前面"></a>调整数组顺序使奇数位于偶数前面</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。</p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>创建一个新数组，遍历传进的数组，先放奇数后放偶数。</p><pre><code>class Solution {public:    void reOrderArray(vector&lt;int&gt; &amp;array) {        vector&lt;int&gt; temp;        for(int i = 0;i &lt; array.size();i++){            if(array[i] % 2 == 1){                temp.push_back(array[i]);            }        }        for(int i = 0;i &lt; array.size();i++){            if(array[i] % 2 == 0){                temp.push_back(array[i]);            }        }        array = temp;    }};</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数组 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数值的整数次方</title>
       <link href="/posts/15437.html"/>
       <url>/posts/15437.html</url>
