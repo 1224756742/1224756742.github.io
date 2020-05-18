@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>反转链表</title>
+      <link href="/posts/967.html"/>
+      <url>/posts/967.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个链表，反转链表后，输出新链表的表头。</p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>定义三个指针分别指向当前遍历节点，当前节点的前一个节点，当前节点的后一个节点。</p><p><strong>注意：</strong>链表操作时，大意的话容易丢失当前节点的尾部。所以要确保尾部不丢失。</p><pre><code>/*struct ListNode {    int val;    struct ListNode *next;    ListNode(int x) :            val(x), next(NULL) {    }};*/class Solution {public:    ListNode* ReverseList(ListNode* pHead) {        ListNode* pnode = pHead;        ListNode* rehead = nullptr;        ListNode* pprev = nullptr;        while(pnode != NULL){            ListNode* pnext = pnode-&gt;next;            if(pnext == NULL){                rehead = pnode;            }            pnode-&gt;next = pprev;            pprev = pnode;            pnode = pnext;        }        return rehead;    }};</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 链表 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>链表中倒数第k个结点</title>
       <link href="/posts/9631.html"/>
       <url>/posts/9631.html</url>
