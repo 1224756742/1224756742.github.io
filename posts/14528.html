@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="跳台阶, 少年乙的博客">
+    <meta name="keywords" content="合并两个排序的链表, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>跳台阶 | 少年乙的博客</title>
+    <title>合并两个排序的链表 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">跳台阶</h1>
+                    <h1 class="description center-align post-title">合并两个排序的链表</h1>
                 </div>
             </div>
         </div>
@@ -373,9 +373,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E9%93%BE%E8%A1%A8/">
+                                <span class="chip bg-color">链表</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -396,21 +400,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-10
+                    2020-05-19
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-10
+                    2020-05-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    126
+                    232
                 </div>
                 
 
@@ -432,14 +436,34 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="跳台阶"><a href="#跳台阶" class="headerlink" title="跳台阶"></a>跳台阶</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>斐波那契数列的变种，上递归代码。避免重复计算的做法可以参考我的上篇文章《斐波那契数列》</p>
-<pre><code>class Solution {
+                <h2 id="合并两个排序的链表"><a href="#合并两个排序的链表" class="headerlink" title="合并两个排序的链表"></a>合并两个排序的链表</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>链表表1的头结点的值小于链表2的头结点的值，因此链表1的头结点是合并后链表的头结点。在剩余的结点中，链表2的头结点的值小于链表1的头结点的值，因此链表2的头结点是剩余结点的头结点，把这个结点和之前已经合并好的链表的尾结点链接起来。</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20170119/3111850_1484789893742_6903DA8DDE03E5B02CCB5F97FC3E53C2" alt="过程图"></p>
+<pre><code>/*
+struct ListNode {
+    int val;
+    struct ListNode *next;
+    ListNode(int x) :
+            val(x), next(NULL) {
+    }
+};*/
+class Solution 
 public:
-    int jumpFloor(int number) {
-        if(number == 1) return 1;
-        if(number == 2) return 2;
-        return jumpFloor(number - 1) + jumpFloor(number - 2);
+    ListNode* Merge(ListNode* pHead1, ListNode* pHead2)
+    {
+        if(pHead1 == NULL)
+            return pHead2;
+        if(pHead2 == NULL)
+            return pHead1;
+        ListNode* rehead = nullptr;
+        if(pHead1 -&gt; val &gt; pHead2 -&gt; val){
+            rehead = pHead2;
+            rehead -&gt; next = Merge(pHead1,pHead2 -&gt; next);
+        }else{
+            rehead = pHead1;
+            rehead -&gt; next = Merge(pHead1 -&gt; next,pHead2);
+        }
+        return rehead;
     }
 };</code></pre>
             </div>
@@ -466,7 +490,7 @@ public:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shaonianyi.xyz/posts/62776.html">https://shaonianyi.xyz/posts/62776.html</a>
+                    <a href="https://shaonianyi.xyz/posts/14528.html">https://shaonianyi.xyz/posts/14528.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -503,7 +527,11 @@ public:
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E9%93%BE%E8%A1%A8/">
+                                    <span class="chip bg-color">链表</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -669,35 +697,85 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/2894.html">
+                <a href="/posts/14528.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="矩阵覆盖">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="合并两个排序的链表">
                         
-                        <span class="card-title">矩阵覆盖</span>
+                        <span class="card-title">合并两个排序的链表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            矩阵覆盖题目描述我们可以用21的小矩形横着或者竖着去覆盖更大的矩形。请问用n个21的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？
-比如n=3时，2*3的矩形块有3种覆盖方法：
-
-思路斐波那契数列的变种
-
-当你n=1，方法数：1
-
+                            合并两个排序的链表题目描述输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
+思路链表表1的头结点的值小于链表2的头结点的值，因此链表1的头结点是合并后链表的头结点。在剩余的结点中，链表2的头结点的
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-12
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                    剑指offer
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%93%BE%E8%A1%A8/">
+                        <span class="chip bg-color">链表</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/967.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="反转链表">
+                        
+                        <span class="card-title">反转链表</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            反转链表题目描述输入一个链表，反转链表后，输出新链表的表头。
+思路定义三个指针分别指向当前遍历节点，当前节点的前一个节点，当前节点的后一个节点。
+注意：链表操作时，大意的话容易丢失当前节点的尾部。所以要确保尾部不丢失。
+/*
+struct 
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -713,54 +791,10 @@ public:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%9F%A9%E9%98%B5/">
-                        <span class="chip bg-color">矩阵</span>
+                    <a href="/tags/%E9%93%BE%E8%A1%A8/">
+                        <span class="chip bg-color">链表</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/51227.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="斐波那契数列">
-                        
-                        <span class="card-title">斐波那契数列</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            斐波那契数列题目描述大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0，第1项是1）。
-n&lt;=39
-思路斐波那契数列的规律是前两项的和等于该项。看到这题就想到教科书上的递归解法。
-cla
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-10
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
-                                    剑指offer
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
                 </div>
                 
             </div>
