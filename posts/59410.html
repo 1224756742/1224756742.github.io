@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="字符串中找出连续最长的数字串, 少年乙的博客">
+    <meta name="keywords" content="树的子结构, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>字符串中找出连续最长的数字串 | 少年乙的博客</title>
+    <title>树的子结构 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">字符串中找出连续最长的数字串</h1>
+                    <h1 class="description center-align post-title">树的子结构</h1>
                 </div>
             </div>
         </div>
@@ -375,8 +375,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                <span class="chip bg-color">字符串</span>
+                            <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                                <span class="chip bg-color">二叉树</span>
                             </a>
                         
                     </div>
@@ -387,8 +387,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                华为机试
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                剑指offer
                             </a>
                         
                     </div>
@@ -400,21 +400,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-25
+                    2020-05-20
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-25
+                    2020-05-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    415
+                    267
                 </div>
                 
 
@@ -436,58 +436,46 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="字符串中找出连续最长的数字串"><a href="#字符串中找出连续最长的数字串" class="headerlink" title="字符串中找出连续最长的数字串"></a>字符串中找出连续最长的数字串</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>样例输出</p>
-<p>输出123058789，函数返回值9</p>
-<p>输出54761，函数返回值5</p>
-<p>接口说明</p>
-<p>函数原型：</p>
-<p>  unsignedint Continumax(char<em>* pOutputstr, char</em> intputstr)</p>
-<p>输入参数：<br>  char* intputstr 输入字符串；</p>
-<p>输出参数：<br>  char** pOutputstr: 连续最长的数字串，如果连续最长的数字串的长度为0，应该返回空字符串；如果输入字符串是空，也应该返回空字符串； </p>
-<p>返回值：<br> 连续最长的数字串的长度</p>
-<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入一个字符串。</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输出字符串中最长的数字字符串和它的长度。如果有相同长度的串，则要一块儿输出，但是长度还是一串的长度</code></pre><p>示例1</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>abcd12345ed125ss123058789</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>123058789,9</code></pre><ul>
-<li>字符串分组，数字的全部放进容器里</li>
-<li>找出最长的数字串的长度</li>
-<li>找出最长的数字串并输出</li>
+                <h2 id="树的子结构"><a href="#树的子结构" class="headerlink" title="树的子结构"></a>树的子结构</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入两棵二叉树A，B，判断B是不是A的子结构。（ps：我们约定空树不是任意一个树的子结构）</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>参考剑指offer的思路</p>
+<ul>
+<li><p>首先设置标志位result = false，因为一旦匹配成功result就设为true。如果匹配不成功，默认返回false</p>
+</li>
+<li><p>递归思想：如果根节点相同则递归调用DoesTree1HaveTree2（），<br>如果根节点不相同，则判断tree1的左子树和tree2是否相同，<br>再判断右子树和tree2是否相同</p>
+</li>
+<li><p>注意输入两棵树可能是空树的情况。</p>
+</li>
 </ul>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;string&gt;
-#include&lt;vector&gt;
-using namespace std;
-
-int main(){
-    string str;
-    while(cin&gt;&gt;str){
-        int max = 0;
-        vector&lt;string&gt; arr;
-        string temp;
-        //字符串分组，数字的全部放进容器里
-        for(int i = 0;i &lt; str.size();i++){
-            if(str[i] &gt;= &#39;0&#39; &amp;&amp; str[i] &lt;= &#39;9&#39;){
-                temp += str[i];
-            }else{
-                arr.push_back(temp);
-                temp =&quot;&quot;;
-            }
-        }
-        //不要忘记把最后一组放进去哟
-        arr.push_back(temp);
-        //找出最长的数字串的长度
-        for(int i = 0;i &lt; arr.size();i++){
-            max = arr[i].size() &gt; max ? arr[i].size():max;
-        }
-        //找出最长的数字串并输出
-        for(int i = 0;i &lt;arr.size();i++){
-            if(arr[i].size() == max){
-                cout&lt;&lt;arr[i];
-            }
-        }
-        cout&lt;&lt;&quot;,&quot;&lt;&lt;max&lt;&lt;endl;
-        arr.clear();
+<pre><code>/*
+struct TreeNode {
+    int val;
+    struct TreeNode *left;
+    struct TreeNode *right;
+    TreeNode(int x) :
+            val(x), left(NULL), right(NULL) {
     }
-    return 0;
-}</code></pre>
+};*/
+class Solution {
+public:
+    bool HasSubtree(TreeNode* pRoot1, TreeNode* pRoot2)
+    {
+            bool result = false;
+            if(pRoot1 != nullptr &amp;&amp; pRoot2 != nullptr){
+                if(pRoot1-&gt;val == pRoot2-&gt;val){
+                    result = DoesTree1HaveTree2(pRoot1,pRoot2);
+                }
+                if(!result){result = HasSubtree(pRoot1-&gt;left, pRoot2);}
+                if(!result){result = HasSubtree(pRoot1-&gt;right, pRoot2);}
+            }
+            return result;
+    }
+    bool DoesTree1HaveTree2(TreeNode* root1,TreeNode* root2){
+            if(root1 == nullptr &amp;&amp; root2 != nullptr) return false;
+            if(root2 == nullptr) return true;
+            if(root1-&gt;val != root2-&gt;val) return false;
+            return DoesTree1HaveTree2(root1-&gt;left, root2-&gt;left) &amp;&amp; DoesTree1HaveTree2(root1-&gt;right, root2-&gt;right);
+        }
+};</code></pre>
             </div>
             <hr/>
 
@@ -512,7 +500,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shaonianyi.xyz/posts/34408.html">https://shaonianyi.xyz/posts/34408.html</a>
+                    <a href="https://shaonianyi.xyz/posts/59410.html">https://shaonianyi.xyz/posts/59410.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -550,8 +538,8 @@ int main(){
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                    <span class="chip bg-color">字符串</span>
+                                <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                                    <span class="chip bg-color">二叉树</span>
                                 </a>
                             
                         </div>
@@ -719,41 +707,53 @@ int main(){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/37310.html">
+                <a href="/posts/59410.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="记票统计">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="树的子结构">
                         
-                        <span class="card-title">记票统计</span>
+                        <span class="card-title">树的子结构</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记票统计题目描述请实现接口：
-unsigned int AddCandidate (char* pCandidateName);功能：设置候选人姓名输入： char* pCandidateName 候选人姓名输出：无返回：输入值非法返回0，
+                            树的子结构题目描述输入两棵二叉树A，B，判断B是不是A的子结构。（ps：我们约定空树不是任意一个树的子结构）
+思路参考剑指offer的思路
+
+首先设置标志位result = false，因为一旦匹配成功result就设为true。如果匹配不
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                    剑指offer
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                        <span class="chip bg-color">二叉树</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -765,36 +765,45 @@ unsigned int AddCandidate (char* pCandidateName);功能：设置候选人姓名�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/54020.html">
+                <a href="/posts/14528.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="201301-JAVA题目2-3级">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="合并两个排序的链表">
                         
-                        <span class="card-title">201301-JAVA题目2-3级</span>
+                        <span class="card-title">合并两个排序的链表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            201301-JAVA题目2-3级题目描述请编写一个函数（允许增加子函数），计算n x m的棋盘格子（n为横向的格子数，m为竖向的格子数）沿着各自边缘线从左上角走到右下角，总共有多少种走法，要求不能走回头路，即：只能往右和往下走，不能往左和
+                            合并两个排序的链表题目描述输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
+思路链表表1的头结点的值小于链表2的头结点的值，因此链表1的头结点是合并后链表的头结点。在剩余的结点中，链表2的头结点的
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                    剑指offer
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%93%BE%E8%A1%A8/">
+                        <span class="chip bg-color">链表</span>
+                    </a>
+                    
                 </div>
                 
             </div>

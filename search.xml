@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>树的子结构</title>
+      <link href="/posts/59410.html"/>
+      <url>/posts/59410.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="树的子结构"><a href="#树的子结构" class="headerlink" title="树的子结构"></a>树的子结构</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入两棵二叉树A，B，判断B是不是A的子结构。（ps：我们约定空树不是任意一个树的子结构）</p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>参考剑指offer的思路</p><ul><li><p>首先设置标志位result = false，因为一旦匹配成功result就设为true。如果匹配不成功，默认返回false</p></li><li><p>递归思想：如果根节点相同则递归调用DoesTree1HaveTree2（），<br>如果根节点不相同，则判断tree1的左子树和tree2是否相同，<br>再判断右子树和tree2是否相同</p></li><li><p>注意输入两棵树可能是空树的情况。</p></li></ul><pre><code>/*struct TreeNode {    int val;    struct TreeNode *left;    struct TreeNode *right;    TreeNode(int x) :            val(x), left(NULL), right(NULL) {    }};*/class Solution {public:    bool HasSubtree(TreeNode* pRoot1, TreeNode* pRoot2)    {            bool result = false;            if(pRoot1 != nullptr &amp;&amp; pRoot2 != nullptr){                if(pRoot1-&gt;val == pRoot2-&gt;val){                    result = DoesTree1HaveTree2(pRoot1,pRoot2);                }                if(!result){result = HasSubtree(pRoot1-&gt;left, pRoot2);}                if(!result){result = HasSubtree(pRoot1-&gt;right, pRoot2);}            }            return result;    }    bool DoesTree1HaveTree2(TreeNode* root1,TreeNode* root2){            if(root1 == nullptr &amp;&amp; root2 != nullptr) return false;            if(root2 == nullptr) return true;            if(root1-&gt;val != root2-&gt;val) return false;            return DoesTree1HaveTree2(root1-&gt;left, root2-&gt;left) &amp;&amp; DoesTree1HaveTree2(root1-&gt;right, root2-&gt;right);        }};</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 二叉树 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>合并两个排序的链表</title>
       <link href="/posts/14528.html"/>
       <url>/posts/14528.html</url>
@@ -273,9 +298,9 @@
       
         <tags>
             
-            <tag> 数据结构与算法 </tag>
-            
             <tag> 二叉树 </tag>
+            
+            <tag> 数据结构与算法 </tag>
             
         </tags>
       
