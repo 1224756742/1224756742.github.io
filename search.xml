@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>二叉树的镜像</title>
+      <link href="/posts/24432.html"/>
+      <url>/posts/24432.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="二叉树的镜像"><a href="#二叉树的镜像" class="headerlink" title="二叉树的镜像"></a>二叉树的镜像</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>操作给定的二叉树，将其变换为源二叉树的镜像。</p><h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>二叉树的镜像定义：源二叉树             8           /  \          6   10         / \  / \        5  7 9 11        镜像二叉树            8           /  \          10   6         / \  / \        11 9 7  5</code></pre><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>遍历二叉树的所有节点，如果遍历的节点有子节点，那么就交换遍历节点的子节点。交换完所有的节点就得到二叉树的镜像了。</p><p>递归思想。</p><pre><code>/*struct TreeNode {    int val;    struct TreeNode *left;    struct TreeNode *right;    TreeNode(int x) :            val(x), left(NULL), right(NULL) {    }};*/class Solution {public:    void Mirror(TreeNode *pRoot) {        if(pRoot == nullptr)            return;        if(pRoot -&gt; left == nullptr &amp;&amp; pRoot -&gt; right == nullptr)            return;        TreeNode *temp = pRoot -&gt; left;        pRoot -&gt;left = pRoot -&gt; right;        pRoot -&gt; right = temp;        if(pRoot -&gt; left){            Mirror(pRoot -&gt; left);        }        if(pRoot -&gt; right){            Mirror(pRoot -&gt; right);        }    }};</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 二叉树 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>树的子结构</title>
       <link href="/posts/59410.html"/>
       <url>/posts/59410.html</url>
