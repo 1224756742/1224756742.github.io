@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="输入整型数组和排序标识，对其元素按照升序或降序进行排序, 少年乙的博客">
+    <meta name="keywords" content="客户端与服务端传数据-IntentServe类, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>输入整型数组和排序标识，对其元素按照升序或降序进行排序 | 少年乙的博客</title>
+    <title>客户端与服务端传数据-IntentServe类 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">输入整型数组和排序标识，对其元素按照升序或降序进行排序</h1>
+                    <h1 class="description center-align post-title">客户端与服务端传数据-IntentServe类</h1>
                 </div>
             </div>
         </div>
@@ -373,9 +373,17 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF/">
+                                <span class="chip bg-color">服务端</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF/">
+                                <span class="chip bg-color">客户端</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -383,8 +391,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                华为机试
+                            <a href="/categories/Android/" class="post-category">
+                                Android
                             </a>
                         
                     </div>
@@ -396,28 +404,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-27
+                    2020-05-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-27
+                    2020-05-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    285
+                    449
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -432,50 +440,119 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="输入整型数组和排序标识，对其元素按照升序或降序进行排序"><a href="#输入整型数组和排序标识，对其元素按照升序或降序进行排序" class="headerlink" title="输入整型数组和排序标识，对其元素按照升序或降序进行排序"></a>输入整型数组和排序标识，对其元素按照升序或降序进行排序</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入整型数组和排序标识，对其元素按照升序或降序进行排序（一组测试用例可能会有多组数据）</p>
-<p>接口说明</p>
-<p>原型：</p>
-<p>void sortIntegerArray(Integer[] pIntegerArray, int iSortFlag);</p>
-<p>输入参数：</p>
-<p>Integer[] pIntegerArray：整型数组</p>
-<p>int iSortFlag：排序标识：0表示按升序，1表示按降序</p>
-<p>输出参数：</p>
-<p>无</p>
-<p>返回值：</p>
-<p>void</p>
-<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>1、输入需要输入的整型数个数</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>输出排好序的数字</code></pre><p>示例1</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>8
-1 2 4 9 3 55 64 25
-0</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>1 2 3 4 9 25 55 64</code></pre><p>很普通的排序题</p>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;vector&gt;
-#include&lt;algorithm&gt;
-using namespace std;
+                <h2 id="客户端与服务端传数据-IntentServe类"><a href="#客户端与服务端传数据-IntentServe类" class="headerlink" title="客户端与服务端传数据-IntentServe类"></a>客户端与服务端传数据-IntentServe类</h2><h3 id="要求描述"><a href="#要求描述" class="headerlink" title="要求描述"></a>要求描述</h3><p>以IntentServer类为父类定义一个服务类，实现以下功能：</p>
+<p>1、客户端通过Intent传递两个整数。</p>
+<p>2、服务端获取从客户端传来的两个整数，并在服务端编写一个方法，该方法返回两个数之和。</p>
+<h3 id="客户端MainActivity-java代码"><a href="#客户端MainActivity-java代码" class="headerlink" title="客户端MainActivity.java代码"></a>客户端MainActivity.java代码</h3><p>客户端通过Intent传递两个整数</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>gdlgxy<span class="token punctuation">.</span>intentservice<span class="token punctuation">;</span>
 
-int main(){
-    int num;
-    while(cin&gt;&gt;num){
-        vector&lt;int&gt; arr(num,0);
-        for(int i = 0;i &lt; num;i++){
-            cin&gt;&gt;arr[i];
-        }
-        sort(arr.begin(),arr.end());
-        int flag;
-        cin&gt;&gt;flag;
-        if(flag == 0){
-            for(int i = 0;i &lt; arr.size();i++){
-                cout&lt;&lt;arr[i]&lt;&lt;&quot; &quot;;
-            }
-            cout&lt;&lt;endl;
-        }else{
-            for(int i = arr.size() - 1; i &gt;= 0;i--){
-                cout&lt;&lt;arr[i]&lt;&lt;&quot; &quot;;
-            }
-            cout&lt;&lt;endl;
-        }
-    }
-    return 0;
-}</code></pre>
+<span class="token keyword">import</span> androidx<span class="token punctuation">.</span>appcompat<span class="token punctuation">.</span>app<span class="token punctuation">.</span>AppCompatActivity<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>content<span class="token punctuation">.</span>ComponentName<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>content<span class="token punctuation">.</span>Context<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>content<span class="token punctuation">.</span>Intent<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>content<span class="token punctuation">.</span>ServiceConnection<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>os<span class="token punctuation">.</span>Bundle<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>os<span class="token punctuation">.</span>Handler<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>os<span class="token punctuation">.</span>IBinder<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>os<span class="token punctuation">.</span>Message<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>os<span class="token punctuation">.</span>Messenger<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>os<span class="token punctuation">.</span>RemoteException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Log<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>view<span class="token punctuation">.</span>View<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>widget<span class="token punctuation">.</span>Button<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MainActivity</span> <span class="token keyword">extends</span> <span class="token class-name">AppCompatActivity</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">onCreate</span><span class="token punctuation">(</span>Bundle savedInstanceState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onCreate</span><span class="token punctuation">(</span>savedInstanceState<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">setContentView</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>layout<span class="token punctuation">.</span>activity_main<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        <span class="token keyword">final</span> Intent intent<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Intent</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span>MyIntentService<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            intent<span class="token punctuation">.</span><span class="token function">putExtra</span><span class="token punctuation">(</span><span class="token string">"actio"</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            intent<span class="token punctuation">.</span><span class="token function">putExtra</span><span class="token punctuation">(</span><span class="token string">"count"</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">startService</span><span class="token punctuation">(</span>intent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="服务端MyIntentService-java代码"><a href="#服务端MyIntentService-java代码" class="headerlink" title="服务端MyIntentService.java代码"></a>服务端MyIntentService.java代码</h3><p>服务端获取从客户端传来的两个整数，并在服务端编写一个方法，该方法返回两个数之和。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>gdlgxy<span class="token punctuation">.</span>intentservice<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>app<span class="token punctuation">.</span>IntentService<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>content<span class="token punctuation">.</span>Intent<span class="token punctuation">;</span>
+<span class="token keyword">import</span> android<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Log<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyIntentService</span> <span class="token keyword">extends</span> <span class="token class-name">IntentService</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 主要用于调用服务类构造器
+     *
+     * @param name 用于区分不同任务
+     */</span>
+    <span class="token keyword">public</span> <span class="token function">MyIntentService</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * AndroidManifest.xml配置清单需要配置
+     *
+     * @param
+     */</span>
+    <span class="token keyword">public</span> <span class="token function">MyIntentService</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token string">"action"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     *主要重写该方法，在该方法内进行异步操作。
+     **/</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">onHandleIntent</span><span class="token punctuation">(</span>Intent intent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String name <span class="token operator">=</span> intent<span class="token punctuation">.</span><span class="token function">getStringExtra</span><span class="token punctuation">(</span><span class="token string">"action"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">int</span> a <span class="token operator">=</span> intent<span class="token punctuation">.</span><span class="token function">getIntExtra</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> b <span class="token operator">=</span> intent<span class="token punctuation">.</span><span class="token function">getIntExtra</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">final</span> <span class="token keyword">int</span> result <span class="token operator">=</span> <span class="token function">getresult</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Log<span class="token punctuation">.</span><span class="token function">i</span><span class="token punctuation">(</span><span class="token string">"Download"</span><span class="token punctuation">,</span> <span class="token string">"result:"</span> <span class="token operator">+</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getresult</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+        <span class="token keyword">return</span> a<span class="token operator">+</span>b<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//以下方法的重写，仅仅为了打印日志</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onDestroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onDestroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Log<span class="token punctuation">.</span><span class="token function">i</span><span class="token punctuation">(</span><span class="token string">"Download"</span><span class="token punctuation">,</span> <span class="token string">"onDestroy"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onCreate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onCreate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Log<span class="token punctuation">.</span><span class="token function">i</span><span class="token punctuation">(</span><span class="token string">"Download"</span><span class="token punctuation">,</span> <span class="token string">"onCreate"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onStart</span><span class="token punctuation">(</span>Intent intent<span class="token punctuation">,</span> <span class="token keyword">int</span> startId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onStart</span><span class="token punctuation">(</span>intent<span class="token punctuation">,</span> startId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Log<span class="token punctuation">.</span><span class="token function">i</span><span class="token punctuation">(</span><span class="token string">"Download"</span><span class="token punctuation">,</span> <span class="token string">"onStart"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">onStartCommand</span><span class="token punctuation">(</span>Intent intent<span class="token punctuation">,</span> <span class="token keyword">int</span> flags<span class="token punctuation">,</span> <span class="token keyword">int</span> startId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Log<span class="token punctuation">.</span><span class="token function">i</span><span class="token punctuation">(</span><span class="token string">"Download"</span><span class="token punctuation">,</span> <span class="token string">"onStartCommand"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onStartCommand</span><span class="token punctuation">(</span>intent<span class="token punctuation">,</span> flags<span class="token punctuation">,</span> startId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span></code></pre>
+<h3 id="结果图"><a href="#结果图" class="headerlink" title="结果图"></a>结果图</h3><p><img src="https://cdn.jsdelivr.net/gh/1224756742/imgs2/images/%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%9C%E5%9B%BE.png" alt="程序结果图"></p>
+
             </div>
             <hr/>
 
@@ -500,7 +577,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shaonianyi.xyz/posts/3110.html">https://shaonianyi.xyz/posts/3110.html</a>
+                    <a href="https://shaonianyi.xyz/posts/30153.html">https://shaonianyi.xyz/posts/30153.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -537,7 +614,15 @@ int main(){
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF/">
+                                    <span class="chip bg-color">服务端</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF/">
+                                    <span class="chip bg-color">客户端</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -703,47 +788,54 @@ int main(){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/7363.html">
+                <a href="/posts/30153.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="字符统计">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="客户端与服务端传数据-IntentServe类">
                         
-                        <span class="card-title">字符统计</span>
+                        <span class="card-title">客户端与服务端传数据-IntentServe类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            字符统计题目描述如果统计的个数相同，则按照ASCII码由小到大排序输出 。如果有其他字符，则对这些字符不用进行统计。
-实现以下接口：输入一个字符串，对字符中的各个英文字符，数字，空格进行统计（可反复调用）按照统计个数由多到少输出统计结果，如
+                            客户端与服务端传数据-IntentServe类要求描述以IntentServer类为父类定义一个服务类，实现以下功能：
+1、客户端通过Intent传递两个整数。
+2、服务端获取从客户端传来的两个整数，并在服务端编写一个方法，该方法返回两个数
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
+                            <a href="/categories/Android/" class="post-category">
+                                    Android
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                        <span class="chip bg-color">字符串</span>
+                    <a href="/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF/">
+                        <span class="chip bg-color">服务端</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF/">
+                        <span class="chip bg-color">客户端</span>
                     </a>
                     
                 </div>
@@ -757,39 +849,44 @@ int main(){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/54966.html">
+                <a href="/posts/38808.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="自守数">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="栈的压入、弹出序列">
                         
-                        <span class="card-title">自守数</span>
+                        <span class="card-title">栈的压入、弹出序列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            自守数题目描述自守数是指一个数的平方的尾数等于该数自身的自然数。例如：25^2 = 625，76^2 = 5776，9376^2 = 87909376。请求出n以内的自守数的个数
-接口说明
-/*功能: 求出n以内的自守数的个数
-输入参数：i
+                            栈的压入、弹出序列题目描述输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否可能为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如序列1,2,3,4,5是某栈的压入顺序，序列4,5,3,2,1是该压栈序列对应的一个弹出序列
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                    剑指offer
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%A0%88/">
+                        <span class="chip bg-color">栈</span>
+                    </a>
+                    
                 </div>
                 
             </div>
