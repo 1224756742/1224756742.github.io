@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="计算日期到天数转换, 少年乙的博客">
+    <meta name="keywords" content="栈的压入、弹出序列, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>计算日期到天数转换 | 少年乙的博客</title>
+    <title>栈的压入、弹出序列 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">计算日期到天数转换</h1>
+                    <h1 class="description center-align post-title">栈的压入、弹出序列</h1>
                 </div>
             </div>
         </div>
@@ -373,9 +373,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%A0%88/">
+                                <span class="chip bg-color">栈</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -383,8 +387,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                华为机试
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                剑指offer
                             </a>
                         
                     </div>
@@ -396,21 +400,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-15
+                    2020-05-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-18
+                    2020-05-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    347
+                    322
                 </div>
                 
 
@@ -432,40 +436,47 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="计算日期到天数转换"><a href="#计算日期到天数转换" class="headerlink" title="计算日期到天数转换"></a>计算日期到天数转换</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>根据输入的日期，计算是这一年的第几天。。</p>
-<p>详细描述：</p>
-<p>输入某年某月某日，判断这一天是这一年的第几天？。</p>
-<p>接口设计及说明：</p>
-<p> /<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><br> Description  : 数据转换<br> Input Param  : year 输入年份<br>        Month 输入月份<br>        Day 输入天</p>
-<p> Output Param :<br> Return Value : 成功返回0，失败返回-1（如：数据错误）<br> <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/<br> public static int iConverDateToDay(int year, int month, int day)<br> {<br>   /* 在这里实现功能，将结果填入输入数组中*/<br>   return 0;<br> }</p>
-<p> /<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><br> Description  :<br> Input Param  :</p>
-<p> Output Param :<br> Return Value : 成功:返回outDay输出计算后的第几天;<br>                      失败:返回-1<br> <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/<br> public static int getOutDay()<br> {<br> return 0;<br> }</p>
-<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入三行，分别是年，月，日</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>成功:返回outDay输出计算后的第几天;
-失败:返回-1</code></pre><p>示例1</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>2012
-12
-31</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>366</code></pre><p>这题有个隐藏条件，需要判断输入年份是闰年还是平年。如果能被4整除但不能被100整除的是闰年，还有能被400整除的也是闰年。</p>
-<pre><code>#include&lt;iostream&gt;
-using namespace std;
+                <h3 id="栈的压入、弹出序列"><a href="#栈的压入、弹出序列" class="headerlink" title="栈的压入、弹出序列"></a>栈的压入、弹出序列</h3><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否可能为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如序列1,2,3,4,5是某栈的压入顺序，序列4,5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等的）</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>模拟入栈出栈的过程，判断出栈序列是否正确。</p>
+<ul>
+<li><p>如果pushV中有数据，压入stack</p>
+</li>
+<li><p>如果stack的最后一个元素与popV中第一个元素相等，将两个元素都弹出</p>
+</li>
+<li><p>如果第一个元素相等，直接都弹出，根本不用压入stack</p>
+</li>
+<li><p>如果情况都不满足，false。</p>
+</li>
+</ul>
+<pre><code>class Solution {
+public:
+    bool IsPopOrder(vector&lt;int&gt; pushV,vector&lt;int&gt; popV) {
+        stack&lt;int&gt; a;
 
-int main(){
-    int year, month,day;
-    while(cin&gt;&gt;year&gt;&gt;month&gt;&gt;day){
-        int count = 0;
-        const int res[] = {0,31,59,90,120,151,181,212,243,273,304,334,365};
-        if(month &lt;= 0 || month &gt; 12 || day &lt;= 0 || day &gt; 31){
-            return -1;
-        }
-        else{
-            count = res[month - 1] + day;
-            if((year % 4 == 0 &amp;&amp; year % 100 != 0) || year % 400 == 0){
-                count++;
+        while(pushV.size()){
+            if(pushV[0]!=popV[0]&amp;&amp;(a.empty()||popV[0]!=a.top())){ 
+                a.push(pushV[0]);
+                pushV.erase(pushV.begin());   
+            }else if(pushV[0]==popV[0]){
+                pushV.erase(pushV.begin());
+                popV.erase(popV.begin());
+            }else if(!a.empty()&amp;&amp;popV[0]==a.top()){
+                a.pop();
+                popV.erase(popV.begin());
             }
         }
-        cout&lt;&lt;count&lt;&lt;endl;
+        while(!a.empty())
+            { 
+            if(popV[0]!=a.top()) 
+                return false;
+            else{ 
+                a.pop();
+                popV.erase(popV.begin());
+            }
+        }
+        return true;
     }
-    return 0;
-}</code></pre>
+};</code></pre>
             </div>
             <hr/>
 
@@ -490,7 +501,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shaonianyi.xyz/posts/5532.html">https://shaonianyi.xyz/posts/5532.html</a>
+                    <a href="https://shaonianyi.xyz/posts/38808.html">https://shaonianyi.xyz/posts/38808.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -527,7 +538,11 @@ int main(){
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%A0%88/">
+                                    <span class="chip bg-color">栈</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -693,41 +708,50 @@ int main(){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/54885.html">
+                <a href="/posts/38808.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Markdown学习">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="栈的压入、弹出序列">
                         
-                        <span class="card-title">Markdown学习</span>
+                        <span class="card-title">栈的压入、弹出序列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Markdown学习第一节  Markdown介绍Markdown介绍Markdown是一种轻量级标记语言，知道他可以写文本就完事了。
-编辑器个人用Typora编辑器，不过不用编辑器也可以，Markdown可以纯文本编写文档，文件后缀是.m
+                            栈的压入、弹出序列题目描述输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否可能为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如序列1,2,3,4,5是某栈的压入顺序，序列4,5,3,2,1是该压栈序列对应的一个弹出序列
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                    剑指offer
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%A0%88/">
+                        <span class="chip bg-color">栈</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -739,40 +763,46 @@ int main(){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/2755.html">
+                <a href="/posts/63137.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="百钱买百鸡问题">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="包含min函数的栈">
                         
-                        <span class="card-title">百钱买百鸡问题</span>
+                        <span class="card-title">包含min函数的栈</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            百钱买百鸡问题题目描述公元前五世纪，我国古代数学家张丘建在《算经》一书中提出了“百鸡问题”：鸡翁一值钱五，鸡母一值钱三，鸡雏三值钱一。百钱买百鸡，问鸡翁、鸡母、鸡雏各几何？
-详细描述：
-接口说明
-原型：
-int GetResult(vect
+                            包含min函数的栈题目描述定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。
+注意：保证测试中不会当栈为空的时候，对栈调用pop()或者min()或者top()方法。
+思路定义一个辅助栈，
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                    剑指offer
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%A0%88/">
+                        <span class="chip bg-color">栈</span>
+                    </a>
+                    
                 </div>
                 
             </div>

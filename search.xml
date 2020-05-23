@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>栈的压入、弹出序列</title>
+      <link href="/posts/38808.html"/>
+      <url>/posts/38808.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="栈的压入、弹出序列"><a href="#栈的压入、弹出序列" class="headerlink" title="栈的压入、弹出序列"></a>栈的压入、弹出序列</h3><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否可能为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如序列1,2,3,4,5是某栈的压入顺序，序列4,5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等的）</p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>模拟入栈出栈的过程，判断出栈序列是否正确。</p><ul><li><p>如果pushV中有数据，压入stack</p></li><li><p>如果stack的最后一个元素与popV中第一个元素相等，将两个元素都弹出</p></li><li><p>如果第一个元素相等，直接都弹出，根本不用压入stack</p></li><li><p>如果情况都不满足，false。</p></li></ul><pre><code>class Solution {public:    bool IsPopOrder(vector&lt;int&gt; pushV,vector&lt;int&gt; popV) {        stack&lt;int&gt; a;        while(pushV.size()){            if(pushV[0]!=popV[0]&amp;&amp;(a.empty()||popV[0]!=a.top())){                 a.push(pushV[0]);                pushV.erase(pushV.begin());               }else if(pushV[0]==popV[0]){                pushV.erase(pushV.begin());                popV.erase(popV.begin());            }else if(!a.empty()&amp;&amp;popV[0]==a.top()){                a.pop();                popV.erase(popV.begin());            }        }        while(!a.empty())            {             if(popV[0]!=a.top())                 return false;            else{                 a.pop();                popV.erase(popV.begin());            }        }        return true;    }};</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 栈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>包含min函数的栈</title>
+      <link href="/posts/63137.html"/>
+      <url>/posts/63137.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="包含min函数的栈"><a href="#包含min函数的栈" class="headerlink" title="包含min函数的栈"></a>包含min函数的栈</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。</p><p>注意：保证测试中不会当栈为空的时候，对栈调用pop()或者min()或者top()方法。</p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>定义一个辅助栈，每次压栈操作时, 如果压栈元素比当前最小元素更小, 就把这个元素压入最小元素栈, 原本的最小元素就成了次小元素.。同理, 弹栈时, 如果弹出的元素和最小元素栈的栈顶元素相等, 就把最小元素的栈顶弹出。</p><pre><code>class Solution {public:    stack&lt;int&gt; stack1,stack2;    void push(int value) {        stack1.push(value);        if(stack2.empty())            stack2.push(value);        else if(value&lt;=stack2.top())        {            stack2.push(value);        }    }    void pop() {        if(stack1.top()==stack2.top())            stack2.pop();        stack1.pop();    }    int top() {        return stack1.top();           }    int min() {        return stack2.top();    }};</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 栈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>顺时针打印矩阵</title>
       <link href="/posts/54334.html"/>
       <url>/posts/54334.html</url>
