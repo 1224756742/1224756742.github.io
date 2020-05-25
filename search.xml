@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>二叉搜索树的后序遍历序列</title>
+      <link href="/posts/16324.html"/>
+      <url>/posts/16324.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="二叉搜索树的后序遍历序列"><a href="#二叉搜索树的后序遍历序列" class="headerlink" title="二叉搜索树的后序遍历序列"></a>二叉搜索树的后序遍历序列</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。</p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>后序遍历的序列中，最后一个数字是树的根节点 ，数组中前面的数字可以分为两部分：第一部分是左子树节点的值，都比根节点的值小；第二部分 是右子树节点的值，都比根节点 的值大，后面用递归分别判断前后两部分是否符合以上原则</p><ul><li>确定根节点；</li><li>遍历序列（除去根结点），找到第一个大于根节点的位置，则该位置左边为左子树，右边为右子树；</li><li>遍历右子树，若发现有小于根节点的值，则直接返回false；</li><li>分别判断左子树和右子树是否仍是二叉搜索树</li></ul><h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><pre><code>class Solution {public:    bool VerifySquenceOfBST(vector&lt;int&gt; sequence) {        vector&lt;int&gt; lefttree,righttree;        int length = sequence.size();        if(length == 0)            return false;        int root = sequence[length - 1];        int i = 0;        //在二叉搜索 树中 左子树节点小于根节点        for(;i &lt; length - 1;++i){            if(sequence[i] &gt; root)                break;        }        //二叉搜索树中右子树的节点都大于根节点        int j = i;        for(;j &lt; length - 1;++j){            if(sequence[j] &lt; root)                return false;        }        if(i != 0){            for(int k = 0;k &lt; i;++k){                lefttree.push_back(sequence[k]);            }        }        if(j != 0){            for(int k = i;k &lt; length - 1;++k){                righttree.push_back(sequence[k]);            }        }        bool left = true,right = true;        //判断左子树是否为二叉树        if(lefttree.size() &gt; 1){            left = VerifySquenceOfBST(lefttree);        }        //判断右子树是否为二叉树        if(righttree.size() &gt; 1){            right = VerifySquenceOfBST(righttree);        }        return (left &amp;&amp; right);    }};</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 二叉树 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>从上往下打印二叉树</title>
+      <link href="/posts/78.html"/>
+      <url>/posts/78.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="从上往下打印二叉树"><a href="#从上往下打印二叉树" class="headerlink" title="从上往下打印二叉树"></a>从上往下打印二叉树</h3><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>从上往下打印出二叉树的每个节点，同层节点从左至右打印</p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>考的是树的广度优先搜索，用的是队列来实现。</p><ul><li>将第一个元素加入队列</li><li>队列不为空时取队首元素，判断其是否有子节点，如果有则加入队列。</li><li>将取到的节点出队</li><li>转到第二步，直到队列为空</li></ul><h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><pre><code>/*struct TreeNode {    int val;    struct TreeNode *left;    struct TreeNode *right;    TreeNode(int x) :            val(x), left(NULL), right(NULL) {    }};*/class Solution {public:    vector&lt;int&gt; PrintFromTopToBottom(TreeNode* root) {        vector&lt;int&gt; arr;        if(root == nullptr)            return arr;        queue&lt;TreeNode*&gt; que;        que.push(root);        while(que.size()){            arr.push_back(que.front() -&gt; val);            if(que.front() -&gt; left != nullptr){                que.push(que.front() -&gt; left);            }            if(que.front() -&gt; right != nullptr){                que.push(que.front() -&gt; right);            }            que.pop();        }        return arr;    }};</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 二叉树 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>客户端与服务端传数据-IntentServe类</title>
       <link href="/posts/30153.html"/>
       <url>/posts/30153.html</url>
