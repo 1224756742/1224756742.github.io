@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="字符串截取-密码截取, 少年乙的博客">
+    <meta name="keywords" content="二叉树中和为某一值的路径, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>字符串截取-密码截取 | 少年乙的博客</title>
+    <title>二叉树中和为某一值的路径 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">字符串截取-密码截取</h1>
+                    <h1 class="description center-align post-title">二叉树中和为某一值的路径</h1>
                 </div>
             </div>
         </div>
@@ -375,23 +375,14 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                <span class="chip bg-color">字符串</span>
+                            <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                                <span class="chip bg-color">二叉树</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                华为机试
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -400,21 +391,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-23
+                    2020-05-26
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-23
+                    2020-05-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    387
+                    252
                 </div>
                 
 
@@ -436,56 +427,46 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="字符串运用-字符截取"><a href="#字符串运用-字符截取" class="headerlink" title="字符串运用-字符截取"></a>字符串运用-字符截取</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>Catcher 是MCA国的情报员，他工作时发现敌国会用一些对称的密码进行通信，比如像这些ABBA，ABA，A，123321，但是他们有时会在开始或结束时加入一些无关的字符以防止别国破解。比如进行下列变化 ABBA-&gt;12ABBA,ABA-&gt;ABAKK,123321-&gt;51233214　。因为截获的串太长了，而且存在多种可能的情况（abaaab可看作是aba,或baaab的加密形式），Cathcer的工作量实在是太大了，他只能向电脑高手求助，你能帮Catcher找出最长的有效密码串吗？</p>
-<p>（注意：记得加上while处理多个测试用例）</p>
-<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入一个字符串</code></pre><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>返回有效密码串的最大长度</code></pre><p>示例1</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>ABBA</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>4</code></pre><p>分奇偶情况讨论，比如ABA，ABBA，满足情况，左右指针向外移动。</p>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;string&gt;
-using namespace std;
-int main(){
-    string str;
-    while(getline(cin,str)){
-        int len = str.size();
-        if(len&lt;=1)
-        {
-            //cout&lt;&lt;len&lt;&lt;endl;
-            continue;
-        }
-        int num = 1;
-        for(int i=1;i&lt;len-1;i++)
-        {
-            if(str[i]==str[i+1])
-            {//偶数对成
-                int curnum = 0;
-                int start = i;int end =i+1;
-                while(start&gt;=0 &amp;&amp; end&lt;=len &amp;&amp; str[start] == str[end])
-                {
-                    start--;
-                    end++;
-                    curnum+=2;
-                }
-                if(curnum&gt;num)
-                    num = curnum;
-            }
-            if(str[i-1]==str[i+1])
-            {//奇数对成
-                int curnum = 1;
-                int start = i-1;int end =i+1;
-                while(start&gt;=0 &amp;&amp; end&lt;=len &amp;&amp; str[start] == str[end])
-                {
-                    start--;
-                    end++;
-                    curnum+=2;
-                }
-                if(curnum&gt;num)
-                    num = curnum;
-            }
-        }
-        cout&lt;&lt;num&lt;&lt;endl;
+                <h2 id="二叉树中和为某一值的路径"><a href="#二叉树中和为某一值的路径" class="headerlink" title="二叉树中和为某一值的路径"></a>二叉树中和为某一值的路径</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一颗二叉树的根节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>从根节点开始遍历，直至叶子节点，判断是否为目标路径。</li>
+<li>如果左子树非空，递归左子树</li>
+<li>如果右子树非空，递归右子树</li>
+</ul>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><pre><code>/*
+struct TreeNode {
+    int val;
+    struct TreeNode *left;
+    struct TreeNode *right;
+    TreeNode(int x) :
+            val(x), left(NULL), right(NULL) {
     }
-    return 0;
-}</code></pre>
+};*/
+class Solution {
+public:
+    vector&lt;vector&lt;int&gt;&gt; arr;
+    vector&lt;int&gt; path;
+    vector&lt;vector&lt;int&gt; &gt; FindPath(TreeNode* root,int expectNumber) {
+        find(root,expectNumber);
+        return arr;
+    }
+    void find(TreeNode* root,int number){
+        if(root == nullptr)
+            return ;
+        path.push_back(root -&gt; val);
+        if(!root -&gt; left &amp;&amp; !root -&gt; right &amp;&amp; number == root -&gt; val){
+            arr.push_back(path);
+        }else{
+            if(root -&gt; left){
+                FindPath(root -&gt; left,number - root -&gt; val);
+            }
+            if(root -&gt; right){
+                FindPath(root -&gt; right,number - root -&gt; val);
+            }
+        }
+        path.pop_back();
+    }
+};</code></pre>
             </div>
             <hr/>
 
@@ -510,7 +491,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shaonianyi.xyz/posts/38562.html">https://shaonianyi.xyz/posts/38562.html</a>
+                    <a href="https://shaonianyi.xyz/posts/36527.html">https://shaonianyi.xyz/posts/36527.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -548,8 +529,8 @@ int main(){
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                    <span class="chip bg-color">字符串</span>
+                                <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                                    <span class="chip bg-color">二叉树</span>
                                 </a>
                             
                         </div>
@@ -721,40 +702,45 @@ int main(){
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/33736.html">
+                <a href="/posts/3080.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="求最大连续bit数">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="字符串的排列">
                         
-                        <span class="card-title">求最大连续bit数</span>
+                        <span class="card-title">字符串的排列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            求最大连续bit数题目描述功能: 求一个byte数字对应的二进制数字中1的最大连续数，例如3的二进制为00000011，最大连续2个1
-输入: 一个byte型的数字
-输出: 无
-返回: 对应的二进制数字中1的最大连续数
-输入描述:输入一个b
+                            字符串的排列题目描述输入一个字符串,按字典序打印出该字符串中字符的所有排列。例如输入字符串abc,则打印出由字符a,b,c所能排列出来的所有字符串abc,acb,bac,bca,cab和cba。
+输入描述:输入一个字符串,长度不超过9(可能
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-23
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-26
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%8E%E4%B8%BA%E6%9C%BA%E8%AF%95/" class="post-category">
-                                    华为机试
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                    剑指offer
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                        <span class="chip bg-color">字符串</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -766,37 +752,45 @@ int main(){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/26899.html">
+                <a href="/posts/16324.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="安卓菜单组件的实现">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="二叉搜索树的后序遍历序列">
                         
-                        <span class="card-title">安卓菜单组件的实现</span>
+                        <span class="card-title">二叉搜索树的后序遍历序列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            安卓菜单组件的实现选项菜单的.xml代码&lt;?xml version="1.0" encoding="utf-8"?>
-&lt;menu xmlns:android="http://schemas.android.com/apk/res
+                            二叉搜索树的后序遍历序列题目描述输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。
+思路后序遍历的序列中，最后一个数字是树的根节点 ，数组中前面的数字可
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-25
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Android/" class="post-category">
-                                    Android
+                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
+                                    剑指offer
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                        <span class="chip bg-color">二叉树</span>
+                    </a>
+                    
                 </div>
                 
             </div>
