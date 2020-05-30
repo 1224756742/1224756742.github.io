@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>两个链表的第一个公共结点</title>
+      <link href="/posts/37293.html"/>
+      <url>/posts/37293.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="两个链表的第一个公共结点"><a href="#两个链表的第一个公共结点" class="headerlink" title="两个链表的第一个公共结点"></a>两个链表的第一个公共结点</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入两个链表，找出它们的第一个公共结点。（注意因为传入数据是链表，所以错误测试数据的提示是用其他方式显示的，保证传入数据是正确的）</p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul><li>先计算两个链表的的长度</li><li>让长的链表先走两者长度的差</li><li>开始齐头并进，直到找到第一个公共结点</li></ul><h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><pre><code>/*struct ListNode {    int val;    struct ListNode *next;    ListNode(int x) :            val(x), next(NULL) {    }};*/class Solution {public:    ListNode* FindFirstCommonNode( ListNode* pHead1, ListNode* pHead2) {        ListNode* node1 = pHead1;        ListNode* node2 = pHead2;        int leng1 = length(node1);        int leng2 = length(node2);        int lengcha = 0;        if(leng1 &gt; leng2){            lengcha = leng1 - leng2;            for(int i = 0;i &lt; lengcha;i++){                node1 = node1 -&gt; next;            }        }else{            lengcha = leng2 - leng1;            for(int i = 0;i &lt; lengcha;i++){                node1 = node1 -&gt; next;            }        }        while(node1 != node2){            node1 = node1 -&gt; next;            node2 = node2 -&gt; next;        }        return node1;    }    int length(ListNode* head){            int leng = 0;            ListNode* node = head;            while(node != nullptr){                leng++;                node = node -&gt; next;            }            return leng;        }};</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 链表 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第一个只出现一次的字符</title>
+      <link href="/posts/34594.html"/>
+      <url>/posts/34594.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="第一个只出现一次的字符"><a href="#第一个只出现一次的字符" class="headerlink" title="第一个只出现一次的字符"></a>第一个只出现一次的字符</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>在一个字符串(0&lt;=字符串长度&lt;=10000，全部由字母组成)中找到第一个只出现一次的字符,并返回它的位置, 如果没有则返回 -1（需要区分大小写）.（从0开始计数）</p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>先在hash表中统计各字母出现次数，第二次扫描直接访问hash表获得次数。，第二个循环是依据原字符串的顺序进行遍历并在arr中进行查找的，遇到第一个数值对应为1的字符后就直接输出了。</p><h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><pre><code>class Solution {public:    int FirstNotRepeatingChar(string str) {        if(str.size() &lt;= 0)            return -1;        int arr[256] = {0};        for(int i = 0;i &lt; str.size();i++){            arr[str[i]]++;        }        for(int i = 0;i &lt; str.size();i++){            if(arr[str[i]] == 1){                return i;            }        }        return -1;    }};</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字符串 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>丑数</title>
       <link href="/posts/4116.html"/>
       <url>/posts/4116.html</url>
