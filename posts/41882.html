@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="数值的整数次方, 少年乙的博客">
+    <meta name="keywords" content="TCP的三次握手和四次挥手, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>数值的整数次方 | 少年乙的博客</title>
+    <title>TCP的三次握手和四次挥手 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">数值的整数次方</h1>
+                    <h1 class="description center-align post-title">TCP的三次握手和四次挥手</h1>
                 </div>
             </div>
         </div>
@@ -373,9 +373,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/TCP/">
+                                <span class="chip bg-color">TCP</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -383,8 +387,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
-                                剑指offer
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                计算机网络
                             </a>
                         
                     </div>
@@ -396,28 +400,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-14
+                    2020-06-05
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-14
+                    2020-06-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    185
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -432,39 +436,39 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="数值的整数次方"><a href="#数值的整数次方" class="headerlink" title="数值的整数次方"></a>数值的整数次方</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。</p>
-<p>保证base和exponent不同时为0</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>使用递归，时间复杂度O(logn)</p>
-<ul>
-<li>当n为偶数，a^n =（a^n/2）*（a^n/2）</li>
-</ul>
-<ul>
-<li>当n为奇数，a^n = a^[(n-1)/2] * a^[(n-1)/2] * a</li>
-</ul>
-<pre><code>class Solution {
-public:
-    double Power(double base, int exponent) {
-        int n = exponent;
-        if(exponent &lt; 0){
-           n = -exponent;
-        }
-        if(n==0)
-            return 1;
-        if(n==1)
-            return base;
-        double result=Power(base,n&gt;&gt;1);
-        result*=result;
-        if((n&amp;1)==1)
-            result*=base;
-        if(exponent&lt;0)
-            result=1/result;
-        return result;     
-    }
-};</code></pre><h3 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h3><ul>
-<li>用右移运算符代替除以2</li>
-<li>用位与运算符代替求余运算符来判断一个数是奇数还是偶数</li>
-</ul>
-<p>这样的效率会更高。</p>
+                <h2 id="TCP的三次握手和四次挥手"><a href="#TCP的三次握手和四次挥手" class="headerlink" title="TCP的三次握手和四次挥手"></a>TCP的三次握手和四次挥手</h2><p>在TCP层，有个FLAGS字段，这个字段有以下几个标识：SYN, FIN, ACK, PSH, RST, URG.</p>
+<p>其中，对于我们日常的分析有用的就是前面的五个字段。</p>
+<p>它们的含义是：</p>
+<p>SYN表示建立连接，</p>
+<p>FIN表示关闭连接，</p>
+<p>ACK表示响应，</p>
+<p>PSH表示有 DATA数据传输，</p>
+<p>RST表示连接重置</p>
+<h3 id="TCP保证可靠性："><a href="#TCP保证可靠性：" class="headerlink" title="TCP保证可靠性："></a>TCP保证可靠性：</h3><p>（1）序列号、确认应答、超时重传</p>
+<p>数据到达接收方，接收方需要发出一个确认应答，表示已经收到该数据段，并且确认序号会说明了它下一次需要接收的数据序列号。如果发送发迟迟未收到确认应答，那么可能是发送的数据丢失，也可能是确认应答丢失，这时发送方在等待一定时间后会进行重传。这个时间一般是2*RTT(报文段往返时间）+一个偏差值。</p>
+<p>（2）窗口控制与高速重发控制/快速重传（重复确认应答）</p>
+<p>TCP会利用窗口控制来提高传输速度，意思是在一个窗口大小内，不用一定要等到应答才能发送下一段数据，窗口大小就是无需等待确认而可以继续发送数据的最大值。如果不使用窗口控制，每一个没收到确认应答的数据都要重发。</p>
+<p>使用窗口控制，如果数据段1001-2000丢失，后面数据每次传输，确认应答都会不停地发送序号为1001的应答，表示我要接收1001开始的数据，发送端如果收到3次相同应答，就会立刻进行重发；但还有种情况有可能是数据都收到了，但是有的应答丢失了，这种情况不会进行重发，因为发送端知道，如果是数据段丢失，接收端不会放过它的，会疯狂向它提醒……</p>
+<p>（3）拥塞控制</p>
+<p>如果把窗口定的很大，发送端连续发送大量的数据，可能会造成网络的拥堵（大家都在用网，你在这狂发，吞吐量就那么大，当然会堵），甚至造成网络的瘫痪。所以TCP在为了防止这种情况而进行了拥塞控制。</p>
+<p>慢启动：定义拥塞窗口，一开始将该窗口大小设为1，之后每次收到确认应答（经过一个rtt），将拥塞窗口大小*2。</p>
+<p>拥塞避免：设置慢启动阈值，一般开始都设为65536。拥塞避免是指当拥塞窗口大小达到这个阈值，拥塞窗口的值不再指数上升，而是加法增加（每次确认应答/每个rtt，拥塞窗口大小+1），以此来避免拥塞。</p>
+<p>将报文段的超时重传看做拥塞，则一旦发生超时重传，我们需要先将阈值设为当前窗口大小的一半，并且将窗口大小设为初值1，然后重新进入慢启动过程。</p>
+<p>快速重传：在遇到3次重复确认应答（高速重发控制）时，代表收到了3个报文段，但是这之前的1个段丢失了，便对它进行立即重传。</p>
+<p>然后，先将阈值设为当前窗口大小的一半，然后将拥塞窗口大小设为慢启动阈值+3的大小。</p>
+<p>这样可以达到：在TCP通信时，网络吞吐量呈现逐渐的上升，并且随着拥堵来降低吞吐量，再进入慢慢上升的过程，网络不会轻易的发生瘫痪。</p>
+<p>TCP建立连接和断开连接的过程：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190313/311436_1552471554293_3A87D0457A6EE404083BBF3CB192C358" alt="img"></p>
+<h3 id="三次握手："><a href="#三次握手：" class="headerlink" title="三次握手："></a>三次握手：</h3><p>\1. Client将标志位SYN置为1，随机产生一个值seq=J，并将该数据包发送给Server，Client进入SYN_SENT状态，等待Server确认。</p>
+<p>\2. Server收到数据包后由标志位SYN=1知道Client请求建立连接，Server将标志位SYN和ACK都置为1，ack=J+1，随机产生一个值seq=K，并将该数据包发送给Client以确认连接请求，Server进入SYN_RCVD状态。</p>
+<p>\3. Client收到确认后，检查ack是否为J+1，ACK是否为1，如果正确则将标志位ACK置为1，ack=K+1，并将该数据包发送给Server，Server检查ack是否为K+1，ACK是否为1，如果正确则连接建立成功，Client和Server进入ESTABLISHED状态，完成三次握手，随后Client与Server之间可以开始传输数据了。</p>
+<h3 id="为什么不是二次握手和四次握手呢"><a href="#为什么不是二次握手和四次握手呢" class="headerlink" title="为什么不是二次握手和四次握手呢"></a>为什么不是二次握手和四次握手呢</h3><p><strong>二次握手：</strong>客户端请求建立连接，服务端确认连接请求。这个时候客户端知道服务端有发送和接受的能力。<strong>但是</strong>，没有第三次握手，服务端只知道客户端有发送的能力，并不知道其有接受的能力。</p>
+<p><strong>四次握手：</strong>第四握手的作用并没有必要，因为第二次握手已经做了。</p>
+<h3 id="四次挥手："><a href="#四次挥手：" class="headerlink" title="四次挥手："></a>四次挥手：</h3><p>由于TCP连接时全双工的，因此，每个方向都必须要单独进行关闭，这一原则是当一方完成数据发送任务后，发送一个FIN来终止这一方向的连接，收到一个FIN只是意味着这一方向上没有数据流动了，即不会再收到数据了，但是在这个TCP连接上仍然能够发送数据，直到这一方向也发送了FIN。首先进行关闭的一方将执行主动关闭，而另一方则执行被动关闭。</p>
+<p>1.数据传输结束后，客户端的应用进程发出连接释放报文段，并停止发送数据，客户端进入FIN_WAIT_1状态，此时客户端依然可以接收服务器发送来的数据。</p>
+<p>2.服务器接收到FIN后，发送一个ACK给客户端，确认序号为收到的序号+1，服务器进入CLOSE_WAIT状态。客户端收到后进入FIN_WAIT_2状态。</p>
+<p>3.当服务器没有数据要发送时，服务器发送一个FIN报文，此时服务器进入LAST_ACK状态，等待客户端的确认</p>
+<p>4.客户端收到服务器的FIN报文后，给服务器发送一个ACK报文，确认序列号为收到的序号+1。此时客户端进入TIME_WAIT状态，等待2MSL（MSL：报文段最大生存时间），然后关闭连接。</p>
 
             </div>
             <hr/>
@@ -490,7 +494,7 @@ public:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shaonianyi.xyz/posts/15437.html">https://shaonianyi.xyz/posts/15437.html</a>
+                    <a href="https://shaonianyi.xyz/posts/41882.html">https://shaonianyi.xyz/posts/41882.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -527,7 +531,11 @@ public:
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/TCP/">
+                                    <span class="chip bg-color">TCP</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -693,30 +701,88 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/7691.html">
+                <a href="/posts/41882.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="调整数组顺序使奇数位于偶数前面">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="TCP的三次握手和四次挥手">
                         
-                        <span class="card-title">调整数组顺序使奇数位于偶数前面</span>
+                        <span class="card-title">TCP的三次握手和四次挥手</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            调整数组顺序使奇数位于偶数前面题目描述输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。
-思路创建一个新数组，遍历传进的数
+                            TCP的三次握手和四次挥手在TCP层，有个FLAGS字段，这个字段有以下几个标识：SYN, FIN, ACK, PSH, RST, URG.
+其中，对于我们日常的分析有用的就是前面的五个字段。
+它们的含义是：
+SYN表示建立连接，
+FIN表
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-17
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    计算机网络
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/TCP/">
+                        <span class="chip bg-color">TCP</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/37293.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="两个链表的第一个公共结点">
+                        
+                        <span class="card-title">两个链表的第一个公共结点</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            两个链表的第一个公共结点题目描述输入两个链表，找出它们的第一个公共结点。（注意因为传入数据是链表，所以错误测试数据的提示是用其他方式显示的，保证传入数据是正确的）
+思路
+先计算两个链表的的长度
+让长的链表先走两者长度的差
+开始齐头并进，直到
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -732,55 +798,10 @@ public:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E7%BB%84/">
-                        <span class="chip bg-color">数组</span>
+                    <a href="/tags/%E9%93%BE%E8%A1%A8/">
+                        <span class="chip bg-color">链表</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/61258.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="二进制中1的个数">
-                        
-                        <span class="card-title">二进制中1的个数</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            二进制中1的个数题目描述输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。
-思路一开始我的想法是把十进制数转换成二进制，二进制的每一位放进数组中，再循环遍历数组找出1的个数。
-class Solution {
-public:
-
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-13
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
-                                    剑指offer
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
                 </div>
                 
             </div>
