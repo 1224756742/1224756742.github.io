@@ -284,7 +284,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/5.jpg)');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/1.jpg)');
 </script>
 
 
@@ -300,14 +300,14 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">65</a></span>
+    <span class="count"><a href="/">66</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">7</a></span>
+    <span class="count"><a href="/categories">8</a></span>
     <span class="name">分类</span>
 </div>
 
@@ -330,14 +330,14 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">65</a></span>
+    <span class="count"><a href="/">66</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">7</a></span>
+    <span class="count"><a href="/categories">8</a></span>
     <span class="name">分类</span>
 </div>
 
@@ -488,7 +488,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,34,30,1],
+                data: [0,0,0,0,0,0,0,0,0,0,34,30,2],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -530,7 +530,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"计算机网络","value":1},{"name":"Jsdeliver","value":1},{"name":"剑指offer","value":27},{"name":"Markdown","value":1},{"name":"华为机试","value":30},{"name":"矩阵","value":1},{"name":"Android","value":4}],
+                data: [{"name":"Jsdeliver","value":1},{"name":"数据库","value":1},{"name":"剑指offer","value":27},{"name":"计算机网络","value":1},{"name":"Markdown","value":1},{"name":"矩阵","value":1},{"name":"Android","value":4},{"name":"华为机试","value":30}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -554,7 +554,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["字符串","二叉树","链表","栈","数组","矩阵","TCP","数据结构与算法","队列","字符串 通配符"]
+                data: ["字符串","二叉树","链表","栈","数组","矩阵","TCP","数据结构与算法","队列","服务端"]
             }
         ],
         yAxis: [
@@ -737,12 +737,6 @@
         <div class="tag-chips center-align">
             
             
-            <a href="/tags/TCP/">
-                <span class="chip center-align waves-effect waves-light chip-default">TCP</span>
-            </a>
-            
-            
-            
             <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
                 <span class="chip center-align waves-effect waves-light chip-default">二叉树</span>
             </a>
@@ -755,14 +749,20 @@
             
             
             
+            <a href="/tags/%E6%A0%88/">
+                <span class="chip center-align waves-effect waves-light chip-default">栈</span>
+            </a>
+            
+            
+            
             <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
                 <span class="chip center-align waves-effect waves-light chip-default">字符串</span>
             </a>
             
             
             
-            <a href="/tags/%E6%A0%88/">
-                <span class="chip center-align waves-effect waves-light chip-default">栈</span>
+            <a href="/tags/TCP/">
+                <span class="chip center-align waves-effect waves-light chip-default">TCP</span>
             </a>
             
             
@@ -791,18 +791,6 @@
             
             
             
-            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2-%E9%80%9A%E9%85%8D%E7%AC%A6/">
-                <span class="chip center-align waves-effect waves-light chip-default">字符串 通配符</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E6%8E%92%E5%BA%8F/">
-                <span class="chip center-align waves-effect waves-light chip-default">排序</span>
-            </a>
-            
-            
-            
             <a href="/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF/">
                 <span class="chip center-align waves-effect waves-light chip-default">服务端</span>
             </a>
@@ -823,6 +811,18 @@
             
             <a href="/tags/%E7%BB%84%E4%BB%B6-%E5%AE%89%E5%8D%93/">
                 <span class="chip center-align waves-effect waves-light chip-default">组件 安卓</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2-%E9%80%9A%E9%85%8D%E7%AC%A6/">
+                <span class="chip center-align waves-effect waves-light chip-default">字符串 通配符</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E6%8E%92%E5%BA%8F/">
+                <span class="chip center-align waves-effect waves-light chip-default">排序</span>
             </a>
             
             
@@ -945,7 +945,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">23.6k</span>&nbsp;字
+                class="white-color">25.7k</span>&nbsp;字
             
             
             
