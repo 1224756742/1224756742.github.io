@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="字符串的排列, 少年乙的博客">
+    <meta name="keywords" content="和为S的两个数字, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>字符串的排列 | 少年乙的博客</title>
+    <title>和为S的两个数字 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">字符串的排列</h1>
+                    <h1 class="description center-align post-title">和为S的两个数字</h1>
                 </div>
             </div>
         </div>
@@ -373,25 +373,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                <span class="chip bg-color">字符串</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
-                                剑指offer
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -400,21 +387,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-26
+                    2020-06-11
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-27
+                    2020-06-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    268
+                    262
                 </div>
                 
 
@@ -436,14 +423,35 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="字符串的排列"><a href="#字符串的排列" class="headerlink" title="字符串的排列"></a>字符串的排列</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个字符串,按字典序打印出该字符串中字符的所有排列。例如输入字符串abc,则打印出由字符a,b,c所能排列出来的所有字符串abc,acb,bac,bca,cab和cba。</p>
-<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><pre><code>输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。</code></pre><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>把字符串分为两部分：第一部分为第一个字符，第二部分为第一个字符以后的字符串。</li>
-<li>然后接下来求后面那部分的全排列。</li>
-<li>再将第一个字符与后面的那部分字符逐个交换</li>
+                <h2 id="和为S的两个数字"><a href="#和为S的两个数字" class="headerlink" title="和为S的两个数字"></a>和为S的两个数字</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个递增排序的数组和一个数字S，在数组中查找两个数，使得他们的和正好是S，如果有多对数字的和等于S，输出两个数的乘积最小的。</p>
+<h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>对应每个测试案例，输出两个数，小的先输出。</code></pre><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这个数列是一个递增序列，设置两个一头一尾的指针</p>
+<ul>
+<li><p>若array[i] + array[j] == sum，就是答案（相差越远乘积越小） </p>
+</li>
+<li><p>若array[i] + array[j] &gt; sum，array[j]肯定不是答案之一（前面已得出 i 前面的数已是不可能），j – </p>
+</li>
+<li><p>若array[i] + array[j] &lt; sum，arrayi肯定不是答案之一（前面已得出 j 后面的数已是不可能），i ++</p>
+</li>
 </ul>
-<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><p>class Solution {<br>public:<br>    vector<string> arr;<br>    vector<string> Permutation(string str) {<br>        if(str.size() == 0){<br>            return arr;<br>        }<br>        permutat(str,0);<br>        sort(arr.begin(),arr.end());<br>        auto it = unique(arr.begin(),arr.end());<br>        arr.erase(it,arr.end());<br>        return arr;<br>    }<br>    void permutat(string str,int stat){<br>        int length = str.size();<br>        if(stat == length){<br>            arr.push_back(str);<br>        }<br>        for(int i = stat;i &lt; str.size();i++){<br>            char temp = str[i];<br>            str[i] = str[stat];<br>            str[stat] = temp;<br>            permutat(str,stat + 1);<br>            temp = str[i];<br>            str[i] = str[stat];<br>            str[stat] = temp;<br>        }<br>    }<br>};</p>
-
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><pre><code>class Solution {
+public:
+    vector&lt;int&gt; FindNumbersWithSum(vector&lt;int&gt; array,int sum) {
+        vector&lt;int&gt; result;
+        int i = 0,j = array.size() - 1;
+        while(i &lt; j){
+            if(array[i] + array[j] == sum){
+                result.push_back(array[i]);
+                result.push_back(array[j]);
+                break;
+            }else if(array[i] + array[j] &gt; sum){
+                j--;
+            }else{
+                i++;
+            }
+        }
+        return result;
+    }
+};</code></pre>
             </div>
             <hr/>
 
@@ -468,7 +476,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shaonianyi.xyz/posts/3080.html">https://shaonianyi.xyz/posts/3080.html</a>
+                    <a href="https://shaonianyi.xyz/posts/42360.html">https://shaonianyi.xyz/posts/42360.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -505,11 +513,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                    <span class="chip bg-color">字符串</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -675,41 +679,40 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/22537.html">
+                <a href="/posts/42360.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="连续子数组的最大和">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="和为S的两个数字">
                         
-                        <span class="card-title">连续子数组的最大和</span>
+                        <span class="card-title">和为S的两个数字</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            连续子数组的最大和题目描述HZ偶尔会拿些专业问题来忽悠那些非计算机专业的同学。今天测试组开完会后,他又发话了:在古老的一维模式识别中,常常需要计算连续子向量的最大和,当向量全为正数的时候,问题很好解决。但是,如果向量中包含负数,是否应该包含
+                            和为S的两个数字题目描述输入一个递增排序的数组和一个数字S，在数组中查找两个数，使得他们的和正好是S，如果有多对数字的和等于S，输出两个数的乘积最小的。
+输出描述:对应每个测试案例，输出两个数，小的先输出。思路这个数列是一个递增序列，设置两
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-11
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
-                                    剑指offer
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            少年乙
                             
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -720,46 +723,32 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/36527.html">
+                <a href="/posts/11352.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="二叉树中和为某一值的路径">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="和为S的连续正数序列">
                         
-                        <span class="card-title">二叉树中和为某一值的路径</span>
+                        <span class="card-title">和为S的连续正数序列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            二叉树中和为某一值的路径题目描述输入一颗二叉树的根节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。
-思路
-从根节点开始遍历，直至叶子节点，判断是否为目标路径。
+                            和为S的连续正数序列题目描述小明很喜欢数学,有一天他在做数学作业时,要求计算出9~16的和,他马上就写出了正确答案是100。但是他并不满足于此,他在想究竟有多少种连续的正数序列的和为100(至少包括两个数)。没多久,他就得到另一组连续正数和
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-10
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
-                                    剑指offer
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            少年乙
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-                        <span class="chip bg-color">二叉树</span>
-                    </a>
-                    
                 </div>
                 
             </div>

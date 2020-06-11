@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>和为S的两个数字</title>
+      <link href="/posts/42360.html"/>
+      <url>/posts/42360.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="和为S的两个数字"><a href="#和为S的两个数字" class="headerlink" title="和为S的两个数字"></a>和为S的两个数字</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个递增排序的数组和一个数字S，在数组中查找两个数，使得他们的和正好是S，如果有多对数字的和等于S，输出两个数的乘积最小的。</p><h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><pre><code>对应每个测试案例，输出两个数，小的先输出。</code></pre><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这个数列是一个递增序列，设置两个一头一尾的指针</p><ul><li><p>若array[i] + array[j] == sum，就是答案（相差越远乘积越小） </p></li><li><p>若array[i] + array[j] &gt; sum，array[j]肯定不是答案之一（前面已得出 i 前面的数已是不可能），j – </p></li><li><p>若array[i] + array[j] &lt; sum，arrayi肯定不是答案之一（前面已得出 j 后面的数已是不可能），i ++</p></li></ul><h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><pre><code>class Solution {public:    vector&lt;int&gt; FindNumbersWithSum(vector&lt;int&gt; array,int sum) {        vector&lt;int&gt; result;        int i = 0,j = array.size() - 1;        while(i &lt; j){            if(array[i] + array[j] == sum){                result.push_back(array[i]);                result.push_back(array[j]);                break;            }else if(array[i] + array[j] &gt; sum){                j--;            }else{                i++;            }        }        return result;    }};</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>和为S的连续正数序列</title>
       <link href="/posts/11352.html"/>
       <url>/posts/11352.html</url>
