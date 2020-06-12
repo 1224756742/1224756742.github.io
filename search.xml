@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>左旋转字符串</title>
+      <link href="/posts/11018.html"/>
+      <url>/posts/11018.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="左旋转字符串"><a href="#左旋转字符串" class="headerlink" title="左旋转字符串"></a>左旋转字符串</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>汇编语言中有一种移位指令叫做循环左移（ROL），现在有个简单的任务，就是用字符串模拟这个指令的运算结果。对于一个给定的字符序列S，请你把其循环左移K位后的序列输出。例如，字符序列S=”abcXYZdef”,要求输出循环左移3位后的结果，即“XYZdefabc”。是不是很简单？OK，搞定它！</p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>字符串拼接，n之后的先接起来，然后再把0到n前的接起来即可。</p><h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><pre><code>class Solution {public:    string LeftRotateString(string str, int n) {        string tempstr;        for(int i = n;i &lt; str.size();i++){            tempstr += str[i];        }        for(int i = 0;i &lt; n;i++){            tempstr += str[i];        }        return tempstr;    }};</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>和为S的两个数字</title>
       <link href="/posts/42360.html"/>
       <url>/posts/42360.html</url>
