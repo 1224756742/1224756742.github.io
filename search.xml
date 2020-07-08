@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>select，poll，epoll的介绍</title>
+      <link href="/posts/13106.html"/>
+      <url>/posts/13106.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="select，poll-epoll的介绍"><a href="#select，poll-epoll的介绍" class="headerlink" title="select，poll,  epoll的介绍"></a>select，poll,  epoll的介绍</h2><h3 id="select"><a href="#select" class="headerlink" title="select"></a>select</h3><p>select：是最初解决IO阻塞问题的方法。用结构体fd_set来告诉内核监听多个文件描述符，该结构体被称为描述符集。由数组来维持哪些描述符被置位了。对结构体的操作封装在三个宏定义中。通过轮寻来查找是否有描述符要被处理。</p><p>存在的问题：</p><ul><li><p>内置数组的形式使得select的最大文件数受限与FD_SIZE；</p></li><li><p>每次调用select前都要重新初始化描述符集，将fd从用户态拷贝到内核态，每次调用select后，都需要将fd从内核态拷贝到用户态；</p></li><li><p>轮寻排查当文件描述符个数很多时，效率很低；</p></li></ul><h3 id="poll"><a href="#poll" class="headerlink" title="poll"></a>poll</h3><p>poll：通过一个可变长度的数组解决了select文件描述符受限的问题。数组中元素是结构体，该结构体保存描述符的信息，每增加一个文件描述符就向数组中加入一个结构体，结构体只需要拷贝一次到内核态。poll解决了select重复初始化的问题。轮寻排查的问题未解决。</p><h3 id="epoll"><a href="#epoll" class="headerlink" title="epoll"></a>epoll</h3><p>epoll：轮寻排查所有文件描述符的效率不高，使服务器并发能力受限。因此，epoll采用只返回状态发生变化的文件描述符，便解决了轮寻的瓶颈。</p><p>epoll对文件描述符的操作有两种模式：LT（level trigger）和ET（edge trigger）。LT模式是默认模式</p><ul><li>LT模式</li></ul><p>LT(level triggered)是缺省的工作方式，并且同时支持block和no-block socket.在这种做法中，内核告诉你一个文件描述符是否就绪了，然后你可以对这个就绪的fd进行IO操作。如果你不作任何操作，内核还是会继续通知你的。</p><ul><li>ET模式</li></ul><p>ET(edge-triggered)是高速工作方式，只支持no-block socket。在这种模式下，当描述符从未就绪变为就绪时，内核通过epoll告诉你。然后它会假设你知道文件描述符已经就绪，并且不会再为那个文件描述符发送更多的就绪通知，直到你做了某些操作导致那个文件描述符不再为就绪状态了(比如，你在发送，接收或者接收请求，或者发送接收的数据少于一定量时导致了一个EWOULDBLOCK 错误）。但是请注意，如果一直不对这个fd作IO操作(从而导致它再次变成未就绪)，内核不会发送更多的通知(only once)</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>进程与线程、进程间的通信</title>
       <link href="/posts/37183.html"/>
       <url>/posts/37183.html</url>
