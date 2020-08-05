@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="包含min函数的栈, 少年乙的博客">
+    <meta name="keywords" content="腾讯一面笔试题, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>包含min函数的栈 | 少年乙的博客</title>
+    <title>腾讯一面笔试题 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">包含min函数的栈</h1>
+                    <h1 class="description center-align post-title">腾讯一面笔试题</h1>
                 </div>
             </div>
         </div>
@@ -373,13 +373,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E6%A0%88/">
-                                <span class="chip bg-color">栈</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -387,8 +383,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
-                                剑指offer
+                            <a href="/categories/%E8%85%BE%E8%AE%AF/" class="post-category">
+                                腾讯
                             </a>
                         
                     </div>
@@ -400,28 +396,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-23
+                    2020-08-05
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-23
+                    2020-08-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    229
+                    432
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -436,41 +432,42 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="包含min函数的栈"><a href="#包含min函数的栈" class="headerlink" title="包含min函数的栈"></a>包含min函数的栈</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。</p>
-<p>注意：保证测试中不会当栈为空的时候，对栈调用pop()或者min()或者top()方法。</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>定义一个辅助栈，每次压栈操作时, 如果压栈元素比当前最小元素更小, 就把这个元素压入最小元素栈, 原本的最小元素就成了次小元素.。同理, 弹栈时, 如果弹出的元素和最小元素栈的栈顶元素相等, 就把最小元素的栈顶弹出。</p>
-<pre><code>class Solution {
+                <h2 id="腾讯一面笔试题"><a href="#腾讯一面笔试题" class="headerlink" title="腾讯一面笔试题"></a>腾讯一面笔试题</h2><h3 id="假期"><a href="#假期" class="headerlink" title="假期"></a>假期</h3><p>由于业绩优秀，公司给小Q放了 n 天的假，身为工作狂的小Q打算在在假期中工作、锻炼或者休息。他有个奇怪的习惯：不会连续两天工作或锻炼。只有当公司营业时，小Q才能去工作，只有当健身房营业时，小Q才能去健身，小Q一天只能干一件事。给出假期中公司，健身房的营业情况，求小Q最少需要休息几天。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>题目中有状态转换，用动态规划的思想。</p>
+<p>小Q有工作，健身，休息三中状态，用dp【i】【0】，dp【i】【1】，dp【i】【2】分别表示他们的状态。求最多不休息的天数，然后用总天数减去不休息的天数等于休息天数。</p>
+<p>动态方程为：</p>
+<p>dp【i】【0】 = max(dp【i-1】【1】,dp【i-1】【2】) + 1<br>dp【i】【1】 = max(dp【i-1】【0】,dp【i-1】【2】) + 1 </p>
+<p>dp【i】【2】 = max(dp【i-1】【0】,dp【i-1】【1】,dp【i-1】【2】)</p>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><pre><code>#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include &lt;algorithm&gt;
+using namespace std;
 
-public:
-
-    stack&lt;int&gt; stack1,stack2;
-
-    void push(int value) {
-        stack1.push(value);
-        if(stack2.empty())
-            stack2.push(value);
-        else if(value&lt;=stack2.top())
-        {
-            stack2.push(value);
+int main(){
+    int n;
+    while(cin&gt;&gt;n){
+        vector&lt;int&gt; arr1(n,0);
+        vector&lt;int&gt; arr2(n,0);
+        for(int i = 0;i &lt; n;i++){
+            cin&gt;&gt;arr1[i];
         }
+        for(int i = 0;i &lt; n;i++){
+            cin&gt;&gt;arr2[i];
+        }
+        vector&lt;vector&lt;int&gt;&gt; dp(n + 1,vector&lt;int&gt;(3));
+        dp[0][0] = dp[0][1] = dp[0][2] = 0;
+        for(int i = 1;i &lt;= n;i++){
+            if(arr1[i - 1] == 1){
+                dp[i][0] = max(dp[i - 1][1],dp[i - 1][2]) + 1;
+            }
+            if(arr2[i - 1] == 1){
+                dp[i][1] = max(dp[i - 1][0],dp[i - 1][2]) + 1;
+            }
+            dp[i][2] = max(dp[i - 1][0],max(dp[i - 1][1],dp[i - 1][2]));
+        }
+        cout&lt;&lt;n - max(dp[n][0],max(dp[n][2],dp[n][1]))&lt;&lt;endl;;
     }
-
-    void pop() {
-        if(stack1.top()==stack2.top())
-            stack2.pop();
-        stack1.pop();
-
-    }
-
-    int top() {
-        return stack1.top();       
-    }
-
-    int min() {
-        return stack2.top();
-    }
-
-};</code></pre>
+}</code></pre>
             </div>
             <hr/>
 
@@ -495,7 +492,7 @@ public:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shaonianyi.xyz/posts/63137.html">https://shaonianyi.xyz/posts/63137.html</a>
+                    <a href="https://shaonianyi.xyz/posts/8991.html">https://shaonianyi.xyz/posts/8991.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -532,11 +529,7 @@ public:
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E6%A0%88/">
-                                    <span class="chip bg-color">栈</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -702,49 +695,43 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/38808.html">
+                <a href="/posts/8991.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="栈的压入、弹出序列">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="腾讯一面笔试题">
                         
-                        <span class="card-title">栈的压入、弹出序列</span>
+                        <span class="card-title">腾讯一面笔试题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            栈的压入、弹出序列题目描述输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否可能为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如序列1,2,3,4,5是某栈的压入顺序，序列4,5,3,2,1是该压栈序列对应的一个弹出序列
+                            腾讯一面笔试题假期由于业绩优秀，公司给小Q放了 n 天的假，身为工作狂的小Q打算在在假期中工作、锻炼或者休息。他有个奇怪的习惯：不会连续两天工作或锻炼。只有当公司营业时，小Q才能去工作，只有当健身房营业时，小Q才能去健身，小Q一天只能干一件
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
-                                    剑指offer
+                            <a href="/categories/%E8%85%BE%E8%AE%AF/" class="post-category">
+                                    腾讯
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%A0%88/">
-                        <span class="chip bg-color">栈</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -755,44 +742,32 @@ public:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/54334.html">
+                <a href="/posts/13106.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="顺时针打印矩阵">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="select，poll，epoll的介绍">
                         
-                        <span class="card-title">顺时针打印矩阵</span>
+                        <span class="card-title">select，poll，epoll的介绍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            顺时针打印矩阵题目描述输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 则依次打印出数字1,2,3,4,8,12,
+                            select，poll,  epoll的介绍selectselect：是最初解决IO阻塞问题的方法。用结构体fd_set来告诉内核监听多个文件描述符，该结构体被称为描述符集。由数组来维持哪些描述符被置位了。对结构体的操作封装在三个宏定义中。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-08
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%9F%A9%E9%98%B5/" class="post-category">
-                                    矩阵
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            少年乙
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%9F%A9%E9%98%B5/">
-                        <span class="chip bg-color">矩阵</span>
-                    </a>
-                    
                 </div>
                 
             </div>
