@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>Makefile学习笔记</title>
+      <link href="/posts/62371.html"/>
+      <url>/posts/62371.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="Makefile学习笔记"><a href="#Makefile学习笔记" class="headerlink" title="Makefile学习笔记"></a>Makefile学习笔记</h2><h3 id="Makefile介绍"><a href="#Makefile介绍" class="headerlink" title="Makefile介绍"></a>Makefile介绍</h3><pre><code>makefile的主要好处是：自动化编译。makefile文件写好后，只需要一个make命令就可以将整个工程完全自动编译，很大程度上提高了软件开发效率。</code></pre><h3 id="Makefile学习–第一层（显示规则）"><a href="#Makefile学习–第一层（显示规则）" class="headerlink" title="Makefile学习–第一层（显示规则）"></a>Makefile学习–第一层（显示规则）</h3><ul><li><p>#号开头是Makefile文件的注释</p></li><li><p>目标文件：依赖文件</p></li><li><p>Tab+操作系统的命令</p></li><li><p>.PHONY:是伪目标</p></li></ul><p>定义好文件的依赖关系之后，下一行以Tab键作为开头，后续接一个操作系统的命令。</p><p>先有一个hello.c文件，需要生成hello可执行文件，makefile代码示例如下:</p><pre class=" language-makefile"><code class="language-makefile"><span class="token symbol">hello.o </span><span class="token punctuation">:</span> hello.c    gcc -c hello.c -o hello.o<span class="token symbol">hello.o </span><span class="token punctuation">:</span> hello.s    gcc -c hello.s -o hello.o<span class="token symbol">hello.s </span><span class="token punctuation">:</span> hello.i    gcc -s hello.i -o hello.s<span class="token symbol">hello.i </span><span class="token punctuation">:</span> hello.c    gcc -e hello.c -o hello.i<span class="token builtin">.PHONY</span><span class="token punctuation">:</span><span class="token symbol">clear</span><span class="token punctuation">:</span>    rm -rf hello.o hello.s hello.i hello</code></pre><p>要生成hello可执行文件，使用make命令执行makefile文件后，1.makefile文件会找到第一个目标文件，然后看看目标文件所需要的依赖文件。</p><p>2.如果依赖文件一需要依赖文件，这时候这个依赖文件就变成了目标文件。类似递归，一层一层的往下走。</p><p>3.往下找完之后，文件存在执行完，生成hello可执行文件。</p><p>4.正像我们前面例子中的“clean”一样，即然我们生成了许多文件编译文件，我们也应该提供一个清除它们的“目标”以备完整地重编译而用。 （以“make clean”来使用该目标）</p><h3 id="Makefile学习–第二层-变量"><a href="#Makefile学习–第二层-变量" class="headerlink" title="Makefile学习–第二层(变量)"></a>Makefile学习–第二层(变量)</h3><ul><li><p>“=”号操作符：在“=”左侧是变量，右侧是变量的值，右侧变量的值可以定义在文件的任何一处，也就是说，右侧中的变量不一定非要是已定义好的值，其也可以使用后面定义的值。比如：TAR = hello.c</p></li><li><p>“:=”号操作符：表示恒等，常量。例如命令标识符gcc，一般情况下是不会修改的。可写作 CC ：= gcc，之后用CC代替gcc。</p></li><li><p>“+=” 号操作符：如果变量之前没有定义过，那么，“+=”会自动变成“=”，如果前面有变量定义，那么“+=”会继承于前次操作的赋值符。如果前一次的是“:=”，那么“+=”会以“:=”作为其赋值符。比如：OBJ  = hello.o hello.s</p><pre><code>                OBJ += hello.i hello</code></pre><p>于是，我们的 <code>$(OBJ)</code> 值变成：“hello.o hello.s hello.i hello”（ hello.i hello被追加进去了）</p><ul><li><p>使用  $(变量名)  进行替换。</p><p>代码示例，在上次的代码中改：</p></li></ul><pre class=" language-makefile"><code class="language-makefile">TAR <span class="token operator">=</span> hello.cCC <span class="token operator">:=</span> gccOBJ <span class="token operator">=</span> hello.o hello.sOBJ <span class="token operator">+=</span> hello.i hello<span class="token symbol">hello.o </span><span class="token punctuation">:</span> <span class="token variable">$</span><span class="token punctuation">(</span>TAR<span class="token punctuation">)</span>    <span class="token variable">$</span><span class="token punctuation">(</span>CC<span class="token punctuation">)</span> -c <span class="token variable">$</span><span class="token punctuation">(</span>TAR<span class="token punctuation">)</span> -o hello.o<span class="token symbol">hello.o </span><span class="token punctuation">:</span> hello.s    <span class="token variable">$</span><span class="token punctuation">(</span>CC<span class="token punctuation">)</span> -c hello.s -o hello.o<span class="token symbol">hello.s </span><span class="token punctuation">:</span> hello.i    <span class="token variable">$</span><span class="token punctuation">(</span>CC<span class="token punctuation">)</span> -s hello.i -o hello.s<span class="token symbol">hello.i </span><span class="token punctuation">:</span> <span class="token variable">$</span><span class="token punctuation">(</span>TAR<span class="token punctuation">)</span>    <span class="token variable">$</span><span class="token punctuation">(</span>CC<span class="token punctuation">)</span> -e <span class="token variable">$</span><span class="token punctuation">(</span>TAR<span class="token punctuation">)</span> -o hello.i<span class="token builtin">.PHONY</span><span class="token punctuation">:</span><span class="token symbol">clear</span><span class="token punctuation">:</span>    rm -rf <span class="token variable">$</span><span class="token punctuation">(</span>OBJ<span class="token punctuation">)</span></code></pre></li></ul><h3 id="Makefile学习–第三层-隐含规则"><a href="#Makefile学习–第三层-隐含规则" class="headerlink" title="Makefile学习–第三层(隐含规则)"></a>Makefile学习–第三层(隐含规则)</h3><ul><li>%.c  *.o:表示任意的.c或者.o</li><li>*.c   *.o表示所有的.c或者.o</li></ul><p>现有makefile文件代码如下：</p><pre class=" language-makefile"><code class="language-makefile"><span class="token symbol">hello.o </span><span class="token punctuation">:</span> hello.cgcc -c hello.c -o hello.o<span class="token symbol">h.o </span><span class="token punctuation">:</span> o.cgcc -c o.c -o h.o<span class="token symbol">a.o </span><span class="token punctuation">:</span> b.cgcc -c b.c -o a.o</code></pre><p>用隐含规则的方法，上面代码只需写成两行</p><pre class=" language-makefile"><code class="language-makefile"><span class="token symbol">*.o </span><span class="token punctuation">:</span> *.cgcc -c *.c -o *.o</code></pre><h3 id="Makefile学习–第四层-通配符"><a href="#Makefile学习–第四层-通配符" class="headerlink" title="Makefile学习–第四层(通配符)"></a>Makefile学习–第四层(通配符)</h3><ul><li>$@表示所有的目标文件</li><li>$^表示所有的依赖文件</li><li>$&lt;表示所有依赖文件的第一个文件</li></ul><p>代码示例如下：</p><pre class=" language-makefile"><code class="language-makefile"><span class="token comment" spellcheck="true">#原代码</span>TAR <span class="token operator">=</span> hello.cCC <span class="token operator">:=</span> gccOBJ <span class="token operator">=</span> hello.o hello.sOBJ <span class="token operator">+=</span> hello.i hello<span class="token symbol">hello.o </span><span class="token punctuation">:</span> <span class="token variable">$</span><span class="token punctuation">(</span>TAR<span class="token punctuation">)</span>    <span class="token variable">$</span><span class="token punctuation">(</span>CC<span class="token punctuation">)</span> -c <span class="token variable">$</span><span class="token punctuation">(</span>TAR<span class="token punctuation">)</span> -o hello.o<span class="token comment" spellcheck="true">#使用通配符后写的代码</span>TAR <span class="token operator">=</span> hello.cCC <span class="token operator">:=</span> gccOBJ <span class="token operator">=</span> hello.o hello.sOBJ <span class="token operator">+=</span> hello.i hello<span class="token symbol">hello.o </span><span class="token punctuation">:</span> <span class="token variable">$^</span>    <span class="token variable">$</span><span class="token punctuation">(</span>CC<span class="token punctuation">)</span> -c <span class="token variable">$^</span> -o hello.o</code></pre><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><pre><code> 几乎项目中的每个模块都有一个makefile文件，之前并有没有接触过大型的项目，对makefile了解甚少，需要将这块知识补起来。学习makefile的过程中，将学习到的东西记录下来。嘿嘿</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Makefile </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>GDB学习笔记</title>
+      <link href="/posts/14893.html"/>
+      <url>/posts/14893.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="GDB学习笔记"><a href="#GDB学习笔记" class="headerlink" title="GDB学习笔记"></a>GDB学习笔记</h2><h3 id="GDB介绍与功能"><a href="#GDB介绍与功能" class="headerlink" title="GDB介绍与功能"></a>GDB介绍与功能</h3><p><strong>介绍：</strong>  UNIX及UNIX-like下的调试工具。或许，各位比较喜欢那种图形界面方式的，像VC、BCB等IDE的调试，但如果你是在 UNIX平台下做软件，你会发现GDB这个调试工具相比于VC、z的优点是具有修复网络断点以及恢复链接等功能，比BCB的图形化调试器有更强大的功能。所谓“尺有所短，寸有所长”就是这个道理。</p><p><strong>功能：</strong>一般来说，GDB主要帮助你完成下面四个方面的功能：</p><ul><li><p>启动你的程序，可以按照你的自定义的要求随心所欲的运行程序。</p></li><li><p>可让被调试的程序在你所指定的调置的断点处停住。（断点可以是条件表达式）</p></li><li><p>当程序被停住时，可以检查此时你的程序中所发生的事。</p></li><li><p>你可以改变你的程序，将一个BUG产生的影响修正从而测试其他BUG。</p></li></ul><p>GDB的<a href="[http://sourceware.org/gdb/current/onlinedocs/gdb/](https://links.jianshu.com/go?to=http%3A%2F%2Fsourceware.org%2Fgdb%2Fcurrent%2Fonlinedocs%2Fgdb%2F)">官方文档</a></p><h3 id="使用GDB调试"><a href="#使用GDB调试" class="headerlink" title="使用GDB调试"></a>使用GDB调试</h3><p><strong>编译时用-g选项</strong></p><pre><code>$ gcc -g program.c -o programname</code></pre><p><strong>启动程序，programname是执行文件</strong></p><pre><code>gdb programname</code></pre><p><strong>在程序中设置断点</strong></p><p><code>break</code> 设置断点，可以简写为b<br><code>b 10</code>设置断点，在源程序第10行<br><code>b func()</code>设置断点，在<code>func</code>函数入口处</p><pre><code>(gdb) b func()</code></pre><p>设置C++函数断点的时候，需要在函数前面增加增加类名。因为C++具有多态的特性</p><pre><code>(gdb) break Class::func() </code></pre><p>查询所有断点</p><pre><code>(gdb) info b</code></pre><p>跳到下一个断点</p><pre><code>(gdb) c</code></pre><p><strong>启动程序时指定参数</strong></p><pre><code>(gdb) r 202010 919</code></pre><p>重启程序</p><pre><code>(gdb) killKill the program being debugged? (y or n) y(gdb) run</code></pre><p><strong>单步调试</strong></p><p><code>next</code> 单步跟踪，函数调用当作一条简单语句执行，可简写为n</p><p><code>step</code> 单步跟踪，函数调进入被调用函数体内，可简写为s</p><pre><code>(gdb)n(gdb)c</code></pre><p><strong>退出GDB</strong></p><pre><code>(gdb) quitThe program is running. Exit anyway? (y or n) </code></pre><h3 id="在GDB显示变量"><a href="#在GDB显示变量" class="headerlink" title="在GDB显示变量"></a>在GDB显示变量</h3><p><strong>查看变量</strong></p><p><code>print</code>打印变量，可简写为p</p><pre><code>(gdb) p a</code></pre><p><strong>按格式打印变量</strong></p><ul><li><p>x 按十六进制格式显示变量。</p></li><li><p>d 按十进制格式显示变量。</p></li><li><p>u 按十六进制格式显示无符号整型。</p></li><li><p>o 按八进制格式显示变量。</p></li><li><p>t 按二进制格式显示变量。</p></li><li><p>a 按十六进制格式显示变量。</p></li><li><p>c 按字符格式显示变量。</p></li><li><p>f 按浮点数格式显示变量。</p></li></ul><pre><code>(gdb) p/x a</code></pre><p><strong>显示变量类型</strong></p><pre><code>(gdb) whatis p</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> GDB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>腾讯后台笔试题--压缩算法</title>
       <link href="/posts/42441.html"/>
       <url>/posts/42441.html</url>
