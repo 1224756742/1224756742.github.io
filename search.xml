@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>腾讯后台笔试题--压缩算法</title>
+      <link href="/posts/42441.html"/>
+      <url>/posts/42441.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="腾讯后台笔试题–压缩算法"><a href="#腾讯后台笔试题–压缩算法" class="headerlink" title="腾讯后台笔试题–压缩算法"></a>腾讯后台笔试题–压缩算法</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>小Q想要给他的朋友发送一个神秘字符串，但是他发现字符串的过于长了，于是小Q发明了一种压缩算法对字符串中重复的部分进行了压缩，对于字符串中连续的m个相同字符串S将会压缩为<a href="m为一个整数且1<=m<=100">m|S</a>，例如字符串ABCABCABC将会被压缩为[3|ABC]，现在小Q的同学收到了小Q发送过来的字符串，你能帮助他进行解压缩么？ </p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>利用栈的先进后出的特性</p><p>将】前的先全部进栈，然后将|后的字符串放进临时变量里，按|前的数字有多少依次增加（注意每出完一类型的字符串就翻转一次，同时还要将“】”，“|”出栈。）</p><h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><pre><code>#include&lt;iostream&gt;#include&lt;stack&gt;#include&lt;string&gt;#include&lt;algorithm&gt;using namespace std;int main(){    string str;    cin&gt;&gt;str;    int length = str.size();    stack&lt;char&gt; str_stack;    for(int i = 0;i &lt; length;i++){        if(str[i] != &#39;]&#39;){            str_stack.push(str[i]);        }else{            string temp = &quot;&quot;;            while(str_stack.top() != &#39;|&#39;){                temp += str_stack.top();                str_stack.pop();            }            reverse(temp.begin(),temp.end());            str_stack.pop();            string num = &quot;&quot;;            while(str_stack.top() != &#39;[&#39;){                num += str_stack.top();                str_stack.pop();            }            str_stack.pop();            reverse(num.begin(),num.end());            int nums = stoi(num);            while(nums--){                for(int i = 0;i &lt; temp.size();i++){                    str_stack.push(temp[i]);                }            }        }    }    string ans;    while(!str_stack.empty()){        ans += str_stack.top();        str_stack.pop();    }    reverse(ans.begin(),ans.end());    cout&lt;&lt;ans&lt;&lt;endl;    return 0;}</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>腾讯一面笔试题</title>
       <link href="/posts/8991.html"/>
       <url>/posts/8991.html</url>

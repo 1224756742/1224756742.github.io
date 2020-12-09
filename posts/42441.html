@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="两个链表的第一个公共结点, 少年乙的博客">
+    <meta name="keywords" content="腾讯后台笔试题--压缩算法, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>两个链表的第一个公共结点 | 少年乙的博客</title>
+    <title>腾讯后台笔试题--压缩算法 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">两个链表的第一个公共结点</h1>
+                    <h1 class="description center-align post-title">腾讯后台笔试题--压缩算法</h1>
                 </div>
             </div>
         </div>
@@ -373,25 +373,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E9%93%BE%E8%A1%A8/">
-                                <span class="chip bg-color">链表</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
-                                剑指offer
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -400,21 +387,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-30
+                    2020-08-09
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-30
+                    2020-08-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    230
+                    355
                 </div>
                 
 
@@ -436,55 +423,55 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="两个链表的第一个公共结点"><a href="#两个链表的第一个公共结点" class="headerlink" title="两个链表的第一个公共结点"></a>两个链表的第一个公共结点</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入两个链表，找出它们的第一个公共结点。（注意因为传入数据是链表，所以错误测试数据的提示是用其他方式显示的，保证传入数据是正确的）</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>先计算两个链表的的长度</li>
-<li>让长的链表先走两者长度的差</li>
-<li>开始齐头并进，直到找到第一个公共结点</li>
-</ul>
-<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><pre><code>/*
-struct ListNode {
-    int val;
-    struct ListNode *next;
-    ListNode(int x) :
-            val(x), next(NULL) {
-    }
-};*/
-class Solution {
-public:
-    ListNode* FindFirstCommonNode( ListNode* pHead1, ListNode* pHead2) {
-        ListNode* node1 = pHead1;
-        ListNode* node2 = pHead2;
-        int leng1 = length(node1);
-        int leng2 = length(node2);
-        int lengcha = 0;
-        if(leng1 &gt; leng2){
-            lengcha = leng1 - leng2;
-            for(int i = 0;i &lt; lengcha;i++){
-                node1 = node1 -&gt; next;
-            }
+                <h2 id="腾讯后台笔试题–压缩算法"><a href="#腾讯后台笔试题–压缩算法" class="headerlink" title="腾讯后台笔试题–压缩算法"></a>腾讯后台笔试题–压缩算法</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>小Q想要给他的朋友发送一个神秘字符串，但是他发现字符串的过于长了，于是小Q发明了一种压缩算法对字符串中重复的部分进行了压缩，对于字符串中连续的m个相同字符串S将会压缩为<a href="m为一个整数且1<=m<=100">m|S</a>，例如字符串ABCABCABC将会被压缩为[3|ABC]，现在小Q的同学收到了小Q发送过来的字符串，你能帮助他进行解压缩么？ </p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>利用栈的先进后出的特性</p>
+<p>将】前的先全部进栈，然后将|后的字符串放进临时变量里，按|前的数字有多少依次增加（注意每出完一类型的字符串就翻转一次，同时还要将“】”，“|”出栈。）</p>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><pre><code>#include&lt;iostream&gt;
+#include&lt;stack&gt;
+#include&lt;string&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+
+int main(){
+    string str;
+    cin&gt;&gt;str;
+    int length = str.size();
+    stack&lt;char&gt; str_stack;
+    for(int i = 0;i &lt; length;i++){
+        if(str[i] != &#39;]&#39;){
+            str_stack.push(str[i]);
         }else{
-            lengcha = leng2 - leng1;
-            for(int i = 0;i &lt; lengcha;i++){
-                node1 = node1 -&gt; next;
+            string temp = &quot;&quot;;
+            while(str_stack.top() != &#39;|&#39;){
+                temp += str_stack.top();
+                str_stack.pop();
+            }
+            reverse(temp.begin(),temp.end());
+            str_stack.pop();
+            string num = &quot;&quot;;
+            while(str_stack.top() != &#39;[&#39;){
+                num += str_stack.top();
+                str_stack.pop();
+            }
+            str_stack.pop();
+            reverse(num.begin(),num.end());
+            int nums = stoi(num);
+            while(nums--){
+                for(int i = 0;i &lt; temp.size();i++){
+                    str_stack.push(temp[i]);
+                }
             }
         }
-        while(node1 != node2){
-            node1 = node1 -&gt; next;
-            node2 = node2 -&gt; next;
-        }
-        return node1;
     }
-    int length(ListNode* head){
-            int leng = 0;
-            ListNode* node = head;
-            while(node != nullptr){
-                leng++;
-                node = node -&gt; next;
-            }
-            return leng;
-        }
-};</code></pre>
+    string ans;
+    while(!str_stack.empty()){
+        ans += str_stack.top();
+        str_stack.pop();
+    }
+    reverse(ans.begin(),ans.end());
+    cout&lt;&lt;ans&lt;&lt;endl;
+    return 0;
+}</code></pre>
             </div>
             <hr/>
 
@@ -509,7 +496,7 @@ public:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shaonianyi.xyz/posts/37293.html">https://shaonianyi.xyz/posts/37293.html</a>
+                    <a href="https://shaonianyi.xyz/posts/42441.html">https://shaonianyi.xyz/posts/42441.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -546,11 +533,7 @@ public:
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E9%93%BE%E8%A1%A8/">
-                                    <span class="chip bg-color">链表</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -716,53 +699,39 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/41882.html">
+                <a href="/posts/42441.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="TCP的三次握手和四次挥手">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="腾讯后台笔试题--压缩算法">
                         
-                        <span class="card-title">TCP的三次握手和四次挥手</span>
+                        <span class="card-title">腾讯后台笔试题--压缩算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            TCP的三次握手和四次挥手在TCP层，有个FLAGS字段，这个字段有以下几个标识：SYN, FIN, ACK, PSH, RST, URG.
-其中，对于我们日常的分析有用的就是前面的五个字段。
-它们的含义是：
-SYN表示建立连接，
-FIN表
+                            腾讯后台笔试题–压缩算法题目描述小Q想要给他的朋友发送一个神秘字符串，但是他发现字符串的过于长了，于是小Q发明了一种压缩算法对字符串中重复的部分进行了压缩，对于字符串中连续的m个相同字符串S将会压缩为m|S，例如字符串ABCABCABC将会
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-09
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
-                                    计算机网络
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            少年乙
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/TCP/">
-                        <span class="chip bg-color">TCP</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -773,45 +742,36 @@ FIN表
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/34594.html">
+                <a href="/posts/8991.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="第一个只出现一次的字符">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="腾讯一面笔试题">
                         
-                        <span class="card-title">第一个只出现一次的字符</span>
+                        <span class="card-title">腾讯一面笔试题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            第一个只出现一次的字符题目描述在一个字符串(0&lt;=字符串长度&lt;=10000，全部由字母组成)中找到第一个只出现一次的字符,并返回它的位置, 如果没有则返回 -1（需要区分大小写）.（从0开始计数）
-思路先在hash表中统计各字母
+                            腾讯一面笔试题假期由于业绩优秀，公司给小Q放了 n 天的假，身为工作狂的小Q打算在在假期中工作、锻炼或者休息。他有个奇怪的习惯：不会连续两天工作或锻炼。只有当公司营业时，小Q才能去工作，只有当健身房营业时，小Q才能去健身，小Q一天只能干一件
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
-                                    剑指offer
+                            <a href="/categories/%E8%85%BE%E8%AE%AF/" class="post-category">
+                                    腾讯
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                        <span class="chip bg-color">字符串</span>
-                    </a>
-                    
                 </div>
                 
             </div>
