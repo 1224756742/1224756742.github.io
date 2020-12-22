@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="八大排序算法, 少年乙的博客">
+    <meta name="keywords" content="shell脚本编程学习, 少年乙的博客">
     <meta name="description" content="记录学习过程的一些收获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>八大排序算法 | 少年乙的博客</title>
+    <title>shell脚本编程学习 | 少年乙的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">八大排序算法</h1>
+                    <h1 class="description center-align post-title">shell脚本编程学习</h1>
                 </div>
             </div>
         </div>
@@ -375,14 +375,23 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%8E%92%E5%BA%8F/">
-                                <span class="chip bg-color">排序</span>
+                            <a href="/tags/shell/">
+                                <span class="chip bg-color">shell</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -391,28 +400,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-14
+                    2020-12-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-16
+                    2020-12-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    4 分
                 </div>
                 
 
@@ -427,256 +436,238 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="八大排序算法"><a href="#八大排序算法" class="headerlink" title="八大排序算法"></a>八大排序算法</h2><p>排序就是将一组数据按递增或递减的次序排列起来。</p>
-<p>排序可以分为5类</p>
-<ul>
-<li>插入排序</li>
-<li>交换排序</li>
-<li>选择排序</li>
-<li>归并排序</li>
-<li>非比较排序</li>
-</ul>
-<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><h4 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h4><p>首先在当前有序区R[1..i-1]中查找R[i]的正确插入位置k(1≤k≤i-1)；然后将R[k．．i-1]中的记录均后移一个位置，腾出k位置上的空间插入R[i]。</p>
-<p>注意：若R[i]的关键字大于等于R[1．．i-1]中所有记录的关键字，则R[i]就是插入原位置。</p>
-<p><strong>实现代码</strong></p>
-<pre><code>void insert_sort(int a[],int length){
-        int i,j,temp;
-        for(int i = 0;i &lt; length;i++){
-            temp = a[i];
-            for(int j = i - 1;j &gt;= 0 &amp;&amp; temp &lt; a[j];j--){
-                a[j + 1] = a[j];
-            }
-            a[j + 1] = temp;
-        }
-    }</code></pre><h4 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h4><p>希尔排序属于插入类排序,是将整个有序序列分割成若干小的子序列分别进行插入排序</p>
-<p>排序过程：先取一个正整数d1&lt;n，把所有序号相隔d1的数组元素放一组，组内进行直接插入排序]；然后取d2&lt;d1，重复上述分组和排序操作；直至di=1，即所有记录放进一个组中排序为止。</p>
-<p><strong>实现代码</strong></p>
-<pre><code>void shell_sort(int a[],int length){
-        int i,j,h,temp;
-        for(int h = length / 2;h &gt; 0;h = h / 2){
-            for(i = h;i &lt; length;i++){
-                temp = a[i];
-                for(j = j - h;j &gt;= 0 &amp;&amp; temp &lt; a[j];j = j - h){
-                    a[j + h] = a[j];
-                }
-                a[j + h] = temp;
-            }
-        }
-    }</code></pre><h3 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h3><h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><ul>
-<li><p>比较相邻的元素。如果第一个比第二个大，就交换他们两个。  </p>
-</li>
-<li><p>对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。 [1] </p>
-</li>
-<li><p>针对所有的元素重复以上的步骤，除了最后一个。 [1] </p>
-</li>
-<li><p>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
-</li>
-</ul>
-<p><strong>实现代码</strong></p>
-<pre><code>void bubble_sort(int a[],int length){
-        int i,j;
-        for(i = 0;i &lt; length - 1;i++){
-            for(j = 0;j &lt; length - 1 - i;j++){
-                if(a[j] &gt; a[j + 1]){
-                    int temp = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = temp;
-                }
-            }
-        }
-    }</code></pre><h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4><ul>
-<li><p>首先设定一个分界值，通过该分界值将数组分成左右两部分。  </p>
-</li>
-<li><p>将大于或等于分界值的数据集中到数组右边，小于分界值的数据集中到数组的左边。此时，左边部分中各元素都小于或等于分界值，而右边部分中各元素都大于或等于分界值。</p>
-</li>
-<li><p>然后，左边和右边的数据可以独立排序。对于左侧的数组数据，又可以取一个分界值，将该部分数据分成左右两部分，同样在左边放置较小值，右边放置较大值。右侧的数组数据也可以做类似处理。  </p>
-</li>
-<li><p>重复上述过程，可以看出，这是一个递归定义。通过递归将左侧部分排好序后，再递归排好右侧部分的顺序。当左、右两个部分各数据排序完成后，整个数组的排序也就完成了。</p>
-</li>
-</ul>
-<p><strong>实现代码</strong></p>
-<pre><code>void quick_sort(int a[],int L,int R){
-        if(L &gt; R){
-            return;
-        }
-        int left = L;
-        int right = R;
-        int key = a[left];
-        while(left &lt; right){
-            while(left &lt; right &amp;&amp; a[right] &gt;= key ){
-                right--;
-            }
-            if(left &lt; right){
-                a[left] = a[right];
-            }
-            while(left &lt; right &amp;&amp; a[left] &lt;= key){
-                left++;
-            }
-            if(left &lt; right){
-                a[right] = a[left];
-            }
-            if(left &gt;= right){
-                a[left] = key;
-            }
-        }
-        quick_sort(a, L,right - 1);
-        quick_sort(a, right + 1,R);
-    }</code></pre><h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><h4 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h4><p>首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
-<p><strong>实现代码</strong></p>
-<pre><code>void select_sort(int a[],int length){
-        int i,j,temp;
-        for(i = 0;i &lt; length - 1;i++){
-            int min = i;
-            for(j = i + 1;j &lt; length;j++){
-                if(a[j] &lt; a[min]){
-                    min = j;
-                }
-            }
-            temp = a[i];
-            a[i] = a[min];
-            a[min] = temp;
-        }
-    }</code></pre><h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><p>在堆的数据结构中，堆中的最大值总是位于根节点（在优先队列中使用堆的话堆中的最小值位于根节点）。堆中定义以下几种操作：</p>
-<ul>
-<li>最大堆调整（Max Heapify）：将堆的末端子节点作调整，使得子节点永远小于父节点</li>
-<li>创建最大堆（Build Max Heap）：将堆中的所有数据重新排序</li>
-<li>堆排序（HeapSort）：移除位在第一个数据的根节点，并做最大堆调整的递归运算</li>
-</ul>
-<p><strong>实现代码</strong></p>
-<pre><code>//来源于百度百科
-void max_heapify(int arr[], int start, int end) 
+                <h2 id="shell脚本编程学习"><a href="#shell脚本编程学习" class="headerlink" title="shell脚本编程学习"></a>shell脚本编程学习</h2><h3 id="shell介绍"><a href="#shell介绍" class="headerlink" title="shell介绍"></a>shell介绍</h3><p>Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。</p>
+<p>Shell 是指一种应用程序，这个应用程序提供了一个界面，用户通过这个界面访问操作系统内核的服务。</p>
+<p>介绍不说这么多，主要是学习shell脚本(系统为Linux)。<strong>只要一个写代码的文本编辑器和脚本解释器就可以开始学习shell脚本的快乐之旅啦！</strong></p>
+<h4 id="第一个脚本"><a href="#第一个脚本" class="headerlink" title="第一个脚本"></a>第一个脚本</h4><p>用vi文本编辑器，新建一个hello_world.sh，<strong>.sh</strong>是文件扩展名，代表是shell脚本，看见.sh就晓得是shell编写的脚本了。</p>
+<p><strong>实例</strong></p>
+<pre class=" language-shell"><code class="language-shell">#!/bin/bash
+echo "Hello world!"</code></pre>
+<p><strong>#!</strong>是约定标记，让系统知道用什么解释器来执行脚本。</p>
+<p><strong>echo</strong>命令是将文本输出到窗口上。</p>
+<p>新建出来的文本是只有读和写权限，并没有执行权限，可以用<strong>chmod</strong>命令赋予新建脚本执行权限，之后再执行。执行后窗口会输出<strong>Hello world!</strong>。</p>
+<p><strong>效果</strong></p>
+<pre><code>/public/bss_sx/test&gt;chmod +x ./hello_world.sh
+/public/bss_sx/test&gt;./hello_world.sh
+Hello world!</code></pre><h3 id="shell变量"><a href="#shell变量" class="headerlink" title="shell变量"></a>shell变量</h3><p>定义变量时，变量名不用加<strong>$</strong>符号。变量的命名规则在shell里也要遵守，就不多说了。<strong>注意：</strong>赋值号两边不要有空格</p>
+<p><strong>实例</strong></p>
+<pre class=" language-shell"><code class="language-shell">#!/bin/bash
+#定义变量
+hello="hello_world!"
+#使用变量要在变量前面加$符号
+echo $hello
+#只读变量，这种变量只能读，不能更改它的值
+readonly hello
+hello="你好!"
+echo $hello</code></pre>
+<p>脚本执行后会有个报错，就是只读变量是不能改变它的值的。</p>
+<p><strong>效果</strong></p>
+<pre><code>/public/bss_sx/test&gt;./hello_world.sh
+hello_world!
+./hello_world.sh:行8: hello: 只读变量
+hello_world!</code></pre><h3 id="shell数组"><a href="#shell数组" class="headerlink" title="shell数组"></a>shell数组</h3><p>shell只支持一维数组，不支持多维。数组元素下标由0开始。shell数组用括号表示，元素用<strong>空格符</strong>隔开。</p>
+<p><strong>实例</strong></p>
+<pre class=" language-shell"><code class="language-shell">#!/bin/bash
+
+arr=("迪迦" "戴拿" "盖亚")
+#获取数组中的所有元素可以用@ 或 *
+echo ${arr[@]}
+#也可以用下标来定义数组
+arr2[0]=1
+arr2[1]=2
+arr2[2]=3
+#读取数组用大括号
+echo ${arr2[2]}</code></pre>
+<p><strong>效果</strong></p>
+<pre><code>/public/bss_sx/test&gt;./hello_world.sh
+迪迦 戴拿 盖亚
+3</code></pre><h3 id="shell传递参数"><a href="#shell传递参数" class="headerlink" title="shell传递参数"></a>shell传递参数</h3><p>在执行Shell脚本的时候，可以向脚本传递参数。</p>
+<p><strong>实例</strong></p>
+<pre class=" language-shell"><code class="language-shell">#!/bin/bash
+
+echo "执行的文件名：$0";
+echo "第一个参数为：$1";
+echo "第二个参数为：$2";
+echo "第三个参数为：$3";
+# $# 获取参数个数
+echo "参数个数为：$#";
+#  $*引用所有参数
+echo "传递的参数作为一个字符串显示：$*";</code></pre>
+<p><strong>效果</strong></p>
+<pre><code>/public/bss_sx/test&gt;./hello_world.sh 1 2 3
+执行的文件名：./hello_world.sh
+第一个参数为：1
+第二个参数为：2
+第三个参数为：3
+参数个数为：3
+传递的参数作为一个字符串显示：1 2 3</code></pre><h3 id="shell运算符"><a href="#shell运算符" class="headerlink" title="shell运算符"></a>shell运算符</h3><p><strong>算术运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>加法</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减法</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘法</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除法</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取余</td>
+</tr>
+<tr>
+<td>=</td>
+<td>赋值</td>
+</tr>
+<tr>
+<td>==</td>
+<td>相等。用于比较两个数字，相同则返回true</td>
+</tr>
+<tr>
+<td>！=</td>
+<td>不相等。用于比较两个数字，不相等则返回false</td>
+</tr>
+</tbody></table>
+<p><strong>关系运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-eq</td>
+<td>检查两个数是否相等，相等返回true</td>
+</tr>
+<tr>
+<td>-ne</td>
+<td>检查两个数是否不相等，不相等返回true</td>
+</tr>
+<tr>
+<td>-gt</td>
+<td>检查左边的数是否大于右边的，如果是，则返回 true</td>
+</tr>
+<tr>
+<td>-lt</td>
+<td>检查左边的数是否小于右边的，如果是，则返回true</td>
+</tr>
+<tr>
+<td>-ge</td>
+<td>检查左边的数是否大于等于右边的，如果是，则返回true</td>
+</tr>
+<tr>
+<td>-le</td>
+<td>检查左边的数是否小于等于右边的，如果是，则返回true</td>
+</tr>
+</tbody></table>
+<p><strong>布尔运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>！</td>
+<td>非运算</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>或运算</td>
+</tr>
+<tr>
+<td>-a</td>
+<td>与运算</td>
+</tr>
+</tbody></table>
+<p><strong>逻辑运算符</strong></p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;&amp;</td>
+<td>逻辑的AND</td>
+</tr>
+<tr>
+<td>||</td>
+<td>逻辑的OR</td>
+</tr>
+</tbody></table>
+<p><strong>实例</strong></p>
+<pre class=" language-shell"><code class="language-shell">#!/bin/bash
+
+val=`expr 2 + 3`
+echo "两数之和等于：$val"</code></pre>
+<p><strong>效果</strong></p>
+<pre><code>/public/bss_sx/lzs&gt;./shell.sh
+两数之和等于：5</code></pre><h3 id="shell流程控制"><a href="#shell流程控制" class="headerlink" title="shell流程控制"></a>shell流程控制</h3><p>shell的流程控制和C++的类似，都有if-else，for，while，continue，break关键字。写个实例就明白了。</p>
+<p><strong>实例</strong></p>
+<pre class=" language-shell"><code class="language-shell">#!/bin/bash
+
+num1=1
+num2=2
+if [ $num1 == $num2 ]
+then
+   echo "num1 等于 num2"
+elif [ $num1 -gt $num2 ]
+then
+   echo "num1 大于 num2"
+elif [ $num1 -lt $num2 ]
+then
+   echo "num1 小于 num2"
+else
+   echo "没有符合的条件"
+fi</code></pre>
+<p><strong>效果</strong></p>
+<pre><code>/public/bss_sx/lzs&gt;./shell.sh
+num1 小于 num2</code></pre><h3 id="shell函数"><a href="#shell函数" class="headerlink" title="shell函数"></a>shell函数</h3><p>shell的函数定义格式</p>
+<pre><code>[ function ] funname [()]
 {
-    //建立父节点指标和子节点指标
-    int dad = start;
-    int son = dad * 2 + 1;
-    while (son &lt;= end)  //若子节点指标在范围内才做比较
-    {    
-        if (son + 1 &lt;= end &amp;&amp; arr[son] &lt; arr[son + 1]) //先比较两个子节点大小，选择最大的
-            son++;
-        if (arr[dad] &gt; arr[son]) //如果父节点大於子节点代表调整完毕，直接跳出函数
-            return;
-        else  //否则交换父子内容再继续子节点和孙节点比较
-        {
-            swap(arr[dad], arr[son]);
-            dad = son;
-            son = dad * 2 + 1;
-        }
-    }
+    action;
+    [return int;]
+
+}</code></pre><p><strong>实例</strong></p>
+<pre class=" language-shell"><code class="language-shell">#!/bin/bash
+
+funAdd(){
+    echo "输入第一个数字: "
+    read Num1
+    echo "输入第二个数字: "
+    read Num2
+    echo "两个数字分别为 $Num1 和 $Num2 !"
+    return $(($Num1+$Num2))
 }
+funAdd
+echo "输入的两个数字之和为 $? !"
 
-void heap_sort(int arr[], int len) 
-{
-    //初始化，i从最後一个父节点开始调整
-    for (int i = len / 2 - 1; i &gt;= 0; i--)
-        max_heapify(arr, i, len - 1);
-    //先将第一个元素和已经排好的元素前一位做交换，再从新调整(刚调整的元素之前的元素)，直到排序完毕
-    for (int i = len - 1; i &gt; 0; i--) 
-    {
-        swap(arr[0], arr[i]);
-        max_heapify(arr, 0, i - 1);
-    }
-}</code></pre><h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><ul>
-<li><p>申请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列</p>
-</li>
-<li><p>设定两个指针，最初位置分别为两个已经排序序列的起始位置</p>
-</li>
-<li><p>比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置</p>
-</li>
-</ul>
-<p>重复步骤3直到某一指针超出序列尾</p>
-<p>将另一序列剩下的所有元素直接复制到合并序列尾</p>
-<p><strong>实现代码</strong></p>
-<pre><code>//自顶向下的方法
-//代码源于百度
-void merge(int *data, int start, int mid, int end, int *result)
-{
-    int i, j, k;
-    i = start;
-    j = mid + 1;                        //避免重复比较data[mid]
-    k = 0;
-    while (i &lt;= mid &amp;&amp; j &lt;= end)        //数组data[start,mid]与数组(mid,end]均没有全部归入数组result中去
-    {
-        if (data[i] &lt;= data[j])         //如果data[i]小于等于data[j]
-            result[k++] = data[i++];    //则将data[i]的值赋给result[k]，之后i,k各加一，表示后移一位
-        else
-            result[k++] = data[j++];    //否则，将data[j]的值赋给result[k]，j,k各加一
-    }
-    while (i &lt;= mid)                    //表示数组data(mid,end]已经全部归入result数组中去了，而数组data[start,mid]还有剩余
-        result[k++] = data[i++];        //将数组data[start,mid]剩下的值，逐一归入数组result
-    while (j &lt;= end)                    //表示数组data[start,mid]已经全部归入到result数组中去了，而数组(mid,high]还有剩余
-        result[k++] = data[j++];        //将数组a[mid,high]剩下的值，逐一归入数组result
-
-    for (i = 0; i &lt; k; i++)             //将归并后的数组的值逐一赋给数组data[start,end]
-        data[start + i] = result[i];    //注意，应从data[start+i]开始赋值
-}
-void merge_sort(int *data, int start, int end, int *result)
-{
-    if (start &lt; end)
-    {
-        int mid = start + (end-start) / 2;//避免溢出int
-        merge_sort(data, start, mid, result);                    //对左边进行排序
-        merge_sort(data, mid + 1, end, result);                  //对右边进行排序
-        merge(data, start, mid, end, result);                    //把排序好的数据合并
-    }
-}</code></pre><h3 id="非比较性排序"><a href="#非比较性排序" class="headerlink" title="非比较性排序"></a>非比较性排序</h3><h4 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h4><ul>
-<li><p>按照个位数进行排序。</p>
-</li>
-<li><p>按照十位数进行排序。</p>
-</li>
-<li><p>按照百位数进行排序。</p>
-<p>排序后，数列就变成了一个有序序列。</p>
-<p><strong>实现代码</strong></p>
-</li>
-</ul>
-<pre><code>//辅助函数，计算数组中的最大位数
-    int maxbit(int a[],int length){
-        int max = 1;
-        int p = 10;
-        for(int i = 0;i &lt; length;i++){
-            while(a[i] &gt;= p){
-                max++;
-                p *= 10;
-            }
-        }
-        return max;
-    }
-    //基数排序
-    void radixsort(int a[],int length){
-        int max = maxbit(a,length); //最大循环次数
-        int *tmp = new int[length];
-        int *count = new int[10]; //计数器
-        int i,j,k;
-        int radix = 1;
-        for(i = 0;i &lt; max;i++){
-            //每次循环将计数器重置
-            for(j = 0;j &lt; 10;j++){
-                count[j] = 0;
-            }
-            //统计桶里数的个数
-            for(j = 0;j &lt; length;j++){
-                k = (a[j] / radix) % 10;
-                count[k]++;
-            }
-            //将tmp的下标位置分配给桶
-            for(j = 1;j &lt; 10;j++){
-                count[j] = count[j - 1] + count[j];
-            }
-            //将桶的记录的数据依次放进tmp中
-            for(j = length - 1;j &gt; 0;j--){
-                k = (a[j] / radix) % 10;
-                tmp[count[k] - 1] = a[j];
-                count[k]--;
-            }
-
-            //将tem数组的数据放回到a数组中
-            for(j = 0;j &lt; length;j++){
-                a[j] = tmp[j];
-            }
-            radix *= 10; //数据的下一位
-        }
-        delete []tmp;
-        delete []count;
-    }</code></pre><h3 id="算法复杂度"><a href="#算法复杂度" class="headerlink" title="算法复杂度"></a>算法复杂度</h3><p><img src="https://cdn.jsdelivr.net/gh/1224756742/imgs2/images/%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6.png" alt="算法复杂度"></p>
+#函数的返回值可以在调用该函数之后获得</code></pre>
+<p><strong>效果</strong></p>
+<pre><code>/public/bss_sx/lzs&gt;./shell.sh
+输入第一个数字:
+2
+输入第二个数字:
+3
+两个数字分别为 2 和 3 !
+输入的两个数字之和为 5 !</code></pre><p><strong>shell学习之旅到此结束！</strong></p>
 
             </div>
             <hr/>
@@ -702,7 +693,7 @@ void merge_sort(int *data, int start, int end, int *result)
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shaonianyi.xyz/posts/60244.html">https://shaonianyi.xyz/posts/60244.html</a>
+                    <a href="https://shaonianyi.xyz/posts/5226.html">https://shaonianyi.xyz/posts/5226.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -740,8 +731,8 @@ void merge_sort(int *data, int start, int end, int *result)
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%8E%92%E5%BA%8F/">
-                                    <span class="chip bg-color">排序</span>
+                                <a href="/tags/shell/">
+                                    <span class="chip bg-color">shell</span>
                                 </a>
                             
                         </div>
@@ -909,46 +900,49 @@ void merge_sort(int *data, int start, int end, int *result)
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/38278.html">
+                <a href="/posts/5226.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="数组中重复的数字">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="shell脚本编程学习">
                         
-                        <span class="card-title">数组中重复的数字</span>
+                        <span class="card-title">shell脚本编程学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            数组中重复的数字题目描述在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几次。请找出数组中任意一个重复的数字。 例如，如果输入长度为7的数组{2,3,1,0,
+                            shell脚本编程学习shell介绍Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。
+Shell 是指一种应用程序，这个应用程序提供了一个界面，用户通过这个界面
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
-                                    剑指offer
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E7%BB%84/">
-                        <span class="chip bg-color">数组</span>
+                    <a href="/tags/shell/">
+                        <span class="chip bg-color">shell</span>
                     </a>
                     
                 </div>
@@ -962,42 +956,46 @@ void merge_sort(int *data, int start, int end, int *result)
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/19476.html">
+                <a href="/posts/62371.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="不用加减乘除做加法">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Makefile学习笔记">
                         
-                        <span class="card-title">不用加减乘除做加法</span>
+                        <span class="card-title">Makefile学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            不用加减乘除做加法题目描述写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。
-思路
-两个数异或：相当于每一位相加，而不考虑进位；
+                            Makefile学习笔记Makefile介绍makefile的主要好处是：自动化编译。
 
-两个数相与，并左移一位：相当于求得进位；
-
-将上述两步的结果相加,直到进位结果为
+makefile文件写好后，只需要一个make命令就可以将整个工程完全自动编译，很大程度上提高了软件开发效率。Makefile学习–第一层（显示规则）
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
-                                    剑指offer
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Makefile/">
+                        <span class="chip bg-color">Makefile</span>
+                    </a>
+                    
                 </div>
                 
             </div>

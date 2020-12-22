@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>shell脚本编程学习</title>
+      <link href="/posts/5226.html"/>
+      <url>/posts/5226.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="shell脚本编程学习"><a href="#shell脚本编程学习" class="headerlink" title="shell脚本编程学习"></a>shell脚本编程学习</h2><h3 id="shell介绍"><a href="#shell介绍" class="headerlink" title="shell介绍"></a>shell介绍</h3><p>Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。</p><p>Shell 是指一种应用程序，这个应用程序提供了一个界面，用户通过这个界面访问操作系统内核的服务。</p><p>介绍不说这么多，主要是学习shell脚本(系统为Linux)。<strong>只要一个写代码的文本编辑器和脚本解释器就可以开始学习shell脚本的快乐之旅啦！</strong></p><h4 id="第一个脚本"><a href="#第一个脚本" class="headerlink" title="第一个脚本"></a>第一个脚本</h4><p>用vi文本编辑器，新建一个hello_world.sh，<strong>.sh</strong>是文件扩展名，代表是shell脚本，看见.sh就晓得是shell编写的脚本了。</p><p><strong>实例</strong></p><pre class=" language-shell"><code class="language-shell">#!/bin/bashecho "Hello world!"</code></pre><p><strong>#!</strong>是约定标记，让系统知道用什么解释器来执行脚本。</p><p><strong>echo</strong>命令是将文本输出到窗口上。</p><p>新建出来的文本是只有读和写权限，并没有执行权限，可以用<strong>chmod</strong>命令赋予新建脚本执行权限，之后再执行。执行后窗口会输出<strong>Hello world!</strong>。</p><p><strong>效果</strong></p><pre><code>/public/bss_sx/test&gt;chmod +x ./hello_world.sh/public/bss_sx/test&gt;./hello_world.shHello world!</code></pre><h3 id="shell变量"><a href="#shell变量" class="headerlink" title="shell变量"></a>shell变量</h3><p>定义变量时，变量名不用加<strong>$</strong>符号。变量的命名规则在shell里也要遵守，就不多说了。<strong>注意：</strong>赋值号两边不要有空格</p><p><strong>实例</strong></p><pre class=" language-shell"><code class="language-shell">#!/bin/bash#定义变量hello="hello_world!"#使用变量要在变量前面加$符号echo $hello#只读变量，这种变量只能读，不能更改它的值readonly hellohello="你好!"echo $hello</code></pre><p>脚本执行后会有个报错，就是只读变量是不能改变它的值的。</p><p><strong>效果</strong></p><pre><code>/public/bss_sx/test&gt;./hello_world.shhello_world!./hello_world.sh:行8: hello: 只读变量hello_world!</code></pre><h3 id="shell数组"><a href="#shell数组" class="headerlink" title="shell数组"></a>shell数组</h3><p>shell只支持一维数组，不支持多维。数组元素下标由0开始。shell数组用括号表示，元素用<strong>空格符</strong>隔开。</p><p><strong>实例</strong></p><pre class=" language-shell"><code class="language-shell">#!/bin/basharr=("迪迦" "戴拿" "盖亚")#获取数组中的所有元素可以用@ 或 *echo ${arr[@]}#也可以用下标来定义数组arr2[0]=1arr2[1]=2arr2[2]=3#读取数组用大括号echo ${arr2[2]}</code></pre><p><strong>效果</strong></p><pre><code>/public/bss_sx/test&gt;./hello_world.sh迪迦 戴拿 盖亚3</code></pre><h3 id="shell传递参数"><a href="#shell传递参数" class="headerlink" title="shell传递参数"></a>shell传递参数</h3><p>在执行Shell脚本的时候，可以向脚本传递参数。</p><p><strong>实例</strong></p><pre class=" language-shell"><code class="language-shell">#!/bin/bashecho "执行的文件名：$0";echo "第一个参数为：$1";echo "第二个参数为：$2";echo "第三个参数为：$3";# $# 获取参数个数echo "参数个数为：$#";#  $*引用所有参数echo "传递的参数作为一个字符串显示：$*";</code></pre><p><strong>效果</strong></p><pre><code>/public/bss_sx/test&gt;./hello_world.sh 1 2 3执行的文件名：./hello_world.sh第一个参数为：1第二个参数为：2第三个参数为：3参数个数为：3传递的参数作为一个字符串显示：1 2 3</code></pre><h3 id="shell运算符"><a href="#shell运算符" class="headerlink" title="shell运算符"></a>shell运算符</h3><p><strong>算术运算符</strong></p><table><thead><tr><th>运算符</th><th>说明</th></tr></thead><tbody><tr><td>+</td><td>加法</td></tr><tr><td>-</td><td>减法</td></tr><tr><td>*</td><td>乘法</td></tr><tr><td>/</td><td>除法</td></tr><tr><td>%</td><td>取余</td></tr><tr><td>=</td><td>赋值</td></tr><tr><td>==</td><td>相等。用于比较两个数字，相同则返回true</td></tr><tr><td>！=</td><td>不相等。用于比较两个数字，不相等则返回false</td></tr></tbody></table><p><strong>关系运算符</strong></p><table><thead><tr><th>运算符</th><th>说明</th></tr></thead><tbody><tr><td>-eq</td><td>检查两个数是否相等，相等返回true</td></tr><tr><td>-ne</td><td>检查两个数是否不相等，不相等返回true</td></tr><tr><td>-gt</td><td>检查左边的数是否大于右边的，如果是，则返回 true</td></tr><tr><td>-lt</td><td>检查左边的数是否小于右边的，如果是，则返回true</td></tr><tr><td>-ge</td><td>检查左边的数是否大于等于右边的，如果是，则返回true</td></tr><tr><td>-le</td><td>检查左边的数是否小于等于右边的，如果是，则返回true</td></tr></tbody></table><p><strong>布尔运算符</strong></p><table><thead><tr><th>运算符</th><th>说明</th></tr></thead><tbody><tr><td>！</td><td>非运算</td></tr><tr><td>-o</td><td>或运算</td></tr><tr><td>-a</td><td>与运算</td></tr></tbody></table><p><strong>逻辑运算符</strong></p><table><thead><tr><th>运算符</th><th>说明</th></tr></thead><tbody><tr><td>&amp;&amp;</td><td>逻辑的AND</td></tr><tr><td>||</td><td>逻辑的OR</td></tr></tbody></table><p><strong>实例</strong></p><pre class=" language-shell"><code class="language-shell">#!/bin/bashval=`expr 2 + 3`echo "两数之和等于：$val"</code></pre><p><strong>效果</strong></p><pre><code>/public/bss_sx/lzs&gt;./shell.sh两数之和等于：5</code></pre><h3 id="shell流程控制"><a href="#shell流程控制" class="headerlink" title="shell流程控制"></a>shell流程控制</h3><p>shell的流程控制和C++的类似，都有if-else，for，while，continue，break关键字。写个实例就明白了。</p><p><strong>实例</strong></p><pre class=" language-shell"><code class="language-shell">#!/bin/bashnum1=1num2=2if [ $num1 == $num2 ]then   echo "num1 等于 num2"elif [ $num1 -gt $num2 ]then   echo "num1 大于 num2"elif [ $num1 -lt $num2 ]then   echo "num1 小于 num2"else   echo "没有符合的条件"fi</code></pre><p><strong>效果</strong></p><pre><code>/public/bss_sx/lzs&gt;./shell.shnum1 小于 num2</code></pre><h3 id="shell函数"><a href="#shell函数" class="headerlink" title="shell函数"></a>shell函数</h3><p>shell的函数定义格式</p><pre><code>[ function ] funname [()]{    action;    [return int;]}</code></pre><p><strong>实例</strong></p><pre class=" language-shell"><code class="language-shell">#!/bin/bashfunAdd(){    echo "输入第一个数字: "    read Num1    echo "输入第二个数字: "    read Num2    echo "两个数字分别为 $Num1 和 $Num2 !"    return $(($Num1+$Num2))}funAddecho "输入的两个数字之和为 $? !"#函数的返回值可以在调用该函数之后获得</code></pre><p><strong>效果</strong></p><pre><code>/public/bss_sx/lzs&gt;./shell.sh输入第一个数字:2输入第二个数字:3两个数字分别为 2 和 3 !输入的两个数字之和为 5 !</code></pre><p><strong>shell学习之旅到此结束！</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> shell </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Makefile学习笔记</title>
       <link href="/posts/62371.html"/>
       <url>/posts/62371.html</url>
