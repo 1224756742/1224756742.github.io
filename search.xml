@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Vi编辑器使用笔记</title>
+      <link href="/posts/19289.html"/>
+      <url>/posts/19289.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="Vi编辑器使用笔记"><a href="#Vi编辑器使用笔记" class="headerlink" title="Vi编辑器使用笔记"></a>Vi编辑器使用笔记</h2><h3 id="Vi介绍"><a href="#Vi介绍" class="headerlink" title="Vi介绍"></a>Vi介绍</h3><p>Vi编辑器是Linux系统中最常用，最经典的编辑器，功能非常强大。它不像有图形界面的编辑器，可以进行段落的排版，行间距是多少呀，段落前空几个字符呀这类操作。在Vi编辑器中，只有命令，而且命令很多。</p><h3 id="Vi编辑器的三种模式"><a href="#Vi编辑器的三种模式" class="headerlink" title="Vi编辑器的三种模式"></a>Vi编辑器的三种模式</h3><h4 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h4><p>启动Vi后进入的就是命令模式了，在命令模式下，从键盘输入的任何字符都会被当做命令，但字符不会显示出来。比如在命令模式下输入”dd”，此命令会被当做编辑命令来解释，删除光标所在行的所有字符。</p><p>如果命令合法则执行命令，若不合法则触发警告。刚启动Vi底部会显示文件名。</p><p><a href="https://imgchr.com/i/ryZKbT" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/23/ryZKbT.png" alt="刚启动Vi底部显示文件名"></a></p><h4 id="输入模式"><a href="#输入模式" class="headerlink" title="输入模式"></a>输入模式</h4><p>在命令模式下，从键盘输入”i”，”insert”进入输入模式，这时候，从键盘上输入的字符都会显示在屏幕上。按”Esc”键可以退回到命令模式。</p><p>在输入模式下，底部会显示“插入”的提示字符。</p><p><a href="https://imgchr.com/i/ryeI0K" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/23/ryeI0K.png" alt="Vi编辑器输入模式"></a></p><h4 id="最后行模式"><a href="#最后行模式" class="headerlink" title="最后行模式"></a>最后行模式</h4><p>在命令模式下按下”:”就进入了底线命令模式。经常使用的命令有</p><ul><li>q 退出程序</li><li>w 保存文件</li></ul><p>按”Esc”键可以退回到命令模式</p><p>编辑器底部有”:”的提示是最后行模式。</p><p><a href="https://imgchr.com/i/rymKNF" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/23/rymKNF.png" alt="Vi编辑器最后行模式"></a></p><h3 id="Vi编辑器常用按钮说明"><a href="#Vi编辑器常用按钮说明" class="headerlink" title="Vi编辑器常用按钮说明"></a>Vi编辑器常用按钮说明</h3><h4 id="命令模式下的光标移动"><a href="#命令模式下的光标移动" class="headerlink" title="命令模式下的光标移动"></a>命令模式下的光标移动</h4><table><thead><tr><th>命令</th><th>说明</th></tr></thead><tbody><tr><td>h或者向左箭头键</td><td>光标向左移动一个字符</td></tr><tr><td>j或者向下箭头键</td><td>光标向下移动一个字符</td></tr><tr><td>k或者向上箭头键</td><td>光标向上移动一个字符</td></tr><tr><td>l或者向右箭头键</td><td>光标向右移动一个字符</td></tr><tr><td>Ctrl+f</td><td>屏幕向下移动一页</td></tr><tr><td>Ctrl+b</td><td>屏幕向上移动一页</td></tr><tr><td>0</td><td>光标移动到这一行的第一个字符</td></tr><tr><td>$</td><td>光标移动到这一行的最后一个字符</td></tr><tr><td>gg</td><td>移动到这个文档的第一行</td></tr></tbody></table><h4 id="命令模式下的删除，复制，黏贴"><a href="#命令模式下的删除，复制，黏贴" class="headerlink" title="命令模式下的删除，复制，黏贴"></a>命令模式下的删除，复制，黏贴</h4><table><thead><tr><th>命令</th><th>说明</th></tr></thead><tbody><tr><td>x,X</td><td>在一行字当中，x 为向后删除一个字符， X 为向前删除一个字符</td></tr><tr><td>dd</td><td>删除光标所在行</td></tr><tr><td>yy</td><td>复制光标所在行</td></tr><tr><td>p</td><td>p 为将已复制的数据在光标下一行贴上</td></tr><tr><td>u</td><td>复原前一个动作</td></tr><tr><td>Ctrl+r</td><td>重做上一个动作</td></tr></tbody></table><h4 id="最后行模式下命令说明"><a href="#最后行模式下命令说明" class="headerlink" title="最后行模式下命令说明"></a>最后行模式下命令说明</h4><p>“!”符号在Vi编辑器有强制的意思。</p><table><thead><tr><th>命令</th><th>说明</th></tr></thead><tbody><tr><td>w</td><td>将编辑的数据写入文件</td></tr><tr><td>w！</td><td>若文件的属性是只读的，强制写入文件</td></tr><tr><td>q</td><td>退出Vi</td></tr><tr><td>q!</td><td>文件修改过，不想保存则强制退出</td></tr><tr><td>wq</td><td>保存退出</td></tr></tbody></table><h4 id="最后行模式下显示行号"><a href="#最后行模式下显示行号" class="headerlink" title="最后行模式下显示行号"></a>最后行模式下显示行号</h4><table><thead><tr><th>命令</th><th>说明</th></tr></thead><tbody><tr><td>set nu</td><td>显示行号</td></tr><tr><td>set nonu</td><td>取消行号</td></tr></tbody></table><p><strong>每天都要精进一点点呀！</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vi/Vim </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>shell脚本编程学习</title>
       <link href="/posts/5226.html"/>
       <url>/posts/5226.html</url>
